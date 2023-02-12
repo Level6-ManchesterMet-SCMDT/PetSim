@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimalParentScript : MonoBehaviour
 {
     public string animalName;
-    public int maxValue;
+    public int maxValue=100;
     public int health = 50;
     public int mood = 50;
     public int hunger=50;
@@ -14,18 +14,10 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     [Tooltip("aliments for matching with the correct medicene")]
     protected string[] alimentsList ={"flu","rash"};
-    public string CurrentAliment;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string CurrentAliment="healthy";
+    [Tooltip("for what the animal recives from the player")]
+    public GameObject animalInventory;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
@@ -42,4 +34,13 @@ public class AnimalParentScript : MonoBehaviour
             health -= 10;
         }
     }
+    public void IncreaseHappiness(int modifier=10)//increases happiness placeholder
+    {
+        mood += modifier;
+    }
+    virtual public void PlayWithToy() //Remember to do a overide in the derived classes
+    {
+        IncreaseHappiness();
+    }
+
 }
