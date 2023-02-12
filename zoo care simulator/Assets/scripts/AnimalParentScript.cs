@@ -17,6 +17,7 @@ public class AnimalParentScript : MonoBehaviour
     public string CurrentAliment="healthy";
     [Tooltip("for what the animal recives from the player")]
     public GameObject animalInventory;
+    
 
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
@@ -42,5 +43,4 @@ public class AnimalParentScript : MonoBehaviour
     {
         IncreaseHappiness();
     }
-
 }
