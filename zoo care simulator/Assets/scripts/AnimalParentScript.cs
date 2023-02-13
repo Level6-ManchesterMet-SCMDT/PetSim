@@ -18,6 +18,9 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("for what the animal recives from the player")]
     public GameObject animalInventory;
 
+    [SerializeField]
+    protected bool IsPlaying=false;
+
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
