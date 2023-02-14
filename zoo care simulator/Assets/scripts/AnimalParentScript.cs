@@ -19,31 +19,47 @@ public class AnimalParentScript : MonoBehaviour
     public GameObject animalInventory;
 
     [SerializeField]
-    protected bool IsPlaying=false;
+    protected bool IsPlayingToy=false;
 
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
+        Destroy(animalInventory);
     }
-    public void GiveMedicine(string medicine)//input what the medicene cures and it increases health
+    public void EatMedicine(int modifier=10)//input what the medicene cures and it increases health
     {
-        if (medicine == CurrentAliment)
-        {
-            CurrentAliment = "healthy";
-            health += 10;
-        }
-        else
-        {
-            health -= 10;
-        }
+        health += modifier;
+        Destroy(animalInventory);
     }
     public void IncreaseHappiness(int modifier=10)//increases happiness placeholder
-    {
-        mood += modifier;
+    {    
+        if (IsPlayingToy==false) 
+        { 
+            mood += modifier; 
+        }
+        IsPlayingToy = true;
     }
-    virtual public void PlayWithToy() //Remember to do a overide in the derived classes
+    protected virtual void PlayingWithToy()
     {
         IncreaseHappiness();
+        IsPlayingToy = false;
+    }
+    virtual public void Update()
+    {
+        //check animal inventory
+        if (animalInventory.tag == "toy")
+        {
+            PlayingWithToy();
+        }
+        else if (animalInventory.tag == "medicene")
+        {
+            
+            EatMedicine();
+        }
+        else if (animalInventory.tag == "food")
+        {
+            Feed();
+        }
     }
 
 }

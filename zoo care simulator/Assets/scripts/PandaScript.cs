@@ -15,32 +15,6 @@ public class PandaScript : AnimalParentScript
         currentPlayDuration = playDuration;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
 
-        if (IsPlaying == true)
-        {
-            if(playDuration> 0)
-            {
-                transform.Rotate(0, 30 * Time.deltaTime, 0);
-                currentPlayDuration -= 1*Time.deltaTime;
-            }
-            else
-            {
-                currentPlayDuration = playDuration;
-                IsPlaying= false;
-            }
-        }
-    }
-    public override void PlayWithToy()
-    {
-        if (animalInventory.name == "toy")
-        {
-            base.PlayWithToy();
-            IsPlaying= true;
-            
-        }
-    }
 }
