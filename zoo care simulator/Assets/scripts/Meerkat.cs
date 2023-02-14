@@ -1,14 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
+// THIS IS FOR MEERKAT FEEDING 2D MINIGAME ONLY
+// Just in case people think this is to do with all Meerkats, it is only
+// the feeding minigame that is 2D, no 3D AI or 3D meerkat info or control
+// in here - Owen
+
 public class Meerkat : MonoBehaviour
 {
     [Header("Graphics")]
     [SerializeField] private Sprite meerkat;
     [SerializeField] private Sprite meerkatFed;
-    // [SerializeField] private Sprite penguin;
-    //   [SerializeField] private Sprite penguinFed;
-
     [Header("GameManager")]
     [SerializeField] private GameManager gameManager;
 
