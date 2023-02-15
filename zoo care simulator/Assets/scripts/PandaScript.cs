@@ -5,16 +5,23 @@ using UnityEngine;
 //inherits from parent class
 public class PandaScript : AnimalParentScript
 {
-    [SerializeField]
-    [Tooltip("play animation in seconds")]
-    private float playDuration = 5;
-    private float currentPlayDuration;
+    
     // Start is called before the first frame update
     void Start()
     {
-        currentPlayDuration = playDuration;
+
     }
-
-
+    protected override void PlayToyAnimation()
+    {
+        if (IsPlayingToy == true)
+        {
+            
+        }
+        base.PlayToyAnimation();//remove this once animation is added
+    }
+    public override void Update()
+    {
+        base.Update();
+    }
 
 }
