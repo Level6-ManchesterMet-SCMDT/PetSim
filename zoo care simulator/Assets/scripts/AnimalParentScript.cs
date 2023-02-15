@@ -20,6 +20,10 @@ public class AnimalParentScript : MonoBehaviour
 
     [SerializeField]
     protected bool IsPlayingToy=false;
+    [SerializeField]
+    [Tooltip("play animation in seconds")]
+    protected float playAimationDuration = 5;
+
 
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
@@ -31,35 +35,53 @@ public class AnimalParentScript : MonoBehaviour
         health += modifier;
         Destroy(animalInventory);
     }
-    public void IncreaseHappiness(int modifier=10)//increases happiness placeholder
-    {    
-        if (IsPlayingToy==false) 
-        { 
-            mood += modifier; 
+
+     protected IEnumerator playingWithToy(float duration)//triggers once when animal recives toy
+    {
+        //stops duplication
+        if (IsPlayingToy==true)
+        {
+            yield break;
         }
         IsPlayingToy = true;
+        //improves mood
+        print("add "+mood+" mood");
+        mood += 10;
+        yield return new WaitForSeconds(duration);
+        IsPlayingToy= false;
+        animalInventory = null;
     }
-    protected virtual void PlayingWithToy()
+    virtual protected void PlayToyAnimation()//for the animal's play animation
     {
-        IncreaseHappiness();
-        IsPlayingToy = false;
+        if(IsPlayingToy== true)
+        {
+            //placeholder animation
+            transform.Rotate(0, 50 * Time.deltaTime, 0);
+        }
     }
-    virtual public void Update()
+    virtual public void Update()//make sure to call override on all child methods and that it has a base.Update()
     {
+
         //check animal inventory
-        if (animalInventory.tag == "toy")
+        if (animalInventory != null)
         {
-            PlayingWithToy();
+            if (animalInventory.tag == "toy")
+            {
+                StartCoroutine(playingWithToy(playAimationDuration));
+                PlayToyAnimation();
+                
+            }
+            else if (animalInventory.tag == "medicene")
+            {
+
+                EatMedicine();
+            }
+            else if (animalInventory.tag == "food")
+            {
+                Feed();
+            }
         }
-        else if (animalInventory.tag == "medicene")
-        {
-            
-            EatMedicine();
-        }
-        else if (animalInventory.tag == "food")
-        {
-            Feed();
-        }
+        
     }
 
 }
