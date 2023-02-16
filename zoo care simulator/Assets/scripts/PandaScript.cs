@@ -15,7 +15,7 @@ public class PandaScript : AnimalParentScript
     {
         if (IsPlayingToy == true)
         {
-            
+            //animation for playing with toy   
         }
         base.PlayToyAnimation();//remove this once animation is added
     }
