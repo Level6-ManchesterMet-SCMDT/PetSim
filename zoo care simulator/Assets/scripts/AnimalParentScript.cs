@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimalParentScript : MonoBehaviour
@@ -23,7 +24,7 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     [Tooltip("play animation in seconds")]
     protected float playAimationDuration = 5;
-
+    private string healthy = "healthy";
 
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
@@ -32,8 +33,21 @@ public class AnimalParentScript : MonoBehaviour
     }
     public void EatMedicine(int modifier=10)//input what the medicene cures and it increases health
     {
-        health += modifier;
-        Destroy(animalInventory);
+        var mediciene=animalInventory.GetComponent<mediceneScript>();
+
+        if (CurrentAliment != healthy)//medicene does nothing if the animal is healthy
+        {
+            if (mediciene.GetAliment() == CurrentAliment)//If correct medicene used cures the aliment and icreases health
+            {
+                health += modifier;
+                CurrentAliment = healthy;
+            }
+            else//if wrong medicene used it reduces health and aliment stays
+            {
+                health -= modifier;
+            }
+        }
+        Destroy(animalInventory);//eats the medicene for all cases
     }
 
      protected IEnumerator playingWithToy(float duration)//triggers once when animal recives toy
