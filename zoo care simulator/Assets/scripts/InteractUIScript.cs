@@ -13,6 +13,8 @@ public class InteractUIScript : MonoBehaviour
     [SerializeField] private Slider hungerSlider;
     [SerializeField] private Slider happinessSilder;
     [SerializeField] private Text alimentDisplay;
+    [SerializeField] private Text AnimalName;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -62,5 +64,8 @@ public class InteractUIScript : MonoBehaviour
     {
         alimentDisplay.text= aliment;
     }
-
+    public void setName(string name)
+    {
+        AnimalName.text= name;
+    }
 }

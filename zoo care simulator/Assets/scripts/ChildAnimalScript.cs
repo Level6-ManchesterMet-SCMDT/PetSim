@@ -10,6 +10,7 @@ public class ChildAnimalScript : AnimalParentScript
     void Start()
     {
         UIAnimalDisplay=gameObject.GetComponent<InteractUIScript>();
+        UIAnimalDisplay.setName(animalName);
     }
     protected override void PlayToyAnimation()
     {
@@ -20,12 +21,13 @@ public class ChildAnimalScript : AnimalParentScript
         base.PlayToyAnimation();//remove this once animation is added
     }
     public override void Update()
-    {
+    {   
+        base.Update();
         //sets the UI sliders
         UIAnimalDisplay.setHappiness(mood);
         UIAnimalDisplay.setHealth(health);
         UIAnimalDisplay.setHunger(hunger);
-        base.Update();
+        UIAnimalDisplay.setAliment(CurrentAliment);
     }
 
 }
