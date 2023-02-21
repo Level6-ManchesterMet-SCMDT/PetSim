@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //inherits from parent class
-public class PandaScript : AnimalParentScript
+public class ChildAnimalScript : AnimalParentScript
 {
-    
+    private InteractUIScript UIAnimalDisplay;
     // Start is called before the first frame update
     void Start()
     {
-
+        UIAnimalDisplay=gameObject.GetComponent<InteractUIScript>();
     }
     protected override void PlayToyAnimation()
     {
@@ -21,6 +21,10 @@ public class PandaScript : AnimalParentScript
     }
     public override void Update()
     {
+        //sets the UI sliders
+        UIAnimalDisplay.setHappiness(mood);
+        UIAnimalDisplay.setHealth(health);
+        UIAnimalDisplay.setHunger(hunger);
         base.Update();
     }
 
