@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class AnimalParentScript : MonoBehaviour
 {
-    public string animalName;
-    public int maxValue=100;
-    public int health = 50;
-    public int mood = 50;
-    public int hunger=50;
+    [Tooltip("Displays in the notepad as the name")]public string animalName;
+    [SerializeField]
+    protected int maxValue=100;
+    public float health = 50;
+    public float mood = 50;
+    public float hunger=50;
     public float growthRate;
     public float age;
     [SerializeField]
@@ -25,7 +26,22 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("play animation in seconds")]
     protected float playAimationDuration = 5;
     private string healthy = "healthy";
-
+    
+    [SerializeField]
+    [Tooltip("lower bound for the stats when generation")]
+    private int lowerBoundModifier=50;
+    [SerializeField]
+    [Tooltip("how much time passes before hunger decreases by 1 in seconds")]
+    private int hungerDecayRate = 1;
+    [SerializeField]
+    [Tooltip("how much time passes before mood decreases by 1 in seconds")]
+    private int moodDecayRate = 1;
+    [SerializeField]
+    [Tooltip("how much time passes before health decreases by 1 in seconds if ill or low mood/hunger")]
+    private int healthDecayRate = 1;
+    [SerializeField]
+    [Tooltip("how fast health goes up passively when hunger and mood is high")]
+    private int healthRestoreRate = 1;
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
@@ -95,7 +111,21 @@ public class AnimalParentScript : MonoBehaviour
                 Feed();
             }
         }
-        
+        DecayHunger();
+    }
+    /// <summary>
+    /// for generating random stats upon spawning the animal into the game, put it in start method
+    /// </summary>
+    protected void generateRandomInitalStats()
+    {
+        health=Random.Range(lowerBoundModifier, 100);
+        mood = Random.Range(lowerBoundModifier, 100);
+        //hunger = Random.Range(lowerBoundModifier, 100);
+        hunger = maxValue;
+    }
+    protected void DecayHunger()
+    {
+        hunger = hunger -   Time.deltaTime/ hungerDecayRate;
     }
 
 }
