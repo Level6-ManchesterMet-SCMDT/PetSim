@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,6 +12,9 @@ public class AnimalParentScript : MonoBehaviour
     public float health = 50;
     public float mood = 50;
     public float hunger=50;
+    public int currenthealth;
+    public int currenthappiness;
+    public int currenthunger;
     public float growthRate;
     public float age;
     public bool isDead = false;
@@ -27,7 +31,6 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("play animation in seconds")]
     protected float playAimationDuration = 5;
     private string healthy = "healthy";
-    
     [SerializeField]
     [Tooltip("lower bound for the stats when generation")]
     private int lowerBoundGenerationModifier=50;
@@ -59,6 +62,20 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     [Tooltip("DEBUGGING")]
     private float currenthungerAfflictedChance;
+    [SerializeField] private StatBars statBars;
+
+    private void Start()
+    {
+        currenthealth = maxValue;
+        statBars.SetMaxHealth(maxValue);
+        
+        currenthunger = maxValue;
+        statBars.SetMaxHunger(maxValue);
+        
+        currenthappiness = maxValue;
+        statBars.SetHappiness(maxValue);
+    }
+
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
