@@ -30,19 +30,26 @@ public class AnimalParentScript : MonoBehaviour
     
     [SerializeField]
     [Tooltip("lower bound for the stats when generation")]
-    private int lowerBoundModifier=50;
+    private int lowerBoundGenerationModifier=50;
     [SerializeField]
-    [Tooltip("how much time passes before hunger decreases by 1 in seconds")]
+    [Tooltip("tick rate of how often processes update in seconds")]
+    private float tickRate = 1;
+    private float timer = 0;
+    [SerializeField]
+    [Tooltip("how much hunger decreases by per tick")]
     private int hungerDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much time passes before mood decreases by 1 in seconds")]
+    [Tooltip("how much mood decreases by per tick")]
     private int moodDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much time passes before health decreases by 1 in seconds if afflicted or low mood/hunger")]
+    [Tooltip("how much health decreases by per tick if afflicted or low mood/hunger")]
     private int healthDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much time passes before health increases by 1 in seconds passively when hunger and mood is high")]
+    [Tooltip("how much health increases by per tick passively when hunger and mood is high")]
     private int healthRestoreRate = 1;
+    [SerializeField]
+    [Tooltip("what is the upper limit for both hunger and mood before health starts to regenerate")]
+    private int HealthRegenPercentage = 75;
     [SerializeField]
     [Tooltip("maximun chance out of 100% to become afflicted at 0 hunger and 0 happiness")]
     private float maxChanceToGetAfflicted = 70;
@@ -121,38 +128,55 @@ public class AnimalParentScript : MonoBehaviour
                 Feed();
             }
         }
-        AdvanceTimeStatus();
+        timer-= Time.deltaTime;
+        if (timer < 0)
+        {
+            AdvanceTimeStatus();
+            timer = tickRate;
+            print("tick"+gameObject.name);
+        }
     }
     /// <summary>
     /// for generating random stats upon spawning the animal into the game, put it in start method
     /// </summary>
     protected void generateRandomInitalStats()
     {
-        health=Random.Range(lowerBoundModifier, 100);
-        mood = Random.Range(lowerBoundModifier, 100);
+        health=Random.Range(lowerBoundGenerationModifier, 100);
+        mood = Random.Range(lowerBoundGenerationModifier, 100);
         //hunger = Random.Range(lowerBoundModifier, 100);
         hunger = maxValue;
     }
     protected void DecayHunger()
     {
-        if (hunger >= 0)
+        if (hunger > 1)
         {
-            hunger = hunger - Time.deltaTime / hungerDecayRate;
+            hunger = hunger- hungerDecayRate;
         }
-        
+        if (hunger < 1)
+        {
+            hunger = 1;
+        }
     }
     protected void decayHappiness()
     {
-        if (mood >= 0)
+        if (mood > 1)
         {
-            mood = mood - Time.deltaTime / moodDecayRate;
+            mood = mood -  moodDecayRate;
+        }
+        if (mood < 1)
+        {
+            mood = 1;
         }
     }
     protected void decayHealth()
     {
-        if (health >= 0)
+        if (health > 0)
         {
-            health = Time.deltaTime / healthDecayRate;
+            health = health- healthDecayRate;
+        }
+        if (health <= 0)//animal dies
+        {
+            isDead= true;
         }
     }
     protected void BecomeAfflicted()
@@ -164,7 +188,13 @@ public class AnimalParentScript : MonoBehaviour
             CurrentAliment= alimentsList[index];
         }
     }
-    
+    protected void restoreHealth()
+    {
+        if (health <= 100)
+        {
+            health += healthRestoreRate;
+        }
+    }
     virtual protected void AdvanceTimeStatus()//logic for the base stats
     {
         //hunger and happiness goes down all the time
@@ -209,5 +239,13 @@ public class AnimalParentScript : MonoBehaviour
         {
             decayHealth();
         }
+        else if (CurrentAliment == healthy)//restores health if healthy and if hunger and mood is above a certain value
+        {
+            if (mood >= HealthRegenPercentage && hunger >= HealthRegenPercentage)
+            {
+                restoreHealth();
+            }
+        }
+
     }
 }
