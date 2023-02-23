@@ -158,8 +158,8 @@ public class AnimalParentScript : MonoBehaviour
     /// </summary>
     protected void generateRandomInitalStats()
     {
-        health=Random.Range(lowerBoundGenerationModifier, 100);
-        mood = Random.Range(lowerBoundGenerationModifier, 100);
+        health=UnityEngine.Random.Range(lowerBoundGenerationModifier, 100);
+        mood = UnityEngine.Random.Range(lowerBoundGenerationModifier, 100);
         //hunger = Random.Range(lowerBoundModifier, 100);
         hunger = maxValue;
     }
@@ -201,7 +201,7 @@ public class AnimalParentScript : MonoBehaviour
         if (CurrentAliment == "healthy")
         {
             int length = alimentsList.Length;
-            int index=Random.Range(0, length);
+            int index=UnityEngine.Random.Range(0, length);
             CurrentAliment= alimentsList[index];
         }
     }
@@ -244,7 +244,7 @@ public class AnimalParentScript : MonoBehaviour
             currentAfflictedChance = 100;
         }
         //print(currentIllChance);
-        int randomNumber=Random.Range(0, maxValue);
+        int randomNumber=UnityEngine.Random.Range(0, maxValue);
         //will animal get afflicted
         //requires fizing later
         if (randomNumber <= currentAfflictedChance)
