@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d15d0eb5dc56ec4f8eb3ad502942ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalName: panda
+  animalName: animal name here
   maxValue: 100
   health: 50
   mood: 50
@@ -1398,6 +1398,7 @@ MonoBehaviour:
   animalInventory: {fileID: 0}
   IsPlayingToy: 0
   playAimationDuration: 5
+  lowerBoundModifier: 50
 --- !u!135 &1162244098217511323
 SphereCollider:
   m_ObjectHideFlags: 0

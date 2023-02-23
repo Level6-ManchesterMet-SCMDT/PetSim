@@ -15,6 +15,7 @@ public class InteractUIScript : MonoBehaviour
     [SerializeField] private Text alimentDisplay;
     [SerializeField] private Text AnimalName;
 
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -48,15 +49,15 @@ public class InteractUIScript : MonoBehaviour
             prompt.SetActive(false);
         }
     }
-    public void setHealth(int health)
+    public void setHealth(float health)
     {
-        healthSlider.value = health;
+        healthSlider.value = (int)health;
     }
-    public void setHunger(int hunger)
+    public void setHunger(float hunger)
     {
-        hungerSlider.value = hunger;
+        hungerSlider.value = (int) hunger;
     }
-    public void setHappiness(int happiness)
+    public void setHappiness(float happiness)
     {
         happinessSilder.value = happiness;
     }
