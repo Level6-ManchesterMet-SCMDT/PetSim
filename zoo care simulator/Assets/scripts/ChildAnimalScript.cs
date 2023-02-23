@@ -11,7 +11,7 @@ public class ChildAnimalScript : AnimalParentScript
     {
         UIAnimalDisplay=gameObject.GetComponent<InteractUIScript>();
         UIAnimalDisplay.setName(animalName);
-        generateRandomInitalStats();
+        generateRandomInitalStats();//animal starts out with random stats
     }
     protected override void PlayToyAnimation()
     {
