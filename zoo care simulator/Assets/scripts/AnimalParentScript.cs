@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,6 +12,9 @@ public class AnimalParentScript : MonoBehaviour
     public float health = 50;
     public float mood = 50;
     public float hunger=50;
+    public int currenthealth;
+    public int currenthappiness;
+    public int currenthunger;
     public float growthRate;
     public float age;
     public bool isDead = false;
@@ -27,7 +31,6 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("play animation in seconds")]
     protected float playAimationDuration = 5;
     private string healthy = "healthy";
-    
     [SerializeField]
     [Tooltip("lower bound for the stats when generation")]
     private int lowerBoundGenerationModifier=50;
@@ -59,6 +62,20 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     [Tooltip("DEBUGGING")]
     private float currenthungerAfflictedChance;
+    [SerializeField] private StatBars statBars;
+
+    private void Start()
+    {
+        currenthealth = maxValue;
+        statBars.SetMaxHealth(maxValue);
+        
+        currenthunger = maxValue;
+        statBars.SetMaxHunger(maxValue);
+        
+        currenthappiness = maxValue;
+        statBars.SetHappiness(maxValue);
+    }
+
     public void Feed(int foodvalue=10)//increases hunger bar from feeding
     {
         hunger += foodvalue;
@@ -141,8 +158,8 @@ public class AnimalParentScript : MonoBehaviour
     /// </summary>
     protected void generateRandomInitalStats()
     {
-        health=Random.Range(lowerBoundGenerationModifier, 100);
-        mood = Random.Range(lowerBoundGenerationModifier, 100);
+        health=UnityEngine.Random.Range(lowerBoundGenerationModifier, 100);
+        mood = UnityEngine.Random.Range(lowerBoundGenerationModifier, 100);
         //hunger = Random.Range(lowerBoundModifier, 100);
         hunger = maxValue;
     }
@@ -184,7 +201,7 @@ public class AnimalParentScript : MonoBehaviour
         if (CurrentAliment == "healthy")
         {
             int length = alimentsList.Length;
-            int index=Random.Range(0, length);
+            int index=UnityEngine.Random.Range(0, length);
             CurrentAliment= alimentsList[index];
         }
     }
@@ -227,7 +244,7 @@ public class AnimalParentScript : MonoBehaviour
             currentAfflictedChance = 100;
         }
         //print(currentIllChance);
-        int randomNumber=Random.Range(0, maxValue);
+        int randomNumber=UnityEngine.Random.Range(0, maxValue);
         //will animal get afflicted
         //requires fizing later
         if (randomNumber <= currentAfflictedChance)
