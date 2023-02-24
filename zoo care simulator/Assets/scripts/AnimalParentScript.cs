@@ -9,9 +9,9 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("Displays in the notepad as the name")]public string animalName;
     [SerializeField]
     protected int maxValue=100;
-    public float health = 50;
-    public float mood = 50;
-    public float hunger=50;
+    public int health = 50;
+    public int mood = 50;
+    public int hunger=50;
     public int currenthealth;
     public int currenthappiness;
     public int currenthunger;
@@ -168,6 +168,7 @@ public class AnimalParentScript : MonoBehaviour
         if (hunger > 1)
         {
             hunger = hunger- hungerDecayRate;
+            statBars.SetHunger(hunger);
         }
         if (hunger < 1)
         {
@@ -179,6 +180,7 @@ public class AnimalParentScript : MonoBehaviour
         if (mood > 1)
         {
             mood = mood -  moodDecayRate;
+            statBars.SetHappiness(mood);
         }
         if (mood < 1)
         {
@@ -190,6 +192,7 @@ public class AnimalParentScript : MonoBehaviour
         if (health > 0)
         {
             health = health- healthDecayRate;
+            statBars.SetHealth(health);
         }
         if (health <= 0)//animal dies
         {
