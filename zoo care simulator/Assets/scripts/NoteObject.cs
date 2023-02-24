@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
     public bool canBePressed;
- 
+    public GameObject hitEffect, goodEffect, greatEffect, missEffect;
     public KeyCode keyToPress;
 
     // Start is called before the first frame update
@@ -23,8 +23,26 @@ public class NoteObject : MonoBehaviour
             {
                 gameObject.SetActive(false);
 
-                Debug.Log("Hit on time!");
                 //GameManager.instance.NoteHit();
+            
+                if(Mathf.Abs(transform.position.y) > 0.25)
+                {
+                    Debug.Log("Just hit it!");
+                    GameManager.instance.NormalHit();
+                    Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
+                }
+                else if(Mathf.Abs(transform.position.y) > 0.05)
+                {
+                    Debug.Log("Hit on time!");
+                    GameManager.instance.GoodHit();
+                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+                }
+                else
+                {
+                    Debug.Log("Perfect hit!");
+                    GameManager.instance.GreatHit();
+                    Instantiate(greatEffect, transform.position, greatEffect.transform.rotation);
+                }
             }
         }
     }
@@ -44,7 +62,8 @@ public class NoteObject : MonoBehaviour
             canBePressed = false;
 
             Debug.Log("Missed note...");
-            //GameManager.instance.NoteMissed();
+            GameManager.instance.NoteMissed();
+            Instantiate(missEffect, transform.position, missEffect.transform.rotation);
         }
     }
 }
