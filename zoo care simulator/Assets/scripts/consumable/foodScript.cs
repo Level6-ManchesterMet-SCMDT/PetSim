@@ -11,8 +11,10 @@ public class foodScript : MonoBehaviour
     private string FoodType;
     [Tooltip("how much hunger points it normally restores")]
     public int saturationRestore=10;
+    
     [Tooltip("if it is the animal's favourite food, add mood")]
     public int HappinesRestore=10;
+    
     
     public string getFoodType()
     {

@@ -10,7 +10,7 @@ public class mediceneScript : MonoBehaviour
     [Tooltip("what aliments can it cure, case sensitive to the aliment list")]
     private string CureAliment;
 
-    [Tooltip("can be negative as a tradeoff")]
+    [Tooltip("needs to be positive or 0")]
     public int HealthAdded=0;
     [Tooltip("can be negative as a tradeoff")]
     public int HungerAdded = 0;

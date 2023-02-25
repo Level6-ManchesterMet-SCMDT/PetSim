@@ -198,9 +198,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodName: carrot
-  FoodType: plants
-  saturationRestore: 0
-  moodRestore: 0
+  FoodType: plant
+  saturationRestore: 10
+  HappinesRestore: 10
+--- !u!1001 &437232237
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.963
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099889, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321591812640099917, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+      propertyPath: m_Name
+      value: ribs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+--- !u!1 &437232238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6321591812640099917, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
+  m_PrefabInstance: {fileID: 437232237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &437232239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437232238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14911dc5566146b46b301e76ba5fc340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodName: ribs
+  FoodType: meat
+  saturationRestore: 10
+  HappinesRestore: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,27 +589,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
---- !u!1 &1844056840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6321591812640099917, guid: 37c8e6628afd849489b1334d562c569b, type: 3}
-  m_PrefabInstance: {fileID: 6321591813914124019}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1844056845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844056840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14911dc5566146b46b301e76ba5fc340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FoodName: bamboo
-  FoodType: plants
-  saturationRestore: 0
-  moodRestore: 0
 --- !u!1001 &1974728908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,6 +665,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406351039172563636, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: FoodTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406351039172563636, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: FoodTypes.Array.data[0]
+      value: plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406351039172563636, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: PreferredFood.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406351039172563636, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: PreferredFood.Array.data[0]
+      value: bamboo
+      objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563637, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: m_RootOrder
       value: 1

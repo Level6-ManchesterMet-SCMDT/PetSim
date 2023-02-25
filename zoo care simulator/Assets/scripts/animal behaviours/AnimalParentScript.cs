@@ -84,10 +84,35 @@ public class AnimalParentScript : MonoBehaviour
         statBars.SetHappiness(maxValue);
     }
 
-    public void Feed(int foodvalue=10)//increases hunger bar from feeding
+    public void Feed(foodScript food)//increases hunger bar from feeding
     {
-        hunger += foodvalue;
-        Destroy(animalInventory);
+        //checks for favourite food first
+        for (int i=0;i<PreferredFood.Length;i++)
+        {
+            if (food.getFoodName() == PreferredFood[i])
+            {
+                //if it matches eats the food and becomes happier
+                hunger += food.saturationRestore;
+                mood += food.HappinesRestore;
+                //eats the food
+                Destroy(animalInventory);
+                return;
+            }
+        }
+        //check if it matches food types for all other cases
+        for(int i = 0; i < FoodTypes.Length; i++)
+        {
+            if (food.getFoodType() == FoodTypes[i])
+            {
+                //if it matches the type it eats it.
+                hunger += food.saturationRestore;
+                Destroy(animalInventory);
+                return;
+            }
+        }
+        //drops the food if neither matches
+        animalInventory = null;
+        
     }
     public void EatMedicine(mediceneScript medicene)//input what the medicene cures and it increases health
     {
@@ -101,13 +126,17 @@ public class AnimalParentScript : MonoBehaviour
             if (medicene.GetAliment() == CurrentAliment)//If correct medicene used cures the aliment and icreases health
             {
                 health += healthmodifier;
+                //side effects
                 hunger+= hungermodifier;
                 mood += moodmodifier;
                 CurrentAliment = healthy;
             }
-            else//if wrong medicene used it reduces health and aliment stays
+            else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects. this allows for stuff like anti-depressents
             {
                 health -= healthmodifier;
+                //side effects
+                hunger += hungermodifier;
+                mood += moodmodifier;
             }
         }
         Destroy(animalInventory);//eats the medicene for all cases
@@ -155,7 +184,8 @@ public class AnimalParentScript : MonoBehaviour
             }
             else if (animalInventory.tag == "food")
             {
-                Feed();
+                var FoodContents=animalInventory.GetComponent<foodScript>();
+                Feed(FoodContents);
             }
         }
         timer-= Time.deltaTime;
