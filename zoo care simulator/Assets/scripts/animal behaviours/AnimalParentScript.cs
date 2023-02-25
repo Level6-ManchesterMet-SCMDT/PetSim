@@ -22,6 +22,14 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("aliments for matching with the correct medicene")]
     protected string[] alimentsList ={"flu","rash"};
     public string CurrentAliment="healthy";
+
+    [SerializeField]
+    [Tooltip("what class of food can the animal eat. animals will outright not eat types outside of this class")]
+    private string[] FoodTypes;
+    [SerializeField]
+    [Tooltip("what the animal preferes to eat, and gains mood from the food's happiness value")]
+    private string[] PreferredFood;
+
     [Tooltip("for what the animal recives from the player")]
     public GameObject animalInventory;
 
@@ -81,20 +89,25 @@ public class AnimalParentScript : MonoBehaviour
         hunger += foodvalue;
         Destroy(animalInventory);
     }
-    public void EatMedicine(int modifier=10)//input what the medicene cures and it increases health
+    public void EatMedicine(mediceneScript medicene)//input what the medicene cures and it increases health
     {
-        var mediciene=animalInventory.GetComponent<mediceneScript>();
+        int healthmodifier = medicene.HealthAdded;
+        int hungermodifier = medicene.HungerAdded;
+        int moodmodifier = medicene.HappinessAdded;
+
 
         if (CurrentAliment != healthy)//medicene does nothing if the animal is healthy
         {
-            if (mediciene.GetAliment() == CurrentAliment)//If correct medicene used cures the aliment and icreases health
+            if (medicene.GetAliment() == CurrentAliment)//If correct medicene used cures the aliment and icreases health
             {
-                health += modifier;
+                health += healthmodifier;
+                hunger+= hungermodifier;
+                mood += moodmodifier;
                 CurrentAliment = healthy;
             }
             else//if wrong medicene used it reduces health and aliment stays
             {
-                health -= modifier;
+                health -= healthmodifier;
             }
         }
         Destroy(animalInventory);//eats the medicene for all cases
@@ -137,8 +150,8 @@ public class AnimalParentScript : MonoBehaviour
             }
             else if (animalInventory.tag == "medicene")
             {
-
-                EatMedicine();
+                var mediceneContents = animalInventory.GetComponent<mediceneScript>();
+                EatMedicine(mediceneContents);
             }
             else if (animalInventory.tag == "food")
             {
