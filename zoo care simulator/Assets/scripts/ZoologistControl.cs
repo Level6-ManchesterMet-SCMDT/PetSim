@@ -46,11 +46,24 @@ public class ZoologistControl : MonoBehaviour
             
             interactedItem = hitinfo.collider.gameObject;//grabs the item;
 
-            if(interactedItem.tag=="food"||interactedItem.tag== "medicene"|| interactedItem.tag == "toy")//check if it is an interactble
+            if (interactedItem.tag == "food" || interactedItem.tag == "medicene" || interactedItem.tag == "toy")//check if it is an interactble
             {
                 //DEBUG
                 print("hit pickup");
-                Debug.DrawRay(ray.origin, ray.direction * 10, Color.green, 10f);
+                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.green, 10f);
+
+                for (int i = 0; i < inventorySlots.Length; i++)//finds first free slot in the inventory
+                {
+                    if(inventorySlots[i] == null)
+                    {
+                        inventorySlots[i] = interactedItem;//puts it into the slot
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.red, 10f);
             }
         }
         
