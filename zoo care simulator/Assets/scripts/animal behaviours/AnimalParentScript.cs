@@ -193,7 +193,7 @@ public class AnimalParentScript : MonoBehaviour
         {
             AdvanceTimeStatus();
             timer = tickRate;
-            print("tick"+gameObject.name);
+            //print("tick "+gameObject.name);
         }
     }
     /// <summary>
