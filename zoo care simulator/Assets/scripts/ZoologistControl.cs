@@ -10,7 +10,7 @@ public class ZoologistControl : MonoBehaviour
     [Tooltip("the inventory slots of the player")]
     private GameObject[] inventorySlots;
     [Tooltip("which slots is the inveontory currently slected")]
-    public int currentInventroyIndex;
+    public int currentInventroyIndex=0;
     private GameObject interactedItem;
     [SerializeField]
     private float reachRange = 2;
@@ -34,6 +34,21 @@ public class ZoologistControl : MonoBehaviour
             {
                 inventorySlots[i].transform.position = inventroyStorageLocation.transform.position;
             }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            currentInventroyIndex++;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            currentInventroyIndex--;
+        }
+        if (currentInventroyIndex < 0 ) {
+            currentInventroyIndex = 0;
+        }
+        if(currentInventroyIndex >= inventorySlots.Length)
+        {
+            currentInventroyIndex = inventorySlots.Length - 1;
         }
     }
 
