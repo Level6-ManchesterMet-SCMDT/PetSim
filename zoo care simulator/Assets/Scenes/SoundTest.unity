@@ -390,47 +390,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
---- !u!1 &705097733 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 705097732}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &705097734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705097733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bdafa78f033cc241861f3d74c3e1620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepAudioList:
-  - {fileID: 8300000, guid: 1ad170ca6e68e804b9d58f089261feab, type: 3}
-  - {fileID: 8300000, guid: 0afbad71ac5ff72498168c7db386e3eb, type: 3}
-  - {fileID: 8300000, guid: 09a4dc6f87fd2fb46a61b8ba409f8166, type: 3}
-  - {fileID: 8300000, guid: 3a47087c2d90b6140b10d2f2551df920, type: 3}
-  - {fileID: 8300000, guid: 31a116d6756c98948b3cf8043231a11f, type: 3}
-  - {fileID: 8300000, guid: 33de8dad2073e9c448c385f04df4cc3f, type: 3}
-  - {fileID: 8300000, guid: d16f797f1a8c84746b7fbb49430bd496, type: 3}
-  - {fileID: 8300000, guid: e5ae86afaa48f514ca7998eba8954640, type: 3}
-  - {fileID: 8300000, guid: c55d274374d3dc24694f41bcf833ad1b, type: 3}
-  - {fileID: 8300000, guid: 13b3252efaf71704d83cd4a66c83e24f, type: 3}
-  audioIndex: 1
---- !u!114 &705097735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705097733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1657d220ba51946bc416c65307ff54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &746098164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,15 +554,32 @@ MonoBehaviour:
   health: 50
   mood: 50
   hunger: 50
+  currenthealth: 0
+  currenthappiness: 0
+  currenthunger: 0
   growthRate: 0
   age: 0
+  isDead: 0
   alimentsList:
   - flu
   - rash
   CurrentAliment: flu
+  FoodTypes: []
+  PreferredFood: []
   animalInventory: {fileID: 0}
   IsPlayingToy: 0
   playAimationDuration: 5
+  lowerBoundGenerationModifier: 50
+  tickRate: 1
+  hungerDecayRate: 1
+  moodDecayRate: 1
+  healthDecayRate: 1
+  healthRestoreRate: 1
+  HealthRegenPercentage: 75
+  maxChanceToGetAfflicted: 70
+  currentHappinessAfflictedChance: 0
+  currenthungerAfflictedChance: 0
+  statBars: {fileID: 0}
 --- !u!54 &1123671967
 Rigidbody:
   m_ObjectHideFlags: 0
