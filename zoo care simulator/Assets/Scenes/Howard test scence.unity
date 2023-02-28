@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &122461735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1406351039172563662, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+  m_PrefabInstance: {fileID: 2068912539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &122461739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122461735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &122461740
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122461735}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &122461741
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122461735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &375117452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,6 +726,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1139107620, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99977636
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139107620, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139107620, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139107620, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.021149077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139107620, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.424
+      objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563636, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: FoodTypes.Array.size
       value: 1
@@ -705,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563637, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1710548
+      value: 2.849
       objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563637, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -741,13 +808,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563662, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: m_Name
-      value: panda
+      value: animal core
       objectReference: {fileID: 0}
     - target: {fileID: 1406351039172563662, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1406351039197409062, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 1139107621, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
+    - {fileID: 1139107624, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aeef9e8c1435e4442821c690d9edfdb6, type: 3}
 --- !u!1001 &6321591813914124019
 PrefabInstance:

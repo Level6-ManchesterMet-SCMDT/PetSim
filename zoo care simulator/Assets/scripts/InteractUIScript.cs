@@ -15,7 +15,9 @@ public class InteractUIScript : MonoBehaviour
     [SerializeField] private Text alimentDisplay;
     [SerializeField] private Text AnimalName;
 
-
+    private bool inrange = false;
+   
+    /*
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -23,7 +25,16 @@ public class InteractUIScript : MonoBehaviour
             prompt.SetActive(true);
         }
     }
-    
+   
+   
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animalStats.SetActive(false);
+            prompt.SetActive(false);
+        }
+    }
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,14 +50,57 @@ public class InteractUIScript : MonoBehaviour
                 prompt.SetActive(true);
             }
         }
-    }
+    }*/
+    //look at to interact
+    private void OnMouseOver()
+    {
+        if (inrange == true)
+        {
+            if (animalStats.activeSelf == false)
+            {
+                prompt.SetActive(true);
+            }
+            else
+            {
+                prompt.SetActive(false);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                animalStats.SetActive(true);
+                prompt.SetActive(false);
+            }
+            else if (Input.GetKey(KeyCode.Escape))
+            {
+                animalStats.SetActive(false);
+                prompt.SetActive(true);
+            }
+        }
+        else
+        {
+            animalStats.SetActive(false);
+            prompt.SetActive(false);
+        }
 
+    }
+    private void OnMouseExit()
+    {
+        animalStats.SetActive(false);
+        prompt.SetActive(false);
+    }
+    
+    //check if it is within reach range
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            inrange = true;
+        }
+    }
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            animalStats.SetActive(false);
-            prompt.SetActive(false);
+            inrange = false;
         }
     }
     public void setHealth(float health)
