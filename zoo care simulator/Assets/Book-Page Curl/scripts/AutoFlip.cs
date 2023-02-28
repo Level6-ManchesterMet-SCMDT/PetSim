@@ -130,7 +130,7 @@ public class AutoFlip : MonoBehaviour {
             {
                 PageFlipTime = 0.1f;
                 FlipRightPage();
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.4f);
                 Debug.Log(pageDifference);
                 pageDifference = pageDifference - 1;
             }
@@ -143,7 +143,7 @@ public class AutoFlip : MonoBehaviour {
             {
                 PageFlipTime = 0.1f;
                 FlipLeftPage();
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.4f);
                 Debug.Log(pageDifference);
                 pageDifference = pageDifference - 1;
             }
