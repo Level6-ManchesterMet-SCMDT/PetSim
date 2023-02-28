@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(Book))]
 public class AutoFlip : MonoBehaviour {
     public FlipMode Mode;
@@ -10,6 +12,7 @@ public class AutoFlip : MonoBehaviour {
     public Book ControledBook;
     public int AnimationFramesCount = 40;
     bool isFlipping = false;
+    
     // Use this for initialization
     void Start () {
         if (!ControledBook)
@@ -26,6 +29,7 @@ public class AutoFlip : MonoBehaviour {
     {
         StartCoroutine(FlipToEnd());
     }
+    
     public void FlipRightPage()
     {
         if (isFlipping) return;
@@ -93,6 +97,61 @@ public class AutoFlip : MonoBehaviour {
                 break;
         }
     }
+
+    public void Rewind()
+    {
+        if (Mode == FlipMode.RightToLeft)
+        {
+            Mode = FlipMode.LeftToRight;
+        }
+    }
+    
+    public void Fastforward()
+    {
+        if (Mode == FlipMode.LeftToRight)
+        {
+            Mode = FlipMode.RightToLeft;
+        }
+    }
+
+    public void Bookmark(int targetPage)
+    {
+        StartCoroutine(PageFinder(targetPage));
+    }
+    
+    IEnumerator PageFinder(int target)
+    {
+        int pageDifference = target - ControledBook.currentPage;
+
+        if (pageDifference > 0)
+        {
+            pageDifference = pageDifference / 2;
+            while (pageDifference > 0)
+            {
+                PageFlipTime = 0.1f;
+                FlipRightPage();
+                yield return new WaitForSeconds(0.3f);
+                Debug.Log(pageDifference);
+                pageDifference = pageDifference - 1;
+            }
+            PageFlipTime = 0.5f;
+        }
+        else if (pageDifference < 0)
+        {
+            pageDifference = pageDifference / -2;
+            while (pageDifference > 0)
+            {
+                PageFlipTime = 0.1f;
+                FlipLeftPage();
+                yield return new WaitForSeconds(0.3f);
+                Debug.Log(pageDifference);
+                pageDifference = pageDifference - 1;
+            }
+
+            PageFlipTime = 0.5f;
+        }
+    }
+
     IEnumerator FlipRTL(float xc, float xl, float h, float frameTime, float dx)
     {
         float x = xc + xl;
