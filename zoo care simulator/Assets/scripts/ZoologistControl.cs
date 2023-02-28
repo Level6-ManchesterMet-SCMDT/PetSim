@@ -7,6 +7,8 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField]
     private Transform inventroyStorageLocation;
     [SerializeField]
+    private Transform dropItemLocation;
+    [SerializeField]
     [Tooltip("the inventory slots of the player")]
     private GameObject[] inventorySlots;
     [Tooltip("which slots is the inveontory currently slected")]
@@ -49,6 +51,14 @@ public class ZoologistControl : MonoBehaviour
         if(currentInventroyIndex >= inventorySlots.Length)
         {
             currentInventroyIndex = inventorySlots.Length - 1;
+        }
+
+        //drop selected item
+        if (Input.GetKeyDown("q"))
+        {
+            inventorySlots[currentInventroyIndex].transform.position = dropItemLocation.position;
+            inventorySlots[currentInventroyIndex].GetComponent<Rigidbody>().velocity = Vector3.zero;
+            inventorySlots[currentInventroyIndex]=null;
         }
     }
 

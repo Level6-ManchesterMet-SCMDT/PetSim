@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1184581048116861597}
   - component: {fileID: 2966072132682773861}
   - component: {fileID: 6165232863513380865}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 51628388274662441}
   - component: {fileID: 4508740273875765046}
   - component: {fileID: 3714826512959212532}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HappinessTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,6 +304,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalStats: {fileID: 1149015640771784296}
   prompt: {fileID: 8289989947450456375}
+  healthSlider: {fileID: 0}
+  hungerSlider: {fileID: 0}
+  happinessSilder: {fileID: 0}
+  alimentDisplay: {fileID: 0}
+  AnimalName: {fileID: 0}
 --- !u!114 &748015680042106868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,15 +326,32 @@ MonoBehaviour:
   health: 50
   mood: 50
   hunger: 50
+  currenthealth: 0
+  currenthappiness: 0
+  currenthunger: 0
   growthRate: 0
   age: 0
+  isDead: 0
   alimentsList:
   - flu
   - rash
   CurrentAliment: healthy
+  FoodTypes: []
+  PreferredFood: []
   animalInventory: {fileID: 0}
   IsPlayingToy: 0
   playAimationDuration: 5
+  lowerBoundGenerationModifier: 50
+  tickRate: 1
+  hungerDecayRate: 1
+  moodDecayRate: 1
+  healthDecayRate: 1
+  healthRestoreRate: 1
+  HealthRegenPercentage: 75
+  maxChanceToGetAfflicted: 70
+  currentHappinessAfflictedChance: 0
+  currenthungerAfflictedChance: 0
+  statBars: {fileID: 0}
 --- !u!1 &917834427211238526
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +363,7 @@ GameObject:
   - component: {fileID: 199211121277878048}
   - component: {fileID: 9054857465708190740}
   - component: {fileID: 8134552740866516893}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +444,7 @@ GameObject:
   - component: {fileID: 8365819162538348145}
   - component: {fileID: 3506810528692252861}
   - component: {fileID: 3425874122050078554}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AnimalStatsCvs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +544,7 @@ GameObject:
   - component: {fileID: 8586319575572921264}
   - component: {fileID: 1172815432497132316}
   - component: {fileID: 4318195455442464533}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HappinessFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +620,7 @@ GameObject:
   - component: {fileID: 3167467169565512507}
   - component: {fileID: 5840602414726348066}
   - component: {fileID: 1130280337681381119}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7856562485403565766}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +794,7 @@ GameObject:
   - component: {fileID: 2712028495977194197}
   - component: {fileID: 5979615789361200534}
   - component: {fileID: 3986332403408548742}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HungerTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +875,7 @@ GameObject:
   - component: {fileID: 2517498318705182029}
   - component: {fileID: 4061524162803666013}
   - component: {fileID: 6286324234032517010}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AnimalName (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +955,7 @@ GameObject:
   - component: {fileID: 1145795468892137547}
   - component: {fileID: 865598316648714869}
   - component: {fileID: 877827764885018957}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HappinessBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1059,7 @@ GameObject:
   - component: {fileID: 7573952435125472442}
   - component: {fileID: 7172592332616030233}
   - component: {fileID: 8177853543926247153}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HungerBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1163,7 @@ GameObject:
   - component: {fileID: 681591339636224624}
   - component: {fileID: 7035002534035231986}
   - component: {fileID: 4111453235134192076}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1239,7 @@ GameObject:
   - component: {fileID: 5833252115662347954}
   - component: {fileID: 5771451681761945978}
   - component: {fileID: 3423446386992820501}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1320,7 @@ GameObject:
   - component: {fileID: 8001705164013923712}
   - component: {fileID: 1415589910948435176}
   - component: {fileID: 3182958007788257817}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AnimalName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1400,7 @@ GameObject:
   - component: {fileID: 8133097482104129459}
   - component: {fileID: 8983439831567313985}
   - component: {fileID: 3600740035619156271}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PressE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1458,7 +1480,7 @@ GameObject:
   - component: {fileID: 549717486182904156}
   - component: {fileID: 7899559472380147802}
   - component: {fileID: 685670338225170359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1562,7 +1584,7 @@ GameObject:
   - component: {fileID: 2819458487203924925}
   - component: {fileID: 8947221423161919728}
   - component: {fileID: 8971994535920635056}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HungerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,7 +1661,7 @@ GameObject:
   - component: {fileID: 7953726137460952434}
   - component: {fileID: 5016065720435074352}
   - component: {fileID: 2914106475750524423}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PromptCvs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1739,7 +1761,7 @@ GameObject:
   - component: {fileID: 2172294963713453076}
   - component: {fileID: 8942738626802165369}
   - component: {fileID: 3743862481162348401}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1815,7 +1837,7 @@ GameObject:
   - component: {fileID: 950557226853639441}
   - component: {fileID: 6187246268678385596}
   - component: {fileID: 3111410844285516276}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
