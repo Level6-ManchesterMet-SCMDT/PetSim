@@ -4300,6 +4300,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649683570}
   m_CullTransparentMesh: 1
+--- !u!1 &651568475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ad3c7524ff357ab45a67c45c094ce78a, type: 3}
+  m_PrefabInstance: {fileID: 2121554679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &651568477
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651568475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.9630498
+  m_Height: 9.032809
+  m_Direction: 1
+  m_Center: {x: -0.1320827, y: 0.46225935, z: 0.0000008982289}
+--- !u!114 &651568478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651568475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14911dc5566146b46b301e76ba5fc340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodName: 
+  FoodType: 
+  saturationRestore: 10
+  HappinesRestore: 10
+--- !u!54 &651568479
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651568475}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &661029174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,6 +7604,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4361284dc70ab044b5b3d136b00d8d1, type: 3}
+--- !u!1 &1058342904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ad3c7524ff357ab45a67c45c094ce78a, type: 3}
+  m_PrefabInstance: {fileID: 1063670522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1058342906
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058342904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1628467
+  m_Height: 8.618937
+  m_Direction: 1
+  m_Center: {x: 0.121976875, y: 0.5458936, z: 0.0000010466721}
+--- !u!114 &1058342907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058342904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14911dc5566146b46b301e76ba5fc340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodName: 
+  FoodType: 
+  saturationRestore: 10
+  HappinesRestore: 10
+--- !u!54 &1058342908
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058342904}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1063670522
 PrefabInstance:
   m_ObjectHideFlags: 0
