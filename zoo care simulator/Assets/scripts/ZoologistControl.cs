@@ -18,16 +18,15 @@ public class ZoologistControl : MonoBehaviour
     private float reachRange = 2;
 
 
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0)){
             RaycastInteract(reachRange);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastUseItem(reachRange);
         }
         
         for( int i = 0; i < inventorySlots.Length; i++)//moves all item into storage
@@ -86,14 +85,46 @@ public class ZoologistControl : MonoBehaviour
                     }
                 }
             }
+           
             else
             {
+                //DEBUG
+                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.red, 10f);
+            }
+        }              
+    }
+    private void RaycastUseItem(float reach)//for checking if item is used on animal
+    {
+        RaycastHit hitinfo = new RaycastHit();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hitinfo, reach))
+        {
+            interactedItem = hitinfo.collider.gameObject;//grabs the item;
+             if (interactedItem.tag == "animal")//check if the player is interacting with an animal
+            {
+                //DEBUG
+                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.yellow, 10f);
+
+                //gets the animal parant script
+                AnimalParentScript Animal=interactedItem.GetComponent<AnimalParentScript>();
+
+                //puts selected item into animal's inventory, and removes it from player's if it is not empty
+
+                var item = inventorySlots[currentInventroyIndex];
+                if (item != null && Animal.animalInventory==null)//check if player hand is not empty and if animal inventory is empty
+                {
+                    //moves the player's item into animal's inventory
+                     
+                    Animal.animalInventory = inventorySlots[currentInventroyIndex];
+                    inventorySlots[currentInventroyIndex]= null;
+                }
+            }
+            else
+            {
+                //DEBUG
                 Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.red, 10f);
             }
         }
-        
-
-
-        
     }
 }
