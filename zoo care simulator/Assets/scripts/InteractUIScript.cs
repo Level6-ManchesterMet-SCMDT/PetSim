@@ -14,9 +14,8 @@ public class InteractUIScript : MonoBehaviour
     [SerializeField] private Slider happinessSilder;
     [SerializeField] private Text alimentDisplay;
     [SerializeField] private Text AnimalName;
-
-    private bool inrange = false;
-   
+    [SerializeField] private GameObject RangeManager;
+    
     /*
     private void OnTriggerEnter(Collider collision)
     {
@@ -52,8 +51,10 @@ public class InteractUIScript : MonoBehaviour
         }
     }*/
     //look at to interact
+    
     private void OnMouseOver()
     {
+        var inrange = RangeManager.GetComponent<RangingScript>().inrange;
         if (inrange == true)
         {
             if (animalStats.activeSelf == false)
@@ -88,21 +89,14 @@ public class InteractUIScript : MonoBehaviour
         prompt.SetActive(false);
     }
     
-    //check if it is within reach range
-    private void OnTriggerEnter(Collider collision)
+    
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            inrange = true;
-        }
+        
     }
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            inrange = false;
-        }
-    }
+
+    
+
     public void setHealth(float health)
     {
         healthSlider.value = (int)health;

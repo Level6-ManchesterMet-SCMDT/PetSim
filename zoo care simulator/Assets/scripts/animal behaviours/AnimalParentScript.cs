@@ -32,6 +32,9 @@ public class AnimalParentScript : MonoBehaviour
 
     [Tooltip("for what the animal recives from the player")]
     public GameObject animalInventory;
+    [SerializeField]
+    [Tooltip("toy drop location for when it is finished playing/is playing")]
+    protected Transform animalHand;
 
     [SerializeField]
     protected bool IsPlayingToy=false;
@@ -82,10 +85,12 @@ public class AnimalParentScript : MonoBehaviour
         
         currenthappiness = maxValue;
         statBars.SetHappiness(maxValue);
+ 
     }
 
     public void Feed(foodScript food)//increases hunger bar from feeding
     {
+        print(food.getFoodName());
         //checks for favourite food first
         for (int i=0;i<PreferredFood.Length;i++)
         {
@@ -98,11 +103,7 @@ public class AnimalParentScript : MonoBehaviour
                 Destroy(animalInventory);
                 return;
             }
-        }
-        //check if it matches food types for all other cases
-        for(int i = 0; i < FoodTypes.Length; i++)
-        {
-            if (food.getFoodType() == FoodTypes[i])
+            else if (food.getFoodType() == FoodTypes[i])
             {
                 //if it matches the type it eats it.
                 hunger += food.saturationRestore;
@@ -111,6 +112,8 @@ public class AnimalParentScript : MonoBehaviour
             }
         }
         //drops the food if neither matches
+        animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        animalInventory.gameObject.transform.position = animalHand.transform.position;
         animalInventory = null;
         
     }
@@ -119,7 +122,8 @@ public class AnimalParentScript : MonoBehaviour
         int healthmodifier = medicene.HealthAdded;
         int hungermodifier = medicene.HungerAdded;
         int moodmodifier = medicene.HappinessAdded;
-
+        animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        animalInventory.gameObject.transform.position = animalHand.transform.position;
 
         if (CurrentAliment != healthy)//medicene does nothing if the animal is healthy
         {
@@ -131,13 +135,20 @@ public class AnimalParentScript : MonoBehaviour
                 mood += moodmodifier;
                 CurrentAliment = healthy;
             }
-            else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects. this allows for stuff like anti-depressents
+            else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects.
             {
                 health -= healthmodifier;
                 //side effects
                 hunger += hungermodifier;
                 mood += moodmodifier;
             }
+        }
+        else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects. this allows for stuff like anti-depressents
+        {
+            health -= healthmodifier;
+            //side effects
+            hunger += hungermodifier;
+            mood += moodmodifier;
         }
         Destroy(animalInventory);//eats the medicene for all cases
     }
@@ -155,6 +166,7 @@ public class AnimalParentScript : MonoBehaviour
         mood += 10;
         yield return new WaitForSeconds(duration);
         IsPlayingToy= false;
+        animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
         animalInventory = null;
     }
     virtual protected void PlayToyAnimation()//for the animal's play animation
@@ -163,14 +175,18 @@ public class AnimalParentScript : MonoBehaviour
         {
             //placeholder animation
             transform.Rotate(0, 50 * Time.deltaTime, 0);
+            //moves the toy to the animal's position
+            animalInventory.gameObject.transform.position = animalHand.transform.position;
         }
     }
     virtual public void Update()//make sure to call override on all child methods and that it has a base.Update()
     {
 
         //check animal inventory
+        
         if (animalInventory != null)
         {
+
             if (animalInventory.tag == "toy")
             {
                 StartCoroutine(playingWithToy(playAimationDuration));
@@ -184,6 +200,7 @@ public class AnimalParentScript : MonoBehaviour
             }
             else if (animalInventory.tag == "food")
             {
+                
                 var FoodContents=animalInventory.GetComponent<foodScript>();
                 Feed(FoodContents);
             }
