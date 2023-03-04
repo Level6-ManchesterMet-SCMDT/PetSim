@@ -12,6 +12,7 @@ public class AutoFlip : MonoBehaviour {
     public Book ControledBook;
     public int AnimationFramesCount = 40;
     bool isFlipping = false;
+    [SerializeField] private AudioSource bFlip;
     
     // Use this for initialization
     void Start () {
@@ -156,7 +157,7 @@ public class AutoFlip : MonoBehaviour {
     {
         float x = xc + xl;
         float y = (-h / (xl * xl)) * (x - xc) * (x - xc);
-
+        bFlip.Play();
         ControledBook.DragRightPageToPoint(new Vector3(x, y, 0));
         for (int i = 0; i < AnimationFramesCount; i++)
         {
@@ -171,6 +172,7 @@ public class AutoFlip : MonoBehaviour {
     {
         float x = xc - xl;
         float y = (-h / (xl * xl)) * (x - xc) * (x - xc);
+        bFlip.Play();
         ControledBook.DragLeftPageToPoint(new Vector3(x, y, 0));
         for (int i = 0; i < AnimationFramesCount; i++)
         {

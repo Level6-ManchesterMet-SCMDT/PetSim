@@ -8,7 +8,7 @@ public class HandbookController : MonoBehaviour
     [SerializeField] private GameObject handbookCanvas;
     [SerializeField] private FirstPersonController fpsScript;
 
-    [SerializeField] private AudioSource bFlip, bOpen, bClose;
+    [SerializeField] private AudioSource bOpen, bClose;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +27,16 @@ public class HandbookController : MonoBehaviour
         {
             handbookCanvas.SetActive(!handbookCanvas.activeInHierarchy);
             fpsScript.m_MouseLook.SetCursorLock(!handbookCanvas.activeInHierarchy);
-            GetComponent<FirstPersonController>().enabled = !handbookCanvas.activeInHierarchy;
-            
+            fpsScript.enabled = !handbookCanvas.activeInHierarchy;
+
+            if (handbookCanvas.activeInHierarchy)
+            {
+                bOpen.Play();
+            }
+            else if(!handbookCanvas.activeInHierarchy)
+            {
+                bClose.Play();
+            }
 
         }
     }
