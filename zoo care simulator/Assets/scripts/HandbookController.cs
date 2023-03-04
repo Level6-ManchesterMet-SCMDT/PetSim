@@ -7,6 +7,8 @@ public class HandbookController : MonoBehaviour
 {
     [SerializeField] private GameObject handbookCanvas;
     [SerializeField] private FirstPersonController fpsScript;
+
+    [SerializeField] private AudioSource bFlip, bOpen, bClose;
     // Start is called before the first frame update
     void Start()
     {
