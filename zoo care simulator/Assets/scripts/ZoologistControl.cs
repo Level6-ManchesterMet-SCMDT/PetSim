@@ -22,7 +22,7 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
     [SerializeField] private Sprite[] icons; //Array of possible icons that can be placed in the hotbar
-    private string[] ItemTags = new []{"Fish", "Fruit","Medicine","Ball","Teddy","Food","Toy",}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
+    private string[] ItemTags = new []{"Fish", "Fruit","medicene","Ball","Teddy","food","toy",}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
     
 
 
@@ -172,9 +172,9 @@ public class ZoologistControl : MonoBehaviour
     {
         RaycastHit hitinfo = new RaycastHit();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray,out hitinfo,reach)){
+        if (Physics.Raycast(ray, out hitinfo, reach)) {
 
-            
+
             interactedItem = hitinfo.collider.gameObject;//grabs the item;
 
             for (int t = 0; t < ItemTags.Length; t++) //Checks the iteractedItem tag against the array of tags
@@ -203,14 +203,11 @@ public class ZoologistControl : MonoBehaviour
                 }
 
             }
-           
-            else
-            {
-                //DEBUG
-                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.red, 10f);
 
-            }
-        }              
+
+
+        
+        }
     }
     private void RaycastUseItem(float reach)//for checking if item is used on animal
     {
