@@ -3,7 +3,32 @@ guid: 57ad05682ac07cb488838022bfa8cbc2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ButtonOn
+    second: {fileID: 2100000, guid: 966e147838e160a408fd11c633e412a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: 6abd569e26ed73943870bd50b6d5a368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light Grey
+    second: {fileID: 2100000, guid: 561922dd67a521245b5754d47a4169c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TowerBlack
+    second: {fileID: 2100000, guid: 6abd569e26ed73943870bd50b6d5a368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TowerSilver
+    second: {fileID: 2100000, guid: 97ebce0e8c66fd24f9047176e8ea48de, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
