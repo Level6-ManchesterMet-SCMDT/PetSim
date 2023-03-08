@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: ae121b2ae33d81a4290e0ddfa35a3cd4
+guid: a4218db998dd01840ad4c7c40a5c71fd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: 6abd569e26ed73943870bd50b6d5a368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light Grey
+    second: {fileID: 2100000, guid: 561922dd67a521245b5754d47a4169c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -57,7 +67,7 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    meshOptimizationFlags: 0
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
