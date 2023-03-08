@@ -18,11 +18,31 @@ public class footstepsAudioSwapper : MonoBehaviour
     //call this in the floor sensor
     public void changeFootstepSound(int floorIndex)
     {
-        player.m_FootstepSounds = footstepAudioList[audioIndex];
+        player.m_FootstepSounds = footstepAudioList[floorIndex];
+        audioIndex= floorIndex;
     }
     private void Update()
     {
         //debug
-        player.m_FootstepSounds = footstepAudioList[audioIndex];
+        //player.m_FootstepSounds = footstepAudioList[audioIndex];
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag=="floor type")//checks the collider is a floor change collider
+        {
+            floorTypeScipt floorchange= other.gameObject.GetComponent<floorTypeScipt>();
+            //changes the sound of the walk to the index in the floor type script
+            try
+            {
+
+                changeFootstepSound(floorchange.getFloorType());
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                //if value is not valid
+                print("floor type out of bounds");
+                throw;
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangingScript : MonoBehaviour
 {
-    public bool inrange = true;
+    public bool inrange = false;
 
     //check if it is within reach range
     private void OnTriggerEnter(Collider collision)
