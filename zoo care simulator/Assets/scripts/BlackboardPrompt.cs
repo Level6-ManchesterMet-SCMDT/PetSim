@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -16,14 +17,22 @@ public class BlackboardPrompt : MonoBehaviour
     [SerializeField] private Toggle taskCompletion;
     [SerializeField] private TMP_Text BlackboardTitle;
     
-    [Header("Animal Details")]
-    [SerializeField]private string[] tasks;
-    public enum Species { Penguin, Panda, Meerkat, Coati, Sloth };
-    public Species _species;
     
+    public enum Species { Penguin, Panda, Meerkat, Coati, Sloth };
+    //public enum TaskOutput : int { HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4 }
+    [Header("Animal Details")]
+    [SerializeField] private Species _species;
+    [SerializeField]private string[] tasks;
+    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4. In order of task list")]
+    [Range(1,4)]
+    [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
     private int completed = 0;
+    private int input = 3;
+    
+    
+    
     
     private void Start()
     {
@@ -43,6 +52,29 @@ public class BlackboardPrompt : MonoBehaviour
             }
         }
         Debug.Log(completed + "/" + tasks.Length + " tasks completed");
+        for (int i = 0; i < tasks.Length; i++)
+        {
+            if (taskValue[i] == 1)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HungerBoost(1) to be completed");
+            }
+            else if (taskValue[i] == 2)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HappinessBoost(2) to be completed");
+            }
+            else if (taskValue[i] == 3)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HealthBoost(3) to be completed");
+            }
+            else if (taskValue[i] == 4)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of IsClean(4) to be completed");
+            }
+            else
+            {
+                Debug.Log("Error - Missing value");
+            }
+        }
     }
 
     private void Update()
