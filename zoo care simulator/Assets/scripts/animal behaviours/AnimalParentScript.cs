@@ -275,12 +275,16 @@ public class AnimalParentScript : MonoBehaviour
             health += healthRestoreRate;
         }
     }
+    protected void growOlder()
+    {
+        age += growthRate;
+    }
     virtual protected void AdvanceTimeStatus()//logic for the base stats
     {
         //hunger and happiness goes down all the time
         DecayHunger();
         decayHappiness();
-
+        growOlder();
 
         //the lower the hunger and happiness, the higher the risk of catching an infection, based on maxChanceToGetIll%/2 x hunger + maxChanceToGetIll%/2 x happiness
 
