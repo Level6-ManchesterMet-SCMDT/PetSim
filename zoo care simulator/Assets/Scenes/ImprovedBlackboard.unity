@@ -15768,6 +15768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TaskToggle
       objectReference: {fileID: 0}
+    - target: {fileID: 6968364017290749227, guid: 7d93ee9aefda3a04bba2ed56c5eba7c7, type: 3}
+      propertyPath: m_Text
+      value: Unassigned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d93ee9aefda3a04bba2ed56c5eba7c7, type: 3}
 --- !u!223 &6411517664675766406
@@ -16250,13 +16254,14 @@ MonoBehaviour:
   taskText: {fileID: 6411517665291295267}
   taskCompletion: {fileID: 6411517665514388621}
   BlackboardTitle: {fileID: 6411517666083118841}
+  _species: 0
   tasks:
   - Give fish to the Penguins
   - Give them a toy
   - Treat unwell Penguins
   - Clean Enclosure
   - Play with
-  _species: 0
+  taskValue: 0100000002000000030000000400000002000000
 --- !u!4 &6411517665557413534
 Transform:
   m_ObjectHideFlags: 0
