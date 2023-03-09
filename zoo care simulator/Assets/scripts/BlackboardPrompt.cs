@@ -1,24 +1,86 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Toggle = UnityEngine.UI.Toggle;
 
 public class BlackboardPrompt : MonoBehaviour
 {
+    [Header("Setup")]
     [SerializeField] private GameObject prompt;
+    [SerializeField] private GameObject taskPrefab;
     [SerializeField] private Text taskText;
     [SerializeField] private Toggle taskCompletion;
-
-    private string[] tasks= new string[] { "Feed the Penguins", "Clean Penguin Enclosure", "Treat Unwell Penguins", "Set Penguin Thermostat", "Clock Out"};
+    [SerializeField] private TMP_Text BlackboardTitle;
+    [SerializeField] private AudioSource write, wipe;
+    
+    
+    public enum Species { Penguin, Panda, Meerkat, Coati, Sloth };
+    //public enum TaskOutput : int { HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4 }
+    [Header("Animal Details")]
+    [SerializeField] private Species _species;
+    [SerializeField]private string[] tasks;
+    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4. In order of task list")]
+    [Range(1,4)]
+    [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
     private int completed = 0;
-
+    public Toggle[] spawnedTasks;
+    
+    
+    
+    
     private void Start()
     {
-        taskText.text = tasks[0];
+        spawnedTasks = new Toggle[tasks.Length];
+        BlackboardTitle.fontSize = 60;
+        BlackboardTitle.text = _species + " Tasks";
+        for (int i = 0; i < tasks.Length; i++)
+        {
+            if (i < 1)
+            {
+                taskText.text = tasks[i];
+                spawnedTasks[i] = taskCompletion;
+            }
+            else
+            {
+                Toggle ToggleClone = Instantiate(taskCompletion, new Vector3(taskCompletion.transform.position.x,taskCompletion.transform.position.y,
+                    taskCompletion.transform.position.z), taskCompletion.transform.rotation);
+                ToggleClone.transform.parent = taskCompletion.transform.parent;
+                ToggleClone.transform.localScale = taskCompletion.transform.localScale;
+                ToggleClone.GetComponentInChildren<Text>().text = tasks[i];
+                spawnedTasks[i] = ToggleClone;
+            }
+        }
         Debug.Log(completed + "/" + tasks.Length + " tasks completed");
+        for (int i = 0; i < tasks.Length; i++)
+        {
+            if (taskValue[i] == 1)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HungerBoost(1) to be completed");
+            }
+            else if (taskValue[i] == 2)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HappinessBoost(2) to be completed");
+            }
+            else if (taskValue[i] == 3)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of HealthBoost(3) to be completed");
+            }
+            else if (taskValue[i] == 4)
+            {
+                Debug.Log("Task " + (i+1) + " - " + tasks[i] +" Requires a input of IsClean(4) to be completed");
+            }
+            else
+            {
+                Debug.Log("Error - Missing value");
+            }
+        }
     }
 
     private void Update()
@@ -28,24 +90,36 @@ public class BlackboardPrompt : MonoBehaviour
 
     private void TaskSystemTest()
     {
-        if (Input.GetKeyDown(KeyCode.L) && taskCompletion.isOn == false)
+        for (int i = 0; i < tasks.Length; i++)
         {
-            taskCompletion.isOn = !taskCompletion.isOn;
-            completed++;
-            DailyQuota();
+            if (Input.GetKeyDown(KeyCode.R) && spawnedTasks[i].isOn == false)
+            {
+                taskCompletion.isOn = !taskCompletion.isOn;
+                spawnedTasks[i].isOn = true;
+                write.Play();
+                completed++;
+                DailyQuota();
+            }
         }
         
-        if (inTrigger && Input.GetKeyDown(KeyCode.E))
+        
+        
+        /*if (inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             if (nextTask < tasks.Length && taskCompletion.isOn == true)
             {
                 taskText.text = tasks[nextTask];
+                wipe.Play();
                 nextTask++;
                 taskCompletion.isOn = false;
             }
-        }
+        }*/
     }
 
+    private void ToggleSpawn()
+    {
+        
+    }
     private void DailyQuota()
     {
         Debug.Log(completed + "/" + tasks.Length + " tasks completed");
