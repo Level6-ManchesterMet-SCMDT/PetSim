@@ -5,12 +5,14 @@ using UnityEngine;
 public class gameSystemScript : MonoBehaviour
 {
     [SerializeField]
-    private int money;
+    public int money;
     [SerializeField]
-    private float timer;
+    public float timer;
     [SerializeField]
-    private int days;
+    public int days;
     [SerializeField]
+    public float hours;
+    public float timePass;
     // Start is called before the first frame update
     void Start()
     {

@@ -803,13 +803,13 @@ MonoBehaviour:
   IsPlayingToy: 0
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
-  tickRate: 1
-  hungerDecayRate: 1
-  moodDecayRate: 1
-  healthDecayRate: 1
-  healthRestoreRate: 1
+  tickRate: 60
+  hungerDecayRate: 10
+  moodDecayRate: 15
+  healthDecayRate: 20
+  healthRestoreRate: 10
   HealthRegenPercentage: 75
-  maxChanceToGetAfflicted: 70
+  maxChanceToGetAfflicted: 50
   currentHappinessAfflictedChance: 0
   currenthungerAfflictedChance: 0
   statBars: {fileID: 262688759026323882}
