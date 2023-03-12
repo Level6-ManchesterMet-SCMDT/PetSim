@@ -1,26 +1,89 @@
 fileFormatVersion: 2
 guid: 6bf2170e2c36515458f7b5366f495af5
 ModelImporter:
-  serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: 6777326683069023940
-    second: Armature|endwalk
-  - first:
-      74: -4915026680015048029
-    second: Armature|headbob
-  - first:
-      74: -1978303741906493279
-    second: Armature|idle
-  - first:
-      74: -4979980278963080563
-    second: Armature|startwalk
-  - first:
-      74: -4799524434163024911
-    second: Armature|walk
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: backleft
+    100004: backright
+    100006: Body
+    100008: Bone
+    100010: Bone.001
+    100012: Bone.002
+    100014: Bone.003
+    100016: Bone.004
+    100018: Bone.005
+    100020: Bone.006
+    100022: Bone.007
+    100024: Bone.008
+    100026: Bone.009
+    100028: Bone.011
+    100030: Bone.012
+    100032: Bone.013
+    100034: Bone.014
+    100036: Bone.015
+    100038: Bone.016
+    100040: Bone.017
+    100042: Bone.018
+    100044: Bone.019
+    100046: Bone.020
+    100048: Bone.021
+    100050: Bone.022
+    100052: //RootNode
+    100054: frontleft
+    100056: frontright
+    400000: Armature
+    400002: backleft
+    400004: backright
+    400006: Body
+    400008: Bone
+    400010: Bone.001
+    400012: Bone.002
+    400014: Bone.003
+    400016: Bone.004
+    400018: Bone.005
+    400020: Bone.006
+    400022: Bone.007
+    400024: Bone.008
+    400026: Bone.009
+    400028: Bone.011
+    400030: Bone.012
+    400032: Bone.013
+    400034: Bone.014
+    400036: Bone.015
+    400038: Bone.016
+    400040: Bone.017
+    400042: Bone.018
+    400044: Bone.019
+    400046: Bone.020
+    400048: Bone.021
+    400050: Bone.022
+    400052: //RootNode
+    400054: frontleft
+    400056: frontright
+    2100000: Material.001
+    2100002: Material.005
+    2100004: Material.003
+    2100006: Material.004
+    4300000: Body
+    4300002: frontright
+    4300004: backright
+    4300006: backleft
+    4300008: frontleft
+    7400000: Armature|endwalk
+    7400002: Armature|headbob
+    7400004: Armature|idle
+    7400006: Armature|startwalk
+    7400008: Armature|walk
+    9500000: //RootNode
+    13700000: backleft
+    13700002: backright
+    13700004: Body
+    13700006: frontleft
+    13700008: frontright
   externalObjects: {}
   materials:
-    materialImportMode: 2
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -29,7 +92,6 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -54,34 +116,25 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 1
-    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    optimizeBones: 1
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,10 +143,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -103,18 +156,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

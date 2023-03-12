@@ -3,10 +3,10 @@ guid: 8bb21a88bfa20f840a413602a148c0b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8791617407156663858
+      213: 21300000
     second: P2_Back
   - first:
-      213: 1989484867092917050
+      213: 21300002
     second: P3_Front
   externalObjects: {}
   serializedVersion: 11
@@ -68,7 +68,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -81,7 +81,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -93,7 +93,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -105,7 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -125,7 +125,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 236b6baa379120a70800000000000000
-      internalID: 8791617407156663858
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -146,7 +146,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a3ba61522f11c9b10800000000000000
-      internalID: 1989484867092917050
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      P2_Back: 8791617407156663858
-      P3_Front: 1989484867092917050
+      P2_Back: 21300000
+      P3_Front: 21300002
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

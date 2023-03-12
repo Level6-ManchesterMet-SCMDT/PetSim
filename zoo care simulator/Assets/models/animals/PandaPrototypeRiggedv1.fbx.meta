@@ -1,17 +1,79 @@
 fileFormatVersion: 2
 guid: fe124cbe23b2eed4cbb3171f1aa7ca9f
 ModelImporter:
-  serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
-      74: 6650181466810798551
-    second: Armature|StickAction
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: frontleft2
+    100006: frontleft2.001
+    100008: frontleft2.002
+    100010: frontright2
+    100012: frontright2.001
+    100014: frontright2.002
+    100016: Head
+    100018: LeftBack
+    100020: leftback2
+    100022: leftback2.001
+    100024: leftback2.002
+    100026: LeftFront
+    100028: //RootNode
+    100030: RightBack
+    100032: rightback2
+    100034: rightback2.001
+    100036: rightback2.002
+    100038: RightFront
+    100040: spine1
+    100042: spine2
+    100044: spine3
+    100046: Stick
+    400000: Armature
+    400002: Body
+    400004: frontleft2
+    400006: frontleft2.001
+    400008: frontleft2.002
+    400010: frontright2
+    400012: frontright2.001
+    400014: frontright2.002
+    400016: Head
+    400018: LeftBack
+    400020: leftback2
+    400022: leftback2.001
+    400024: leftback2.002
+    400026: LeftFront
+    400028: //RootNode
+    400030: RightBack
+    400032: rightback2
+    400034: rightback2.001
+    400036: rightback2.002
+    400038: RightFront
+    400040: spine1
+    400042: spine2
+    400044: spine3
+    400046: Stick
+    2100000: Material
+    2100002: black
+    4300000: Body
+    4300002: LeftFront
+    4300004: LeftBack
+    4300006: RightBack
+    4300008: RightFront
+    4300010: Head
+    4300012: Stick
+    7400000: Armature|ArmatureAction
+    7400002: Armature|StickAction
+    9500000: //RootNode
+    13700000: Body
+    13700002: Head
+    13700004: LeftBack
+    13700006: LeftFront
+    13700008: RightBack
+    13700010: RightFront
+    13700012: Stick
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
-    materialImportMode: 2
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -20,7 +82,6 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -45,34 +106,25 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 1
-    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    optimizeBones: 1
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -81,10 +133,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -94,18 +146,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

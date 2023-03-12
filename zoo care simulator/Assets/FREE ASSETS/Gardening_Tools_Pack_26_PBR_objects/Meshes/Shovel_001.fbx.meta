@@ -1,11 +1,42 @@
 fileFormatVersion: 2
 guid: 19b356156119e734fb7a25ff0020c0b9
 ModelImporter:
-  serializedVersion: 20101
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: "Shovel_001_\u042101"
+    100004: "Shovel_001_\u042102"
+    100006: "Shovel_001_\u042103"
+    100008: "Shovel_001_\u042104"
+    100010: "Shovel_001_\u042105"
+    400000: //RootNode
+    400002: "Shovel_001_\u042101"
+    400004: "Shovel_001_\u042102"
+    400006: "Shovel_001_\u042103"
+    400008: "Shovel_001_\u042104"
+    400010: "Shovel_001_\u042105"
+    2100000: Default_Material
+    2300000: //RootNode
+    2300002: "Shovel_001_\u042101"
+    2300004: "Shovel_001_\u042102"
+    2300006: "Shovel_001_\u042103"
+    2300008: "Shovel_001_\u042104"
+    2300010: "Shovel_001_\u042105"
+    3300000: //RootNode
+    3300002: "Shovel_001_\u042101"
+    3300004: "Shovel_001_\u042102"
+    3300006: "Shovel_001_\u042103"
+    3300008: "Shovel_001_\u042104"
+    3300010: "Shovel_001_\u042105"
+    4300000: Shovel_001
+    4300002: "Shovel_001_\u042101"
+    4300004: "Shovel_001_\u042102"
+    4300006: "Shovel_001_\u042103"
+    4300008: "Shovel_001_\u042104"
+    4300010: "Shovel_001_\u042105"
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -38,32 +69,25 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
-    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -72,10 +96,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 0
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 0
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -85,16 +109,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
-  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
