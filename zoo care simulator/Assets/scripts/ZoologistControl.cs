@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,8 +23,8 @@ public class ZoologistControl : MonoBehaviour
 
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
-    [SerializeField] private Sprite[] icons; //Array of possible icons that can be placed in the hotbar
-    private string[] ItemTags = new []{"Fish", "Fruit","medicene","toy","Teddy","food",}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
+    //[SerializeField] private Sprite[] icons; //Array of possible icons that can be placed in the hotbar
+    private string[] ItemTags = new []{"medicene","toy","food"}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
     
 
 
@@ -44,110 +46,57 @@ public class ZoologistControl : MonoBehaviour
                 inventorySlots[i].transform.position = inventroyStorageLocation.transform.position;
             }
         }
-        /*if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        //scoll select item
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             currentInventroyIndex++;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             currentInventroyIndex--;
-        }*/
+        }
 
+        
         if (Input.GetKeyDown(KeyCode.Alpha1))//Highlights the first bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 0;
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
             
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))//Highlights the second bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 1;
-            
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))//Highlights the third bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 2;
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4)) //Highlights the fourth bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 3;
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5)) //Highlights the fifth bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 4;
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6))//Highlights the sixth bubble. ensures the other bubbles are not highlighted
         {
             currentInventroyIndex = 5;
-            for (int i = 0; i < Highlights.Length; i++)
-            {
-                if (i == currentInventroyIndex)
-                {
-                    Highlights[i].SetActive(true);
-                }
-                else
-                {
-                    Highlights[i].SetActive(false);
-                }
-            }
         }
         
         if (currentInventroyIndex < 0 ) {
             currentInventroyIndex = 0;
+        }
+        for (int i=0; i < inventorySlots.Length; i++)
+        {
+            if(currentInventroyIndex== i)//enables the highlight on the selected one
+            {
+                Highlights[i].SetActive(true);
+            }
+            else
+            {
+                //disable highlights on others
+                Highlights[i].SetActive(false);
+            }
         }
         if(currentInventroyIndex >= inventorySlots.Length)
         {
@@ -160,14 +109,28 @@ public class ZoologistControl : MonoBehaviour
             inventorySlots[currentInventroyIndex].transform.position = dropItemLocation.position;
             inventorySlots[currentInventroyIndex].GetComponent<Rigidbody>().velocity = Vector3.zero;
             inventorySlots[currentInventroyIndex]=null;
+            removeIcon(currentInventroyIndex);
+            /*
             slots[currentInventroyIndex].sprite = null; //removes the sprite from the inventory slot/bubble
-            slots[currentInventroyIndex].enabled = false; //deactivates the image component storing the item
-            
-            
+            slots[currentInventroyIndex].enabled = false; //deactivates the image component storing the item          
+            */
 
         }
     }
-
+    private void addIcon(GameObject item, int slotIndex)//updates the inventory icons
+    {
+        //retrives icon from object
+        Sprite icon= item.GetComponent<ConsumableParent>().Icon;
+        //puts icon into the inventory slot UI
+        slots[slotIndex].sprite = icon;
+        //enables the icon
+        slots[slotIndex].enabled = true;
+    }
+    private void removeIcon(int slotIndex)
+    {
+        //disables the icon
+        slots[slotIndex].enabled= false;
+    }
     private void RaycastInteract(float reach)
     {
         RaycastHit hitinfo = new RaycastHit();
@@ -190,8 +153,8 @@ public class ZoologistControl : MonoBehaviour
                         if (inventorySlots[i] == null)
                         {
                             inventorySlots[i] = interactedItem; //puts it into the slot
-                            slots[i].enabled = true;
-                            slots[i].sprite = icons[t]; //set the sprite to the corresponding icon
+                            //adds it to the toolbar
+                            addIcon(interactedItem, i);                           
                             break;
                         }
                     }
@@ -234,6 +197,7 @@ public class ZoologistControl : MonoBehaviour
                      
                     Animal.animalInventory = inventorySlots[currentInventroyIndex];
                     inventorySlots[currentInventroyIndex]= null;
+                    removeIcon(currentInventroyIndex);
                 }
             }
             else

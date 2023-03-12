@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mediceneScript : MonoBehaviour
+public class mediceneScript : ConsumableParent
 {
     [SerializeField]
     private string mediceneName;
     [SerializeField]
     [Tooltip("what aliments can it cure, case sensitive to the aliment list")]
     private string CureAliment;
+
 
     [Tooltip("needs to be positive or 0")]
     public int HealthAdded=0;
