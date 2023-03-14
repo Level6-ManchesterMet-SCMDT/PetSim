@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 6411517665236963333}
   - component: {fileID: 6411517665236963330}
   - component: {fileID: 6411517665236963331}
+  - component: {fileID: 5795715476054373755}
   m_Layer: 0
   m_Name: TaskListUI
   m_TagString: Untagged
@@ -443,8 +444,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: {fileID: 6411517665025953300}
+  taskPrefab: {fileID: 0}
   taskText: {fileID: 6411517665511470269}
   taskCompletion: {fileID: 6411517665194005011}
+  BlackboardTitle: {fileID: 0}
+  write: {fileID: 0}
+  wipe: {fileID: 0}
+  _species: 0
+  tasks: []
+  taskValue: 
+  spawnedTasks: []
+--- !u!114 &5795715476054373755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411517665236963329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b282f900599d814abb368fa32b50065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6411517665313604446
 GameObject:
   m_ObjectHideFlags: 0
