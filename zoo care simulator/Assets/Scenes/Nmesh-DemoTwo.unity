@@ -2959,8 +2959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1fe03afca893b46b2d67067558c905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediceneName: 
-  CureAliment: 
+  Icon: {fileID: 21300000, guid: 4dbf346067f9b5b449b05e2442c10814, type: 3}
+  mediceneName: rash cream
+  CureAliment: rash
   HealthAdded: 0
   HungerAdded: 0
   HappinessAdded: 0
@@ -7964,6 +7965,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
   m_PrefabInstance: {fileID: 796238896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &633746840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8861753548200729529, guid: 3ec3965075e52834086cc89ee9739e08, type: 3}
+  m_PrefabInstance: {fileID: 2093350680}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &644299524 stripped
 Transform:
@@ -17810,8 +17816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1fe03afca893b46b2d67067558c905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediceneName: 
-  CureAliment: 
+  Icon: {fileID: 21300000, guid: 4dbf346067f9b5b449b05e2442c10814, type: 3}
+  mediceneName: rash cream
+  CureAliment: rash
   HealthAdded: 0
   HungerAdded: 0
   HappinessAdded: 0
@@ -21101,6 +21108,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8861753548200729525, guid: 3ec3965075e52834086cc89ee9739e08, type: 3}
   m_PrefabInstance: {fileID: 2093350680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1536209403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633746840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1fe03afca893b46b2d67067558c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 4dbf346067f9b5b449b05e2442c10814, type: 3}
+  mediceneName: flu medicine
+  CureAliment: flu
+  HealthAdded: 0
+  HungerAdded: 0
+  HappinessAdded: 0
+--- !u!1 &1540791338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8861753548200729529, guid: 3ec3965075e52834086cc89ee9739e08, type: 3}
+  m_PrefabInstance: {fileID: 1364747919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540791344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540791338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1fe03afca893b46b2d67067558c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 4dbf346067f9b5b449b05e2442c10814, type: 3}
+  mediceneName: flu Medicine
+  CureAliment: flu
+  HealthAdded: 0
+  HungerAdded: 0
+  HappinessAdded: 0
 --- !u!1 &1547258337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 170520264da723c4599ed66bff1936f1, type: 3}
