@@ -75,6 +75,7 @@ public class AnimalParentScript : MonoBehaviour
     private float currenthungerAfflictedChance;
     [SerializeField] private StatBars statBars;
 
+    public bool 
     private void Start()
     {
         currenthealth = maxValue;
