@@ -19,10 +19,11 @@ public class basicTasks : MonoBehaviour
     void Update()
     {
         checkBasicNeeds();
+        assignSickAnimals();
     }
     private void Start()
     {
-        assignSickAnimals();
+
     }
     void checkBasicNeeds()
     {
