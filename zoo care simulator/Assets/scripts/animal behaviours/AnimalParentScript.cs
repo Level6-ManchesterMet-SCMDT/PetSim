@@ -75,7 +75,10 @@ public class AnimalParentScript : MonoBehaviour
     private float currenthungerAfflictedChance;
     [SerializeField] private StatBars statBars;
 
-    public bool 
+    public bool Played=false;
+    public bool Fed=false;
+    public bool Cured = false;
+
     private void Start()
     {
         currenthealth = maxValue;
@@ -88,7 +91,12 @@ public class AnimalParentScript : MonoBehaviour
         statBars.SetHappiness(maxValue);
  
     }
-
+    public void resetneeds()
+    {
+        Played = false;
+        Fed = false;
+        Cured = false;
+    }
     public void Feed(foodScript food)//increases hunger bar from feeding
     {
         print(food.getFoodName());
@@ -102,6 +110,7 @@ public class AnimalParentScript : MonoBehaviour
                 mood += food.HappinesRestore;
                 //eats the food
                 Destroy(animalInventory);
+                Fed = true;
                 return;
             }
             else if (food.getFoodType() == FoodTypes[i])
@@ -109,6 +118,7 @@ public class AnimalParentScript : MonoBehaviour
                 //if it matches the type it eats it.
                 hunger += food.saturationRestore;
                 Destroy(animalInventory);
+                Fed= true;
                 return;
             }
         }
@@ -135,6 +145,7 @@ public class AnimalParentScript : MonoBehaviour
                 hunger+= hungermodifier;
                 mood += moodmodifier;
                 CurrentAliment = healthy;
+                Cured= true;
             }
             else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects.
             {
@@ -169,6 +180,7 @@ public class AnimalParentScript : MonoBehaviour
         IsPlayingToy= false;
         animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
         animalInventory = null;
+        Played = true;
     }
     virtual protected void PlayToyAnimation()//for the animal's play animation
     {
