@@ -679,7 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55458741}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: ItemHolder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72929285}
   m_Layer: 5
-  m_Name: ItemHolder (2)
+  m_Name: ItemHolder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 108627319}
   - component: {fileID: 108627318}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,6 +2180,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 273476699}
         m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: MeerkatItem2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
         m_MethodName: Subtract50
         m_Mode: 1
         m_Arguments:
@@ -2481,6 +2493,7 @@ MonoBehaviour:
   Desktop: {fileID: 936521538}
   ZooShop: {fileID: 1095864873}
   MoneyDisplay: {fileID: 948751072}
+  AvailableItems: 000000000000000000000000000000
 --- !u!1 &306346764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,7 +2852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333035520}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: ItemHolder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3228,7 +3241,7 @@ GameObject:
   - component: {fileID: 392319509}
   - component: {fileID: 392319508}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3456,6 +3469,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: CoatiItem1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 273476699}
         m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
         m_MethodName: Subtract20
@@ -4791,7 +4816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593472106}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: ItemHolder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6181,7 +6206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730768178}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: ItemHolder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6220,7 +6245,7 @@ GameObject:
   - component: {fileID: 733953388}
   - component: {fileID: 733953387}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8951,7 +8976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981991597}
   m_Layer: 5
-  m_Name: ItemHolder (2)
+  m_Name: ItemHolder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10557,7 +10582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118532657}
   m_Layer: 5
-  m_Name: ItemHolder (2)
+  m_Name: ItemHolder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11859,6 +11884,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1309112913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12292,7 +12329,7 @@ GameObject:
   - component: {fileID: 1360912476}
   - component: {fileID: 1360912475}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12505,7 +12542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1377022280}
   m_Layer: 5
-  m_Name: ItemHolder (2)
+  m_Name: ItemHolder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13597,6 +13634,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 273476699}
         m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: PenguinItem2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
         m_MethodName: Subtract50
         m_Mode: 1
         m_Arguments:
@@ -13657,7 +13706,7 @@ GameObject:
   - component: {fileID: 1500304318}
   - component: {fileID: 1500304317}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13872,7 +13921,7 @@ GameObject:
   - component: {fileID: 1521190612}
   - component: {fileID: 1521190611}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14270,7 +14319,7 @@ GameObject:
   - component: {fileID: 1563870818}
   - component: {fileID: 1563870817}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16027,7 +16076,7 @@ GameObject:
   - component: {fileID: 1676866869}
   - component: {fileID: 1676866868}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16696,6 +16745,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: SlothItem1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 273476699}
         m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
         m_MethodName: Subtract20
@@ -17857,7 +17918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1899150352}
   m_Layer: 5
-  m_Name: ItemHolder (2)
+  m_Name: ItemHolder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18076,7 +18137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1918668005}
   m_Layer: 5
-  m_Name: ItemHolder (1)
+  m_Name: ItemHolder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18995,6 +19056,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 273476699}
         m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
+        m_MethodName: PandaItem2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 273476699}
+        m_TargetAssemblyTypeName: ZooShopManager, Assembly-CSharp
         m_MethodName: Subtract50
         m_Mode: 1
         m_Arguments:
@@ -19439,7 +19512,7 @@ GameObject:
   - component: {fileID: 2108228046}
   - component: {fileID: 2108228045}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19789,7 +19862,7 @@ GameObject:
   - component: {fileID: 2140906793}
   - component: {fileID: 2140906792}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
