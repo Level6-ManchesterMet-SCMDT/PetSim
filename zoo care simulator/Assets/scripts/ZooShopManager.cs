@@ -14,11 +14,8 @@ public class ZooShopManager : MonoBehaviour
     [SerializeField] private TMP_InputField MoneyDisplay;
     private int moneyAmount;
     private int testMoney = 100;
+    private Dictionary<string, Boolean> ShopItems = new Dictionary<string, bool>();
 
-    public Dictionary<string, Boolean> ShopItems = new Dictionary<string, bool>();
-
-    public bool[] AvailableItems = new bool[15];
-    
     // Start is called before the first frame update
     void Start()
     {
