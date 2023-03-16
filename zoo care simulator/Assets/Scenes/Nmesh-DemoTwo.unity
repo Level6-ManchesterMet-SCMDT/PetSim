@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 40708fd1d95ea354a9f030d8809cc125, type: 3}
   FoodName: leaf
-  FoodType: sloth
+  FoodType: plant
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!65 &25797607
@@ -12055,7 +12055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654db629285f06a4f8a9c6618586ce1c, type: 3}
       propertyPath: m_TagString
-      value: Fruit
+      value: food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 654db629285f06a4f8a9c6618586ce1c, type: 3}
@@ -21516,7 +21516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4048516087bbc1458dcb1c3f7f137ec, type: 3}
       propertyPath: m_TagString
-      value: Fruit
+      value: food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4048516087bbc1458dcb1c3f7f137ec, type: 3}
@@ -24737,7 +24737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e2bd6e6eeae1cf498b02fbc62ab4fd7, type: 3}
       propertyPath: m_TagString
-      value: Fruit
+      value: food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2bd6e6eeae1cf498b02fbc62ab4fd7, type: 3}
@@ -25184,7 +25184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 40708fd1d95ea354a9f030d8809cc125, type: 3}
   FoodName: leaf
-  FoodType: sloth
+  FoodType: plant
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &1632577869
@@ -26694,8 +26694,10 @@ MonoBehaviour:
   - flu
   - rash
   CurrentAliment: healthy
-  FoodTypes: []
-  PreferredFood: []
+  FoodTypes:
+  - plant
+  PreferredFood:
+  - leaf
   animalInventory: {fileID: 0}
   animalHand: {fileID: 2146550365}
   IsPlayingToy: 0
@@ -29190,7 +29192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 40708fd1d95ea354a9f030d8809cc125, type: 3}
   FoodName: leaf
-  FoodType: sloth
+  FoodType: plant
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &1838404361
@@ -31708,7 +31710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 40708fd1d95ea354a9f030d8809cc125, type: 3}
   FoodName: leaf
-  FoodType: sloth
+  FoodType: plant
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &2006018661
@@ -32973,7 +32975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94f6c235206dd9f4f91f5265fe915184, type: 3}
       propertyPath: m_TagString
-      value: Fruit
+      value: food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f6c235206dd9f4f91f5265fe915184, type: 3}
@@ -33562,8 +33564,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1580682
-  m_Center: {x: -0.65806884, y: 0, z: 4.553684e-15}
+  m_Radius: 1.3348616
+  m_Center: {x: -0.48127514, y: 0, z: 0}
 --- !u!4 &2111937081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9609b1e40537e1c4f9eb5dd042fb178c, type: 3}
@@ -34435,7 +34437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146550364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.112, y: 2.202, z: 0.209}
+  m_LocalPosition: {x: -0.078, y: 2.35, z: 0.067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
