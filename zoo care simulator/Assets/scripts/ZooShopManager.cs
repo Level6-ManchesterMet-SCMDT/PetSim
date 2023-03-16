@@ -12,6 +12,8 @@ public class ZooShopManager : MonoBehaviour
     [SerializeField] private GameObject Desktop;
     [SerializeField] private GameObject ZooShop;
     [SerializeField] private TMP_InputField MoneyDisplay;
+    [SerializeField] private AudioSource PaySound;
+    [SerializeField] private AudioSource QuitSound;
     private int moneyAmount;
     private int testMoney = 100;
     private Dictionary<string, Boolean> ShopItems = new Dictionary<string, bool>();
@@ -52,6 +54,7 @@ public class ZooShopManager : MonoBehaviour
             GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
             CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
             CurrentBtn.GetComponent<Button>().interactable = false;
+            PaySound.Play();
         }
         else
         {
@@ -68,6 +71,7 @@ public class ZooShopManager : MonoBehaviour
             GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
             CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
             CurrentBtn.GetComponent<Button>().interactable = false;
+            PaySound.Play();
         }
         else
         {
@@ -84,6 +88,7 @@ public class ZooShopManager : MonoBehaviour
             GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
             CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
             CurrentBtn.GetComponent<Button>().interactable = false;
+            PaySound.Play();
         }
         else
         {
@@ -201,6 +206,7 @@ public class ZooShopManager : MonoBehaviour
 
     public void Continue()
     {
+        QuitSound.Play();
         string str = "";
         Debug.Log("Shopping Reciept: ");
         foreach (KeyValuePair<string, bool> ShopItems in ShopItems)
