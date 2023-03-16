@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
   FoodName: egg
-  FoodType: Coati
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!136 &86146401
@@ -4478,8 +4478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
-  FoodName: Egg
-  FoodType: Coati
+  FoodName: egg
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &274965403
@@ -8419,7 +8419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
   FoodName: egg
-  FoodType: coati
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &571919582
@@ -25372,7 +25372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
   FoodName: egg
-  FoodType: Coati
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!136 &1639933165
@@ -27356,8 +27356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
-  FoodName: Egg
-  FoodType: Coati
+  FoodName: egg
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &1751077575
@@ -27967,8 +27967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
-  FoodName: Egg
-  FoodType: Coati
+  FoodName: egg
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!54 &1781946967
@@ -31900,7 +31900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d9ef00fdcaa477442bae1aead762da78, type: 3}
   FoodName: egg
-  FoodType: Coati
+  FoodType: egg
   saturationRestore: 10
   HappinesRestore: 10
 --- !u!136 &2019760297
@@ -37099,6 +37099,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357639277}
     m_Modifications:
+    - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: FoodTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: FoodTypes.Array.data[0]
+      value: fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: PreferredFood.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: PreferredFood.Array.data[0]
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: nodeArray.Array.data[0]
       value: 
@@ -37232,6 +37248,30 @@ PrefabInstance:
       propertyPath: nodeArray.Array.data[7]
       value: 
       objectReference: {fileID: 794171287}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: FoodTypes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: FoodTypes.Array.data[0]
+      value: bugs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: FoodTypes.Array.data[1]
+      value: leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: PreferredFood.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: PreferredFood.Array.data[0]
+      value: bugs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034837826136433002, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: PreferredFood.Array.data[1]
+      value: leafs
+      objectReference: {fileID: 0}
     - target: {fileID: 1034837826136433006, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
       propertyPath: m_Name
       value: NavMeshAllignerMeerkat
@@ -37337,6 +37377,22 @@ PrefabInstance:
       propertyPath: animalHand
       value: 
       objectReference: {fileID: 302109567}
+    - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: FoodTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: FoodTypes.Array.data[0]
+      value: egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: PreferredFood.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: PreferredFood.Array.data[0]
+      value: egg
+      objectReference: {fileID: 0}
     - target: {fileID: 4114625422004919273, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
       propertyPath: m_Name
       value: NavMeshAllignerCoati
