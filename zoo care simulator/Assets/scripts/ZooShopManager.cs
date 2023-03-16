@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ZooShopManager : MonoBehaviour
@@ -29,6 +31,9 @@ public class ZooShopManager : MonoBehaviour
         {
             moneyAmount -= 20;
             MoneyDisplay.text = moneyAmount.ToString();
+            GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
+            CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
+            CurrentBtn.GetComponent<Button>().interactable = false;
         }
         else
         {
@@ -42,6 +47,9 @@ public class ZooShopManager : MonoBehaviour
         {
             moneyAmount -= 50;
             MoneyDisplay.text = moneyAmount.ToString();
+            GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
+            CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
+            CurrentBtn.GetComponent<Button>().interactable = false;
         }
         else
         {
@@ -55,6 +63,9 @@ public class ZooShopManager : MonoBehaviour
         {
             moneyAmount -= 80;
             MoneyDisplay.text = moneyAmount.ToString();
+            GameObject CurrentBtn = EventSystem.current.currentSelectedGameObject;
+            CurrentBtn.GetComponentInChildren<TMP_Text>().text = "Purchased";
+            CurrentBtn.GetComponent<Button>().interactable = false;
         }
         else
         {
