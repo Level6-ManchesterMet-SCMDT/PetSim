@@ -23,7 +23,6 @@ public class MenuController : MonoBehaviour
         {
             Anim.SetTrigger("GameStart");
             firstPrompt.SetActive(false);
-            
         }  
     }
     
@@ -41,5 +40,10 @@ public class MenuController : MonoBehaviour
         {
             FirstMenu.SetActive(true);
         }
+    }
+
+    public void PlayButton()
+    {
+        Anim.SetTrigger("PressPlay");
     }
 }
