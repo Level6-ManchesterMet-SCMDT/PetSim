@@ -8,8 +8,11 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject firstPrompt;
     [SerializeField] private KeyCode PressToPlay;
     [SerializeField] private GameObject FirstMenu;
+    [SerializeField] private GameObject FirstMenuWarp;
     [SerializeField] private GameObject PlayMenu;
     [SerializeField] private GameObject StoryMenu;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,7 @@ public class MenuController : MonoBehaviour
         FirstMenu.SetActive(false);
         PlayMenu.SetActive(false);
         StoryMenu.SetActive(false);
+        FirstMenuWarp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +45,7 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
+            FirstMenuWarp.SetActive(true);
             FirstMenu.SetActive(true);
         }
     }
