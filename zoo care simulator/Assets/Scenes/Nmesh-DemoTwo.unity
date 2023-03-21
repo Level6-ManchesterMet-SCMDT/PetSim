@@ -9652,6 +9652,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581031269}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &582624888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3880836056146430381, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+  m_PrefabInstance: {fileID: 4114625422367389490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &588086045
 GameObject:
   m_ObjectHideFlags: 0
@@ -9738,6 +9743,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4508296158079259415, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
   m_PrefabInstance: {fileID: 4114625422367389490}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &589272492
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582624888}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cfc24b22d1280e478cfd657f2a1fa70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &589725385
 GameObject:
   m_ObjectHideFlags: 0
@@ -27362,6 +27387,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1720661861
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720661852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2c4e318b0a037d4b90b30edb1712356, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1722077235
 PrefabInstance:
   m_ObjectHideFlags: 0
