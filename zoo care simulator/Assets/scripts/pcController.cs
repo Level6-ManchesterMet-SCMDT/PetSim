@@ -118,7 +118,9 @@ public class pcController : MonoBehaviour
     public void PenguinButton()
     {
         DontDestroyOnLoad(player);
+        player.SetActive(false);
         DontDestroyOnLoad(this.gameObject);
+        this.gameObject.SetActive(false);
         SceneManager.LoadScene("PenguinSliding");
 //        Debug.Log("PENGUIN GAME STARTED");
     }
