@@ -117,11 +117,19 @@ public class pcController : MonoBehaviour
     }
     public void PenguinButton()
     {
-        Debug.Log("PENGUIN GAME STARTED");
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene("PenguinSliding");
+//        Debug.Log("PENGUIN GAME STARTED");
     }
     public void SlothButton()
     {
-        Debug.Log("SLOTH GAME STARTED");
+        DontDestroyOnLoad(player);
+        player.SetActive(false);
+        DontDestroyOnLoad(this.gameObject);
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene("SlothRacing");
+  //      Debug.Log("SLOTH GAME STARTED");
     }
     public void CoatiButton()
     {
