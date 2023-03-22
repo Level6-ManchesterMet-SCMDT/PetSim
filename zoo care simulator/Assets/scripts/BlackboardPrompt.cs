@@ -103,82 +103,83 @@ public class BlackboardPrompt : MonoBehaviour
             }
         }
         //check the task script values
-        if(taskScript.allFed==true)//checks if all animals is fed, 
+        for (int i = 0; i < taskValue.Length; i++)
         {
-            for(int i=0;i<taskValue.Length;i++)
-            {//finds corrosponding toggle and switches it
-                if (taskValue[i] == 1)
-                {
-                    spawnedTasks[i].isOn=true;
-                }
-               
-            }
-        }
-        if (taskScript.allPlayed == true)//checks if all animals has played with
-        {
-            for (int i = 0; i < taskValue.Length; i++)
-            {//finds corrosponding toggle and switches it
-                if (taskValue[i] == 2)
+            //checks if all animals is fed, then toggles the check
+            if (taskValue[i] == 1)
+            {
+                if (taskScript.allFed == true)
                 {
                     spawnedTasks[i].isOn = true;
                 }
-
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
             }
-        }
-        if (taskScript.anySick() == true)//if there is sick animals check the all cured value
-        {
-            if (taskScript.allCured == true)//checks if all sick animals is cured
+            //checks if all animals have been played with, then toggles the check
+            if (taskValue[i] == 2)
             {
-                for (int i = 0; i < taskValue.Length; i++)
-                {//finds corrosponding toggle and switches it
-                    if (taskValue[i] == 3)
+                if (taskScript.allPlayed == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+            }
+            //check if all animals is healthy
+            if (taskValue[i] == 3)
+            {
+                if (taskScript.anySick() == true)//if there is sick animals check the all cured value
+                {
+                    if (taskScript.allCured == true)//checks if all sick animals is cured
                     {
                         spawnedTasks[i].isOn = true;
                     }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < taskValue.Length; i++)
-                {//finds corrosponding toggle and switches it
-                    if (taskValue[i] == 3)
+                    else
                     {
                         spawnedTasks[i].isOn = false;
                     }
                 }
-            }
-            
-        }
-        else//if there is no sick animal hide the checklist
-        {
-            for (int i = 0; i < taskValue.Length; i++)
-            {//finds corrosponding toggle and switches it
-                if (taskValue[i] == 3)
-                {
+                else
+                {//disables the feed med toggle
                     spawnedTasks[i].gameObject.SetActive(false);
                 }
             }
-        }
-        if (taskScript.cleanEnclosure == true)//checks if enclosure is clean
-        {
-            for (int i = 0; i < taskValue.Length; i++)
-            {//finds corrosponding toggle and switches it
-                if (taskValue[i] == 4)
+            //checks if the enclosure clean, then toggles the check
+            if (taskValue[i] == 4)
+            {
+                if (taskScript.cleanEnclosure == true)
                 {
                     spawnedTasks[i].isOn = true;
                 }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
             }
-        }
-        if (taskScript.isClean == true)//checks if animal is clean
-        {
-            for (int i = 0; i < taskValue.Length; i++)
-            {//finds corrosponding toggle and switches it
-                if (taskValue[i] == 5)
+            //checks if all animals clean, then toggles the check
+            if (taskValue[i] == 5)
+            {
+                if (taskScript.isClean == true)
                 {
                     spawnedTasks[i].isOn = true;
                 }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
             }
         }
+
+
+       
+            
+
+ 
+
 
         /*if (inTrigger && Input.GetKeyDown(KeyCode.E))
         {
