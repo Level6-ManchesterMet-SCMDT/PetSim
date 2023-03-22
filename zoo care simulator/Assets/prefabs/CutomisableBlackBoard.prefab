@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 7412346041360156860}
   - component: {fileID: 7412346041360156800}
   - component: {fileID: 7412346041360156801}
+  - component: {fileID: 1189976129}
   m_Layer: 0
   m_Name: CutomisableBlackBoard
   m_TagString: Untagged
@@ -294,7 +295,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412346041360156862}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.95, y: 1.4, z: -15.68}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
@@ -351,12 +352,12 @@ MonoBehaviour:
   wipe: {fileID: 7412346041360156801}
   _species: 1
   tasks:
-  - Feed the Panda
+  - Feed the panda
   - Give the Panda Medicine
   - Give Panda a toy
   - Clean out Panda Enclosure
-  - Pet Panda
-  taskValue: 0100000003000000020000000400000002000000
+  - Clean the panda
+  taskValue: 0100000003000000020000000400000005000000
   spawnedTasks: []
 --- !u!82 &7412346041360156800
 AudioSource:
@@ -550,6 +551,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1189976129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412346041360156862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b282f900599d814abb368fa32b50065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalList: []
+  sickAnimals: []
+  allCured: 0
+  allFed: 0
+  allPlayed: 0
+  isClean: 0
+  cleanEnclosure: 0
 --- !u!1 &7412346041438313441
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class basicTasks : MonoBehaviour
     private List<GameObject> animalList;//list of animals to check
     [SerializeField]
     private List<GameObject> sickAnimals;//list of sick animals
+    public bool AnySick = false;
     public bool allCured = false;
     public bool allFed = false;
     public bool allPlayed = false;
@@ -67,6 +68,7 @@ public class basicTasks : MonoBehaviour
             if (animalscript.CurrentAliment != "healthy")
             {
                 sickAnimals.Add(animal);
+                AnySick=true;
             }
         }
     }
@@ -79,5 +81,9 @@ public class basicTasks : MonoBehaviour
             var animalscript = animal.GetComponent<AnimalParentScript>();
             animalscript.resetneeds();
         }
+    }
+    public bool anySick()
+    {
+        return AnySick;
     }
 }

@@ -24,19 +24,20 @@ public class BlackboardPrompt : MonoBehaviour
     [Header("Animal Details")]
     [SerializeField] private Species _species;
     [SerializeField]private string[] tasks;
-    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4. In order of task list")]
-    [Range(1,4)]
+    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned enclosere =4, animal is clean=5, In order of task list")]
+    [Range(1,5)]
     [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
     private int completed = 0;
     public Toggle[] spawnedTasks;
-    
-    
+
+    private basicTasks taskScript;
     
     
     private void Start()
     {
+        taskScript=gameObject.GetComponent<basicTasks>();
         spawnedTasks = new Toggle[tasks.Length];
         BlackboardTitle.fontSize = 60;
         BlackboardTitle.text = _species + " Tasks";
@@ -101,9 +102,84 @@ public class BlackboardPrompt : MonoBehaviour
                 DailyQuota();
             }
         }
-        
-        
-        
+        //check the task script values
+        if(taskScript.allFed==true)//checks if all animals is fed, 
+        {
+            for(int i=0;i<taskValue.Length;i++)
+            {//finds corrosponding toggle and switches it
+                if (taskValue[i] == 1)
+                {
+                    spawnedTasks[i].isOn=true;
+                }
+               
+            }
+        }
+        if (taskScript.allPlayed == true)//checks if all animals has played with
+        {
+            for (int i = 0; i < taskValue.Length; i++)
+            {//finds corrosponding toggle and switches it
+                if (taskValue[i] == 2)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+
+            }
+        }
+        if (taskScript.anySick() == true)//if there is sick animals check the all cured value
+        {
+            if (taskScript.allCured == true)//checks if all sick animals is cured
+            {
+                for (int i = 0; i < taskValue.Length; i++)
+                {//finds corrosponding toggle and switches it
+                    if (taskValue[i] == 3)
+                    {
+                        spawnedTasks[i].isOn = true;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < taskValue.Length; i++)
+                {//finds corrosponding toggle and switches it
+                    if (taskValue[i] == 3)
+                    {
+                        spawnedTasks[i].isOn = false;
+                    }
+                }
+            }
+            
+        }
+        else//if there is no sick animal hide the checklist
+        {
+            for (int i = 0; i < taskValue.Length; i++)
+            {//finds corrosponding toggle and switches it
+                if (taskValue[i] == 3)
+                {
+                    spawnedTasks[i].gameObject.SetActive(false);
+                }
+            }
+        }
+        if (taskScript.cleanEnclosure == true)//checks if enclosure is clean
+        {
+            for (int i = 0; i < taskValue.Length; i++)
+            {//finds corrosponding toggle and switches it
+                if (taskValue[i] == 4)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+            }
+        }
+        if (taskScript.isClean == true)//checks if animal is clean
+        {
+            for (int i = 0; i < taskValue.Length; i++)
+            {//finds corrosponding toggle and switches it
+                if (taskValue[i] == 5)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+            }
+        }
+
         /*if (inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             if (nextTask < tasks.Length && taskCompletion.isOn == true)
