@@ -24,19 +24,20 @@ public class BlackboardPrompt : MonoBehaviour
     [Header("Animal Details")]
     [SerializeField] private Species _species;
     [SerializeField]private string[] tasks;
-    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned =4. In order of task list")]
-    [Range(1,4)]
+    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned enclosere =4, animal is clean=5, In order of task list")]
+    [Range(1,5)]
     [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
     private int completed = 0;
     public Toggle[] spawnedTasks;
-    
-    
+
+    private basicTasks taskScript;
     
     
     private void Start()
     {
+        taskScript=gameObject.GetComponent<basicTasks>();
         spawnedTasks = new Toggle[tasks.Length];
         BlackboardTitle.fontSize = 60;
         BlackboardTitle.text = _species + " Tasks";
@@ -101,9 +102,85 @@ public class BlackboardPrompt : MonoBehaviour
                 DailyQuota();
             }
         }
-        
-        
-        
+        //check the task script values
+        for (int i = 0; i < taskValue.Length; i++)
+        {
+            //checks if all animals is fed, then toggles the check
+            if (taskValue[i] == 1)
+            {
+                if (taskScript.allFed == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+            }
+            //checks if all animals have been played with, then toggles the check
+            if (taskValue[i] == 2)
+            {
+                if (taskScript.allPlayed == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+            }
+            //check if all animals is healthy
+            if (taskValue[i] == 3)
+            {
+                if (taskScript.anySick() == true)//if there is sick animals check the all cured value
+                {
+                    if (taskScript.allCured == true)//checks if all sick animals is cured
+                    {
+                        spawnedTasks[i].isOn = true;
+                    }
+                    else
+                    {
+                        spawnedTasks[i].isOn = false;
+                    }
+                }
+                else
+                {//disables the feed med toggle
+                    spawnedTasks[i].gameObject.SetActive(false);
+                }
+            }
+            //checks if the enclosure clean, then toggles the check
+            if (taskValue[i] == 4)
+            {
+                if (taskScript.cleanEnclosure == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+            }
+            //checks if all animals clean, then toggles the check
+            if (taskValue[i] == 5)
+            {
+                if (taskScript.isClean == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+            }
+        }
+
+
+       
+            
+
+ 
+
+
         /*if (inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             if (nextTask < tasks.Length && taskCompletion.isOn == true)
