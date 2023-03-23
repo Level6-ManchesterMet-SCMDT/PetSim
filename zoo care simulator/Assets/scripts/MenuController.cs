@@ -53,8 +53,6 @@ public class MenuController : MonoBehaviour
             if (warpCoroutine != null)
                 StopCoroutine(warpCoroutine);
             warpCoroutine = StartCoroutine(WarpEffect());
-            //FirstMenuWarp.SetActive(true);
-            //FirstMenu.SetActive(true);
         }
     }
 
@@ -111,6 +109,15 @@ public class MenuController : MonoBehaviour
     {
         Anim.SetTrigger("PressPlay");
         StopCoroutine(warpCoroutine);
+    }
+
+    public void PlayReverse()
+    {
+        Anim.SetTrigger("PressPlayBack");
+        PlayMenu.SetActive(false);
+        if (warpCoroutine != null)
+            StopCoroutine(warpCoroutine);
+        warpCoroutine = StartCoroutine(WarpEffect());
     }
 
     public void QuitButton()
