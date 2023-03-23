@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject FirstMenuWarp;
     [SerializeField] private GameObject PlayMenu;
     [SerializeField] private GameObject SettingsMenu;
+    [SerializeField] private GameObject HelpMenu;
     [SerializeField] private GameObject StoryMenu;
     private Coroutine warpCoroutine;
     
@@ -23,6 +25,7 @@ public class MenuController : MonoBehaviour
         StoryMenu.SetActive(false);
         FirstMenuWarp.SetActive(false);
         SettingsMenu.SetActive(false);
+        HelpMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -71,6 +74,14 @@ public class MenuController : MonoBehaviour
             PlayMenu.SetActive(true);
         }
     }
+
+    public void StartTutorial(string message)
+    {
+        if (message.Equals("TravelAnimationEnded"))
+        {
+            SceneManager.LoadScene("Nmesh-DemoTwo");
+        }
+    }
     
     public void ShowStoryMenu(string message)
     {
@@ -88,10 +99,29 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    public void ShowHelpMenu(string message)
+    {
+        if (message.Equals("TravelAnimationEnded"))
+        {
+            HelpMenu.SetActive(true);
+        }
+    }
+
     public void PlayButton()
     {
         Anim.SetTrigger("PressPlay");
         StopCoroutine(warpCoroutine);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
+
+    public void TutorialButton()
+    {
+        Anim.SetTrigger("PressTutorial");
     }
     
     public void StoryButton()
@@ -102,10 +132,26 @@ public class MenuController : MonoBehaviour
     public void SettingsButton()
     {
         Anim.SetTrigger("PressSettings");
+        FirstMenu.SetActive(false);
     }
 
     public void SettingsReverse()
     {
         Anim.SetTrigger("PressOptionsBack");
+        FirstMenu.SetActive(true);
+        HelpMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+    }
+
+    public void HelpButton()
+    {
+        Anim.SetTrigger("PressHelp");
+        SettingsMenu.SetActive(false);
+    }
+
+    public void HelpReverse()
+    {
+        Anim.SetTrigger("PressHelpBack");
+        SettingsMenu.SetActive(true);
     }
 }
