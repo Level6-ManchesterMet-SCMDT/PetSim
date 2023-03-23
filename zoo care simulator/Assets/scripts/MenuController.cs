@@ -59,7 +59,7 @@ public class MenuController : MonoBehaviour
     IEnumerator WarpEffect()
     {
         FirstMenuWarp.SetActive(true);
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1f);
         FirstMenu.SetActive(true);
         FirstMenuWarp.SetActive(false);
         yield return null; 
@@ -134,6 +134,12 @@ public class MenuController : MonoBehaviour
     public void StoryButton()
     {
         Anim.SetTrigger("PressStory");
+    }
+    
+    public void StoryReverse()
+    {
+        Anim.SetTrigger("PressStoryReverse");
+        PlayMenu.SetActive(true);
     }
 
     public void SettingsButton()
