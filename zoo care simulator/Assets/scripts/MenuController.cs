@@ -10,8 +10,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject FirstMenu;
     [SerializeField] private GameObject FirstMenuWarp;
     [SerializeField] private GameObject PlayMenu;
+    [SerializeField] private GameObject SettingsMenu;
     [SerializeField] private GameObject StoryMenu;
-
+    private Coroutine warpCoroutine;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class MenuController : MonoBehaviour
         PlayMenu.SetActive(false);
         StoryMenu.SetActive(false);
         FirstMenuWarp.SetActive(false);
+        SettingsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,9 +47,21 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
-            FirstMenuWarp.SetActive(true);
-            FirstMenu.SetActive(true);
+            if (warpCoroutine != null)
+                StopCoroutine(warpCoroutine);
+            warpCoroutine = StartCoroutine(WarpEffect());
+            //FirstMenuWarp.SetActive(true);
+            //FirstMenu.SetActive(true);
         }
+    }
+
+    IEnumerator WarpEffect()
+    {
+        FirstMenuWarp.SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        FirstMenu.SetActive(true);
+        FirstMenuWarp.SetActive(false);
+        yield return null; 
     }
     
     public void ShowPlayMenu(string message)
@@ -66,13 +80,32 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    public void ShowSettingsMenu(string message)
+    {
+        if (message.Equals("TravelAnimationEnded"))
+        {
+            SettingsMenu.SetActive(true);
+        }
+    }
+
     public void PlayButton()
     {
         Anim.SetTrigger("PressPlay");
+        StopCoroutine(warpCoroutine);
     }
     
     public void StoryButton()
     {
         Anim.SetTrigger("PressStory");
+    }
+
+    public void SettingsButton()
+    {
+        Anim.SetTrigger("PressSettings");
+    }
+
+    public void SettingsReverse()
+    {
+        Anim.SetTrigger("PressOptionsBack");
     }
 }
