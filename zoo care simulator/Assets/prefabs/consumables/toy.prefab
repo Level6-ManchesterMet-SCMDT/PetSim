@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8578096127969271231}
   m_Layer: 0
   m_Name: toy
-  m_TagString: toy
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c8c0338fc98234bb0e2495aa63324c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  Icon: {fileID: 0}
+  toyName: 
 --- !u!33 &8398944509645541587
 MeshFilter:
   m_ObjectHideFlags: 0
