@@ -105,6 +105,14 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    public void Fade2Game(string message)
+    {
+        if (message.Equals("TravelAnimationEnded"))
+        {
+            SceneManager.LoadScene("Nmesh-DemoTwo");
+        }
+    }
+    
     public void PlayButton()
     {
         Anim.SetTrigger("PressPlay");
@@ -166,5 +174,10 @@ public class MenuController : MonoBehaviour
     {
         Anim.SetTrigger("PressHelpBack");
         SettingsMenu.SetActive(true);
+    }
+
+    public void PlayGame()
+    {
+        Anim.SetTrigger("PlayGame");
     }
 }
