@@ -10,7 +10,6 @@ using Slider = UnityEngine.UI.Slider;
 public class StatTracker : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] private Scrollbar scrollbar;
     [SerializeField] private Sprite[] Icons;
     [SerializeField] private Text[] Names;
     [SerializeField] private Gradient gradient;
@@ -72,9 +71,6 @@ public class StatTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scrollbar.value = 1f;
-        StartCoroutine(ScrollLoop(scrollbar));
-
         PenguinPic.GetComponent<Image>().sprite = Icons[0];
         PandaPic.GetComponent<Image>().sprite = Icons[1];
         CoatiPic.GetComponent<Image>().sprite = Icons[2];
@@ -129,7 +125,7 @@ public class StatTracker : MonoBehaviour
         SlothFill.color = gradient.Evaluate(SlothOverall.normalizedValue);
     }
 
-    IEnumerator ScrollLoop(Scrollbar vertScroll)
+    /*IEnumerator ScrollLoop(Scrollbar vertScroll)
     {
         while (vertScroll.value>(-1.6f))
         {
@@ -140,7 +136,7 @@ public class StatTracker : MonoBehaviour
                 vertScroll.value = 2.55f;
             }
         }
-    }
+    }*/
 
     /*public void ScrollReset()
     {
