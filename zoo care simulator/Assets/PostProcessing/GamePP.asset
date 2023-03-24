@@ -24,19 +24,19 @@ MonoBehaviour:
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0.492
   clamp:
     overrideState: 1
     value: 65472
   diffusion:
     overrideState: 1
-    value: 7
+    value: 5.92
   anamorphicRatio:
     overrideState: 1
-    value: 0
+    value: -0.017
   color:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.764151, g: 0.27231863, b: 0, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -68,10 +68,10 @@ MonoBehaviour:
     value: {x: 50, y: 95}
   minLuminance:
     overrideState: 1
-    value: 0
+    value: -2.52
   maxLuminance:
     overrideState: 1
-    value: 0
+    value: 4.6
   keyValue:
     overrideState: 1
     value: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 0.9716981, b: 0.9019608, a: 1}
+    value: {r: 0.990566, g: 0.9473923, b: 0.83637416, a: 1}
   hueShift:
     overrideState: 1
     value: 0
@@ -1414,6 +1414,7 @@ MonoBehaviour:
   - {fileID: 7355996706030710055}
   - {fileID: -3752152947548891154}
   - {fileID: -2454487123516764147}
+  - {fileID: 3362709849433031102}
 --- !u!114 &1742547592895965917
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1435,13 +1436,62 @@ MonoBehaviour:
     value: 10
   aperture:
     overrideState: 1
-    value: 5.6
+    value: 8.3
   focalLength:
     overrideState: 1
     value: 50
   kernelSize:
     overrideState: 1
     value: 1
+--- !u!114 &3362709849433031102
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
+  m_Name: AmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 0.16
+  color:
+    overrideState: 1
+    value: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+  ambientOnly:
+    overrideState: 1
+    value: 1
+  noiseFilterTolerance:
+    overrideState: 0
+    value: 0
+  blurTolerance:
+    overrideState: 0
+    value: -4.6
+  upsampleTolerance:
+    overrideState: 0
+    value: -12
+  thicknessModifier:
+    overrideState: 1
+    value: 1
+  directLightingStrength:
+    overrideState: 0
+    value: 0
+  radius:
+    overrideState: 0
+    value: 0.25
+  quality:
+    overrideState: 0
+    value: 2
 --- !u!114 &7355996706030710055
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1460,7 +1510,7 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 1
-    value: 2
+    value: 3
   maximumIterationCount:
     overrideState: 0
     value: 16
@@ -1494,7 +1544,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   shutterAngle:
     overrideState: 1
     value: 270
