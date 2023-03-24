@@ -28,19 +28,19 @@ public class NoteObject : MonoBehaviour
                 if(Mathf.Abs(transform.position.y) > 0.25)
                 {
                     Debug.Log("Just hit it!");
-                    GameManager.instance.NormalHit();
+                    GameManager2.instance.NormalHit();
                     Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
                 }
                 else if(Mathf.Abs(transform.position.y) > 0.05)
                 {
                     Debug.Log("Hit on time!");
-                    GameManager.instance.GoodHit();
+                    GameManager2.instance.GoodHit();
                     Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
                 }
                 else
                 {
                     Debug.Log("Perfect hit!");
-                    GameManager.instance.GreatHit();
+                    GameManager2.instance.GreatHit();
                     Instantiate(greatEffect, transform.position, greatEffect.transform.rotation);
                 }
             }
@@ -62,7 +62,7 @@ public class NoteObject : MonoBehaviour
             canBePressed = false;
 
             Debug.Log("Missed note...");
-            GameManager.instance.NoteMissed();
+            GameManager2.instance.NoteMissed();
             Instantiate(missEffect, transform.position, missEffect.transform.rotation);
         }
     }
