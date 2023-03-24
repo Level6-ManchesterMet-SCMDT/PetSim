@@ -163,7 +163,7 @@ public class BlackboardPrompt : MonoBehaviour
             //checks if all animals clean, then toggles the check
             if (taskValue[i] == 5)
             {
-                if (taskScript.isClean == true)
+                if (taskScript.allIsClean == true)
                 {
                     spawnedTasks[i].isOn = true;
                 }
@@ -193,10 +193,6 @@ public class BlackboardPrompt : MonoBehaviour
         }*/
     }
 
-    private void ToggleSpawn()
-    {
-        
-    }
     private void DailyQuota()
     {
         Debug.Log(completed + "/" + tasks.Length + " tasks completed");
