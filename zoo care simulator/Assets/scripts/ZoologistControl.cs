@@ -180,6 +180,7 @@ public class ZoologistControl : MonoBehaviour
         if (Physics.Raycast(ray, out hitinfo, reach))
         {
             interactedItem = hitinfo.collider.gameObject;//grabs the item;
+
              if (interactedItem.tag == "animal")//check if the player is interacting with an animal
             {
                 //DEBUG
@@ -199,6 +200,17 @@ public class ZoologistControl : MonoBehaviour
                     inventorySlots[currentInventroyIndex]= null;
                     removeIcon(currentInventroyIndex);
                 }
+            }
+             else if (interactedItem.tag == "Finish")//clock out interaction with the attendence machine
+            {
+                //DEBUG
+                Debug.DrawRay(ray.origin, ray.direction * reachRange, Color.green, 10f);
+                var attendanceMachine= interactedItem.GetComponent<AttendenceMachineScript>();
+                //clocks out and gets grades for the day
+                attendanceMachine.caculateGradeAndClockOut();
+                //teleports to new day position
+                gameObject.transform.position = attendanceMachine.NewDayPos.position;
+                gameObject.transform.rotation = attendanceMachine.NewDayPos.rotation;
             }
             else
             {

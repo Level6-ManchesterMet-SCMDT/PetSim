@@ -78,7 +78,7 @@ public class AnimalParentScript : MonoBehaviour
     public bool Played=false;
     public bool Fed=false;
     public bool Cured = false;
-
+    public bool Clean = false;
     private void Start()
     {
         currenthealth = maxValue;
