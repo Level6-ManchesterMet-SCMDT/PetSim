@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,7 +15,8 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Text[] Names;
     [SerializeField] private Gradient gradient;
 
-    [Header("Penguin Variables")] 
+    [Header("Penguin Variables")]
+    [SerializeField] private GameObject PenguinEntry;
     [SerializeField] private Image PenguinPic;
     [SerializeField] private TMP_Text PenguinName;
     [SerializeField] private TMP_Text PenguinHealth;
@@ -26,6 +28,7 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Slider[] PenguinCurrentStats;
     
     [Header("Panda Variables")] 
+    [SerializeField] private GameObject PandaEntry;
     [SerializeField] private Image PandaPic;
     [SerializeField] private TMP_Text PandaName;
     [SerializeField] private TMP_Text PandaHealth;
@@ -37,6 +40,7 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Slider[] PandaCurrentStats;
     
     [Header("Coati Variables")] 
+    [SerializeField] private GameObject CoatiEntry;
     [SerializeField] private Image CoatiPic;
     [SerializeField] private TMP_Text CoatiName;
     [SerializeField] private TMP_Text CoatiHealth;
@@ -48,6 +52,7 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Slider[] CoatiCurrentStats;
     
     [Header("Meerkat Variables")] 
+    [SerializeField] private GameObject MeerkatEntry;
     [SerializeField] private Image MeerkatPic;
     [SerializeField] private TMP_Text MeerkatName;
     [SerializeField] private TMP_Text MeerkatHealth;
@@ -59,6 +64,7 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Slider[] MeerkatCurrentStats;
     
     [Header("Sloth Variables")] 
+    [SerializeField] private GameObject SlothEntry;
     [SerializeField] private Image SlothPic;
     [SerializeField] private TMP_Text SlothName;
     [SerializeField] private TMP_Text SlothHealth;
@@ -68,6 +74,8 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private TMP_Text SlothPriority;
     [SerializeField] private Image SlothFill;
     [SerializeField] private Slider[] SlothCurrentStats;
+
+    private List<float> animalAverage = new List<float> { 0, 0, 0, 0, 0 };
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +90,7 @@ public class StatTracker : MonoBehaviour
         CoatiName.text = Names[2].text;
         MeerkatName.text = Names[3].text;
         SlothName.text = Names[4].text;
-
+       
     }
 
     // Update is called once per frame
@@ -94,13 +102,15 @@ public class StatTracker : MonoBehaviour
         PenguinHappy.text = ""+ PenguinCurrentStats[2].value;
         PenguinOverall.value =
             (PenguinCurrentStats[0].value + PenguinCurrentStats[1].value + PenguinCurrentStats[2].value)/3;
+        animalAverage[0] = PenguinOverall.value;
         PenguinFill.color = gradient.Evaluate(PenguinOverall.normalizedValue);
-        
+
         PandaHealth.text = ""+ PandaCurrentStats[0].value;
         PandaHunger.text = ""+ PandaCurrentStats[1].value;
         PandaHappy.text = ""+ PandaCurrentStats[2].value;
         PandaOverall.value =
             (PandaCurrentStats[0].value + PandaCurrentStats[1].value + PandaCurrentStats[2].value)/3;
+        animalAverage[1] = PandaOverall.value;
         PandaFill.color = gradient.Evaluate(PandaOverall.normalizedValue);
         
         CoatiHealth.text = ""+ CoatiCurrentStats[0].value;
@@ -108,6 +118,7 @@ public class StatTracker : MonoBehaviour
         CoatiHappy.text = ""+ CoatiCurrentStats[2].value;
         CoatiOverall.value =
             (CoatiCurrentStats[0].value + CoatiCurrentStats[1].value + CoatiCurrentStats[2].value)/3;
+        animalAverage[2] = CoatiOverall.value;
         CoatiFill.color = gradient.Evaluate(CoatiOverall.normalizedValue);
         
         MeerkatHealth.text = ""+ MeerkatCurrentStats[0].value;
@@ -115,6 +126,7 @@ public class StatTracker : MonoBehaviour
         MeerkatHappy.text = ""+ MeerkatCurrentStats[2].value;
         MeerkatOverall.value =
             (MeerkatCurrentStats[0].value + MeerkatCurrentStats[1].value + MeerkatCurrentStats[2].value)/3;
+        animalAverage[3] = MeerkatOverall.value;
         MeerkatFill.color = gradient.Evaluate(MeerkatOverall.normalizedValue);
         
         SlothHealth.text = ""+ SlothCurrentStats[0].value;
@@ -122,9 +134,28 @@ public class StatTracker : MonoBehaviour
         SlothHappy.text = ""+ SlothCurrentStats[2].value;
         SlothOverall.value =
             (SlothCurrentStats[0].value + SlothCurrentStats[1].value + SlothCurrentStats[2].value)/3;
+        animalAverage[4] = SlothOverall.value;
         SlothFill.color = gradient.Evaluate(SlothOverall.normalizedValue);
-    }
 
+        Debug.Log(animalAverage[0] + "pe : " + animalAverage[1] + "pa : " + animalAverage[2] + "ca : " + animalAverage[3] + "me : " + animalAverage[4] + "sl");
+
+            for (int i = 0; i < animalAverage.Count; i++)
+            {
+                for (int j = i+1; j < animalAverage.Count; j++)
+                {
+                    if (animalAverage[j] < animalAverage[i])
+                    {
+                        (animalAverage[i], animalAverage[j]) = (animalAverage[j], animalAverage[i]);
+                    }
+                }
+                //PenguinEntry.transform.SetSiblingIndex(i);
+                Debug.Log(i);
+                Debug.Log(animalAverage[i]);
+            }
+        
+        
+    }
+    
     /*IEnumerator ScrollLoop(Scrollbar vertScroll)
     {
         while (vertScroll.value>(-1.6f))

@@ -429,6 +429,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
   m_PrefabInstance: {fileID: 1597778539}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &20653411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319472253134124098, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+  m_PrefabInstance: {fileID: 1398328286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &24570181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -2575,6 +2580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113399417063b314caa81e403a2b62f0, type: 3}
+--- !u!1 &107116979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319472253134124098, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+  m_PrefabInstance: {fileID: 1548231681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &108697103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -20402,6 +20412,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4402626770144814, guid: a76d0962e5aaba2479107524e448f23d, type: 3}
   m_PrefabInstance: {fileID: 158301180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1202005274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319472253134124098, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+  m_PrefabInstance: {fileID: 60463285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1202576012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33565,6 +33580,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4098580027920024, guid: ba9a28fd3bfa90a4eb50a1dcc18dd5bc, type: 3}
   m_PrefabInstance: {fileID: 324529898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1974324055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319472253134124098, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+  m_PrefabInstance: {fileID: 319472253369755718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1976625344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -34540,6 +34560,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021499744}
   m_CullTransparentMesh: 1
+--- !u!1 &2026557818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319472253134124098, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+  m_PrefabInstance: {fileID: 575725834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029054317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09db404a7bb1a104fbd425974477ceb4, type: 3}
@@ -35356,6 +35381,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  PenguinEntry: {fileID: 1974324055}
   PenguinPic: {fileID: 1478085057}
   PenguinName: {fileID: 1842910431}
   PenguinHealth: {fileID: 1168618079}
@@ -35368,6 +35394,7 @@ MonoBehaviour:
   - {fileID: 577953900}
   - {fileID: 515106537}
   - {fileID: 836168917}
+  PandaEntry: {fileID: 2026557818}
   PandaPic: {fileID: 229213284}
   PandaName: {fileID: 754532417}
   PandaHealth: {fileID: 398873358}
@@ -35380,6 +35407,7 @@ MonoBehaviour:
   - {fileID: 1629925455}
   - {fileID: 1852346126}
   - {fileID: 1298018871}
+  CoatiEntry: {fileID: 107116979}
   CoatiPic: {fileID: 318189084}
   CoatiName: {fileID: 163464778}
   CoatiHealth: {fileID: 483788270}
@@ -35392,6 +35420,7 @@ MonoBehaviour:
   - {fileID: 2013986662}
   - {fileID: 804815576}
   - {fileID: 1786803420}
+  MeerkatEntry: {fileID: 20653411}
   MeerkatPic: {fileID: 789598758}
   MeerkatName: {fileID: 392790974}
   MeerkatHealth: {fileID: 1970195568}
@@ -35404,6 +35433,7 @@ MonoBehaviour:
   - {fileID: 908487312}
   - {fileID: 1709235699}
   - {fileID: 1420002451}
+  SlothEntry: {fileID: 1202005274}
   SlothPic: {fileID: 524802137}
   SlothName: {fileID: 1829814488}
   SlothHealth: {fileID: 1881601943}
@@ -36545,6 +36575,34 @@ PrefabInstance:
     - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2063972911}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PenguinOrderCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StatTracker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 319472252221319658, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 319472252221319661, guid: e455d4a30e84aa9419f0ce023cc2408a, type: 3}
       propertyPath: m_AnchorMax.y
