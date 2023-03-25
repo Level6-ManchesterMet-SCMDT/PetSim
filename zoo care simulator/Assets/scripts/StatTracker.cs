@@ -76,6 +76,8 @@ public class StatTracker : MonoBehaviour
     [SerializeField] private Slider[] SlothCurrentStats;
 
     private List<float> animalAverage = new List<float> { 0, 0, 0, 0, 0 };
+    private List<GameObject> AnimalEntryList = new List<GameObject>(5);
+    private List<TMP_Text> PriorityList = new List<TMP_Text>(5);
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +92,19 @@ public class StatTracker : MonoBehaviour
         CoatiName.text = Names[2].text;
         MeerkatName.text = Names[3].text;
         SlothName.text = Names[4].text;
-       
+
+        AnimalEntryList[0] = PenguinEntry;
+        AnimalEntryList[1] = PandaEntry;
+        AnimalEntryList[2] = CoatiEntry;
+        AnimalEntryList[3] = MeerkatEntry;
+        AnimalEntryList[4] = SlothEntry;
+
+        PriorityList[0] = PenguinPriority;
+        PriorityList[1] = PandaPriority;
+        PriorityList[2] = CoatiPriority;
+        PriorityList[3] = MeerkatPriority;
+        PriorityList[4] = SlothPriority;
+
     }
 
     // Update is called once per frame
@@ -148,7 +162,6 @@ public class StatTracker : MonoBehaviour
                         (animalAverage[i], animalAverage[j]) = (animalAverage[j], animalAverage[i]);
                     }
                 }
-                //PenguinEntry.transform.SetSiblingIndex(i);
                 Debug.Log(i);
                 Debug.Log(animalAverage[i]);
             }
