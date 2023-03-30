@@ -21043,6 +21043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8aef2070666f74ca2af07fb668f30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GMScript: {fileID: 2002180471}
 --- !u!4 &1282600439
 Transform:
   m_ObjectHideFlags: 0
@@ -32947,6 +32948,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d37aac5a92628d4687b4e2e27e54362, type: 3}
   AMScript: {fileID: 252416115896009438}
   Player: {fileID: 1835094512}
+  Wallet: {fileID: 1282600437}
 --- !u!114 &2003794906 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2919688173665482608, guid: abe1ce98bbf6a634688f36a602c64f37, type: 3}
@@ -38888,6 +38890,7 @@ MonoBehaviour:
   - {fileID: 937953695}
   NewDayPos: {fileID: 252416116318464511}
   GradeMenu: {fileID: 1395214368}
+  Wallet: {fileID: 1282600438}
   TaskCompletionGrade: 
   AverageHealthGrade: 
   AverageHealthScore: 0
@@ -38911,6 +38914,7 @@ MonoBehaviour:
   - {fileID: 1163223868}
   player: {fileID: 1835094508}
   taskCount: 0
+  MoneyEarned: 0
 --- !u!65 &252416115896009439
 BoxCollider:
   m_ObjectHideFlags: 0
