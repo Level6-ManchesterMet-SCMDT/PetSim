@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class AttendenceMachineScript : MonoBehaviour
 {
@@ -11,17 +13,26 @@ public class AttendenceMachineScript : MonoBehaviour
     private GameObject[] TaskBoards;
     [SerializeField]
     public Transform NewDayPos;
-    
+    [SerializeField] private GameObject GradeMenu;
     public string TaskCompletionGrade;
     public string AverageHealthGrade;
 
     [Header("DEBUG VALUES")]
     [SerializeField]
-    private float AverageHealthScore;
+    public float AverageHealthScore;
     [SerializeField]
     private int taskScore;
     [SerializeField]
-    string[] GradeList = { "F", "D", "C", "B", "A" };
+    string[] GradeList = { "F", "E", "D", "C", "B", "A", "S"};
+    [SerializeField] private GameObject[] Disable;
+    [SerializeField] private basicTasks[] AnimalTasks;
+    [SerializeField] private GameObject player;
+    public int taskCount;
+
+    private void Start()
+    {
+        GradeMenu.SetActive(false);
+    }
 
     void Update()
     {
@@ -33,6 +44,13 @@ public class AttendenceMachineScript : MonoBehaviour
         float totalTaskScore = 0;
         int activeEnclosures = 0;
 
+        for (int i = 0; i < AnimalTasks.Length; i++)
+        {
+            taskCount += AnimalTasks[i].tasksCompleted;
+        }
+
+        Debug.Log(taskCount);
+        
         foreach (var TaskBoard in TaskBoards)//get basicTask script in each task board
         {
             var taskManager = TaskBoard.GetComponent<basicTasks>();
@@ -54,29 +72,44 @@ public class AttendenceMachineScript : MonoBehaviour
         taskScore = (int)Mathf.Round(totalTaskScore / activeEnclosures);
         //gets the grade values
         TaskCompletionGrade = GradeList[taskScore];
-        if (AverageHealthScore < 20)
+        if (AverageHealthScore < 14)
         {
             AverageHealthGrade = GradeList[0];
         }
-        else if (AverageHealthScore >= 20 && AverageHealthScore < 40)
+        else if (AverageHealthScore >= 14 && AverageHealthScore < 28)
         {
             AverageHealthGrade = GradeList[1];
         }
-        else if (AverageHealthScore >= 40 && AverageHealthScore < 60)
+        else if (AverageHealthScore >= 28 && AverageHealthScore < 42)
         {
             AverageHealthGrade = GradeList[2];
         }
-        else if (AverageHealthScore >= 60 && AverageHealthScore < 80)
+        else if (AverageHealthScore >= 42 && AverageHealthScore < 56)
         {
             AverageHealthGrade = GradeList[3];
         }
-        else if (AverageHealthScore >= 80)
+        else if (AverageHealthScore >= 56 && AverageHealthScore < 70)
         {
             AverageHealthGrade = GradeList[4];
+        }
+        else if (AverageHealthScore >= 70 && AverageHealthScore < 84)
+        {
+            AverageHealthGrade = GradeList[5];
+        }
+        else if (AverageHealthScore >= 84)
+        {
+            AverageHealthGrade = GradeList[6];
         }
         //DEBUG
         print("average status of all animals: " + AverageHealthGrade);
         print("average task completion of all animals: " + GradeList[taskScore]);
-
+        float debugScore = AverageHealthScore;
+        Debug.Log(debugScore);
+        for (int i = 0; i < Disable.Length; i++)
+        {
+            Disable[i].SetActive(false);
+        }
+        GradeMenu.SetActive(true);
+        player.GetComponent<FirstPersonController>().m_MouseLook.SetCursorLock(false);
     }
 }
