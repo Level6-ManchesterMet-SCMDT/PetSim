@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class AttendenceMachineScript : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class AttendenceMachineScript : MonoBehaviour
     string[] GradeList = { "F", "E", "D", "C", "B", "A", "S"};
     [SerializeField] private GameObject[] Disable;
     [SerializeField] private basicTasks[] AnimalTasks;
+    [SerializeField] private GameObject player;
     public int taskCount;
 
     private void Start()
@@ -108,5 +110,6 @@ public class AttendenceMachineScript : MonoBehaviour
             Disable[i].SetActive(false);
         }
         GradeMenu.SetActive(true);
+        player.GetComponent<FirstPersonController>().m_MouseLook.SetCursorLock(false);
     }
 }
