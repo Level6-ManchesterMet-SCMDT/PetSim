@@ -25,7 +25,7 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
     //[SerializeField] private Sprite[] icons; //Array of possible icons that can be placed in the hotbar
-    private string[] ItemTags = new []{"medicene","toy","food"}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
+    private string[] ItemTags = new []{"medicene","toy","food","cleaning"}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
     
 
 
@@ -213,6 +213,15 @@ public class ZoologistControl : MonoBehaviour
                 //teleports to new day position
                 gameObject.transform.position = attendanceMachine.NewDayPos.position;
                 gameObject.transform.rotation = attendanceMachine.NewDayPos.rotation;
+            }
+             else if (interactedItem.tag == "dirt")//cleaning dirt mechanic
+            {
+                //if player is currently holding a cleaning item
+                var item = inventorySlots[currentInventroyIndex];
+                if (item.tag == "cleaning")
+                {
+                    Destroy(interactedItem);
+                }
             }
             else
             {
