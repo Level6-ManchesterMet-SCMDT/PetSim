@@ -22,7 +22,7 @@ public class dirtManager : MonoBehaviour
     void Start()
     {
         SpawnArea=transform.Cast<Transform>().ToList();
-        spawnDirt();
+        
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class dirtManager : MonoBehaviour
         }
     }
     
-    void spawnDirt()//spawns dirt in an area specified by the areas in game
+    public void spawnDirt()//spawns dirt in an area specified by the areas in game
     {
         for(int i=0; i<= maxDirtAmount;i++)//how many dirt it should spawn
         {
