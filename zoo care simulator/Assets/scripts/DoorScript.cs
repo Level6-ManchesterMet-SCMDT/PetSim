@@ -6,6 +6,7 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private Animator[] DoorAnims;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +21,19 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (player.transform.position.x > this.transform.position.x || player.transform.position.z > this.transform.position.z)
+        for (int i = 0; i < DoorAnims.Length; i++)
         {
-            Debug.Log("Open Outward");
-        }
-        else
-        {
-            Debug.Log("Open Inward");
+            if (player.transform.position.x > this.transform.position.x)
+            {
+                DoorAnims[i].SetTrigger("GreaterThan");
+                Debug.Log("Greater z" + i);
+            }
+            else if (player.transform.position.x < this.transform.position.x)
+            {
+                DoorAnims[i].SetTrigger("LessThan");
+                Debug.Log("Lesser z" + i);
+            }
+            Debug.Log(player.transform.position.x + ", " + player.transform.position.z);
         }
     }
 }
