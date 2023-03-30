@@ -14,7 +14,6 @@ public class ZooShopManager : MonoBehaviour
     [SerializeField] private TMP_InputField MoneyDisplay;
     [SerializeField] private AudioSource PaySound;
     [SerializeField] private AudioSource QuitSound;
-    [SerializeField] private MoneyManager Wallet;
     private int moneyAmount;
     private int testMoney = 100;
     private Dictionary<string, Boolean> ShopItems = new Dictionary<string, bool>();
@@ -24,7 +23,7 @@ public class ZooShopManager : MonoBehaviour
     {
         Desktop.SetActive(true);
         ZooShop.SetActive(false);
-        moneyAmount = Wallet.currentMoney;
+        moneyAmount = MoneyManager.MM.currentMoney;
         MoneyDisplay.text = moneyAmount.ToString();
         
         ShopItems.Add("WindUp Fish Purchased", false);

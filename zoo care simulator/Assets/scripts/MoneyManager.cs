@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
+    public static MoneyManager MM;
     public int currentMoney;
-    [SerializeField] private GradeMenuScript GMScript;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    void Awake () {
+        MakeThisTheOnlyGameManager ();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(currentMoney);
+    void MakeThisTheOnlyGameManager(){
+        if(MM == null){
+            DontDestroyOnLoad(gameObject);
+            MM = this;
+        }
+        else{
+            if(MM != this){
+                Destroy (gameObject);
+            }
+        }
     }
 
     public void MoneyIncrease(int reward)
