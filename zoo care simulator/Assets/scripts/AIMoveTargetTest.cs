@@ -10,6 +10,7 @@ public class AIMoveTargetTest : MonoBehaviour
     [SerializeField] GameObject[] nodeArray;
     [SerializeField] Transform nodeTarget;
     [SerializeField] bool isNodeCol;
+    [SerializeField] AudioSource animalSound;
 
     NavMeshAgent agent;
     Transform animalTransform;
@@ -27,6 +28,7 @@ public class AIMoveTargetTest : MonoBehaviour
         agent.updateUpAxis = false;
         isNodeCol = false;
         StartCoroutine(changeNode());
+        StartCoroutine(soundPlay());
     }
 
     // Update is called once per frame
@@ -67,6 +69,17 @@ public class AIMoveTargetTest : MonoBehaviour
             yield return new WaitForSeconds(7);
         }
 
+    }
+
+    private IEnumerator soundPlay()
+    {
+        //since we have spatial blended sound, all sounds will play at once, only one will be heard considering the spatial sound settings
+        while(true)
+        {
+            yield return new WaitForSeconds(10);
+            animalSound.Play();
+
+        }
     }
 
     private void OnTriggerEnter(Collider col)
