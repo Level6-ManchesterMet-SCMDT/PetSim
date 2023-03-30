@@ -29,7 +29,7 @@ public class BlackboardPrompt : MonoBehaviour
     [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
-    private int completed = 0;
+    public int completed = 0;
     public Toggle[] spawnedTasks;
 
     private basicTasks taskScript;
