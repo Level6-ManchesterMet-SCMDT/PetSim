@@ -63,9 +63,11 @@ public class AttendenceMachineScript : MonoBehaviour
 
                 //gets the total task score
                 totalTaskScore += taskManager.tasksCompleted;
+
+                //resets the taskboards for the day
+                taskManager.dayReset();
             }
-            //resets the taskboards for the day
-            taskManager.dayReset();
+            
         }
         //gets the overall average
         AverageHealthScore = totalHealthScore / activeEnclosures;

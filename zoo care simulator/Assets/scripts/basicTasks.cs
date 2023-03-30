@@ -37,7 +37,7 @@ public class basicTasks : MonoBehaviour
     private void Start()
     {
         assignSickAnimals();
-        dirtScript.spawnDirt();
+
         maxTasks = 5;
     }
     void checkBasicNeeds()
