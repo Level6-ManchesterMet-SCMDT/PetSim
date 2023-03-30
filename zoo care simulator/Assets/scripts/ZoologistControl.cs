@@ -20,6 +20,7 @@ public class ZoologistControl : MonoBehaviour
     private GameObject interactedItem;
     [SerializeField]
     private float reachRange = 2;
+    public float timeStart;
 
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
@@ -31,6 +32,7 @@ public class ZoologistControl : MonoBehaviour
 
     void Update()
     {
+        timeStart +=Time.deltaTime;
         if (Input.GetMouseButtonDown(0)){
             RaycastInteract(reachRange);
         }
