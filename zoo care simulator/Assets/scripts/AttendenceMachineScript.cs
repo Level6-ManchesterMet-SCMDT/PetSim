@@ -18,11 +18,12 @@ public class AttendenceMachineScript : MonoBehaviour
 
     [Header("DEBUG VALUES")]
     [SerializeField]
-    private float AverageHealthScore;
+    public float AverageHealthScore;
     [SerializeField]
     private int taskScore;
     [SerializeField]
     string[] GradeList = { "F", "E", "D", "C", "B", "A", "S"};
+    [SerializeField] private GameObject[] Disable;
 
     private void Start()
     {
@@ -91,6 +92,12 @@ public class AttendenceMachineScript : MonoBehaviour
         //DEBUG
         print("average status of all animals: " + AverageHealthGrade);
         print("average task completion of all animals: " + GradeList[taskScore]);
+        float debugScore = AverageHealthScore;
+        Debug.Log(debugScore);
+        for (int i = 0; i < Disable.Length; i++)
+        {
+            Disable[i].SetActive(false);
+        }
         GradeMenu.SetActive(true);
     }
 }
