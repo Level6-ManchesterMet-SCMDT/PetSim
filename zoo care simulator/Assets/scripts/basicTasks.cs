@@ -76,7 +76,10 @@ public class basicTasks : MonoBehaviour
         // animal clean checker 
 
         //enclosure clean checker
-     
+        if(dirtScript.enclosureClean== false)
+        {
+            enclosureclean= false;
+        }
         allFed = fed;
         allPlayed = played;
         allCured = cured;

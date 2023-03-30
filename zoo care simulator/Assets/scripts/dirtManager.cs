@@ -12,7 +12,7 @@ public class dirtManager : MonoBehaviour
     [SerializeField]
     int maxDirtAmount=4;
     [SerializeField]
-    bool allDirtClean = false;
+    public bool enclosureClean = false;
     [Header("DEBUG")]
     [SerializeField]
     [Tooltip("assign the range coverage prefab as a child to the main gameobject to fill out irregular shaped enclosures. the varible would autofill by the script")]
@@ -39,7 +39,11 @@ public class dirtManager : MonoBehaviour
         }
         if (dirtObjects.Count == 0)
         {
-            allDirtClean= true;
+            enclosureClean = true;
+        }
+        else
+        {
+            enclosureClean= false;
         }
     }
     
@@ -64,4 +68,5 @@ public class dirtManager : MonoBehaviour
             dirtObjects.Add(dirtobject);
         }
     }
+    
 }
