@@ -24,6 +24,8 @@ public class AttendenceMachineScript : MonoBehaviour
     [SerializeField]
     string[] GradeList = { "F", "E", "D", "C", "B", "A", "S"};
     [SerializeField] private GameObject[] Disable;
+    [SerializeField] private basicTasks[] AnimalTasks;
+    public int taskCount;
 
     private void Start()
     {
@@ -40,6 +42,13 @@ public class AttendenceMachineScript : MonoBehaviour
         float totalTaskScore = 0;
         int activeEnclosures = 0;
 
+        for (int i = 0; i < AnimalTasks.Length; i++)
+        {
+            taskCount += AnimalTasks[i].tasksCompleted;
+        }
+
+        Debug.Log(taskCount);
+        
         foreach (var TaskBoard in TaskBoards)//get basicTask script in each task board
         {
             var taskManager = TaskBoard.GetComponent<basicTasks>();

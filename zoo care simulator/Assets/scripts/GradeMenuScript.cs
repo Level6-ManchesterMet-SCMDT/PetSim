@@ -14,7 +14,7 @@ public class GradeMenuScript : MonoBehaviour
     [SerializeField] private Sprite[] PossibleGrades;
     [SerializeField] private AttendenceMachineScript AMScript;
     [SerializeField] private ZoologistControl Player;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +65,7 @@ public class GradeMenuScript : MonoBehaviour
         {
             TimeTaken.text = $"{minutes}m, {seconds}s";
         }
-
+        TasksCompleted.text = AMScript.taskCount.ToString();
         AvgHealth.text = AMScript.AverageHealthScore.ToString("f1") + "%";
 
     }
