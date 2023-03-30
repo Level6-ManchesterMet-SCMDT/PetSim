@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class AttendenceMachineScript : MonoBehaviour
     private GameObject[] TaskBoards;
     [SerializeField]
     public Transform NewDayPos;
-    
+    [SerializeField] private GameObject GradeMenu;
     public string TaskCompletionGrade;
     public string AverageHealthGrade;
 
@@ -21,7 +22,12 @@ public class AttendenceMachineScript : MonoBehaviour
     [SerializeField]
     private int taskScore;
     [SerializeField]
-    string[] GradeList = { "F", "D", "C", "B", "A" };
+    string[] GradeList = { "F", "E", "D", "C", "B", "A", "S"};
+
+    private void Start()
+    {
+        GradeMenu.SetActive(false);
+    }
 
     void Update()
     {
@@ -54,29 +60,37 @@ public class AttendenceMachineScript : MonoBehaviour
         taskScore = (int)Mathf.Round(totalTaskScore / activeEnclosures);
         //gets the grade values
         TaskCompletionGrade = GradeList[taskScore];
-        if (AverageHealthScore < 20)
+        if (AverageHealthScore < 14)
         {
             AverageHealthGrade = GradeList[0];
         }
-        else if (AverageHealthScore >= 20 && AverageHealthScore < 40)
+        else if (AverageHealthScore >= 14 && AverageHealthScore < 28)
         {
             AverageHealthGrade = GradeList[1];
         }
-        else if (AverageHealthScore >= 40 && AverageHealthScore < 60)
+        else if (AverageHealthScore >= 28 && AverageHealthScore < 42)
         {
             AverageHealthGrade = GradeList[2];
         }
-        else if (AverageHealthScore >= 60 && AverageHealthScore < 80)
+        else if (AverageHealthScore >= 42 && AverageHealthScore < 56)
         {
             AverageHealthGrade = GradeList[3];
         }
-        else if (AverageHealthScore >= 80)
+        else if (AverageHealthScore >= 56 && AverageHealthScore < 70)
         {
             AverageHealthGrade = GradeList[4];
+        }
+        else if (AverageHealthScore >= 70 && AverageHealthScore < 84)
+        {
+            AverageHealthGrade = GradeList[5];
+        }
+        else if (AverageHealthScore >= 84)
+        {
+            AverageHealthGrade = GradeList[6];
         }
         //DEBUG
         print("average status of all animals: " + AverageHealthGrade);
         print("average task completion of all animals: " + GradeList[taskScore]);
-
+        GradeMenu.SetActive(true);
     }
 }
