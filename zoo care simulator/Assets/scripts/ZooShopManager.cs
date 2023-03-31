@@ -23,7 +23,7 @@ public class ZooShopManager : MonoBehaviour
     {
         Desktop.SetActive(true);
         ZooShop.SetActive(false);
-        moneyAmount = testMoney;
+        moneyAmount = MoneyManager.MM.currentMoney;
         MoneyDisplay.text = moneyAmount.ToString();
         
         ShopItems.Add("WindUp Fish Purchased", false);

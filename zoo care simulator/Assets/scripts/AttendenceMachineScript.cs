@@ -14,6 +14,7 @@ public class AttendenceMachineScript : MonoBehaviour
     [SerializeField]
     public Transform NewDayPos;
     [SerializeField] private GameObject GradeMenu;
+    [SerializeField] private MoneyManager Wallet;
     public string TaskCompletionGrade;
     public string AverageHealthGrade;
 
@@ -28,6 +29,7 @@ public class AttendenceMachineScript : MonoBehaviour
     [SerializeField] private basicTasks[] AnimalTasks;
     [SerializeField] private GameObject player;
     public int taskCount;
+    public int MoneyEarned = 0;
 
     private void Start()
     {
@@ -79,26 +81,33 @@ public class AttendenceMachineScript : MonoBehaviour
         else if (AverageHealthScore >= 14 && AverageHealthScore < 28)
         {
             AverageHealthGrade = GradeList[1];
+            MoneyEarned = 5;
         }
         else if (AverageHealthScore >= 28 && AverageHealthScore < 42)
         {
             AverageHealthGrade = GradeList[2];
+            MoneyEarned = 10;
         }
         else if (AverageHealthScore >= 42 && AverageHealthScore < 56)
         {
             AverageHealthGrade = GradeList[3];
+            MoneyEarned = 15;
         }
         else if (AverageHealthScore >= 56 && AverageHealthScore < 70)
         {
             AverageHealthGrade = GradeList[4];
+            MoneyEarned = 20;
         }
         else if (AverageHealthScore >= 70 && AverageHealthScore < 84)
         {
             AverageHealthGrade = GradeList[5];
+            MoneyEarned = 30;
         }
         else if (AverageHealthScore >= 84)
         {
             AverageHealthGrade = GradeList[6];
+            MoneyEarned = 40;
+            
         }
         //DEBUG
         print("average status of all animals: " + AverageHealthGrade);
@@ -111,5 +120,6 @@ public class AttendenceMachineScript : MonoBehaviour
         }
         GradeMenu.SetActive(true);
         player.GetComponent<FirstPersonController>().m_MouseLook.SetCursorLock(false);
+        Wallet.MoneyIncrease(MoneyEarned);
     }
 }

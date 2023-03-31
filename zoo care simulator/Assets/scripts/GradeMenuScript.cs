@@ -15,6 +15,8 @@ public class GradeMenuScript : MonoBehaviour
     [SerializeField] private Sprite[] PossibleGrades;
     [SerializeField] private AttendenceMachineScript AMScript;
     [SerializeField] private ZoologistControl Player;
+    [SerializeField] private GameObject Wallet;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,31 +32,37 @@ public class GradeMenuScript : MonoBehaviour
         {
             GradeValue.sprite = PossibleGrades[0];
             GradeComment.text = "Super! Are you sure you're just an intern?";
+            
         }
         else if (AMScript.AverageHealthGrade == "A")
         {
             GradeValue.sprite = PossibleGrades[1];
             GradeComment.text = "Amazing! You deserve a raise!";
+            
         }
         else if (AMScript.AverageHealthGrade == "B")
         {
             GradeValue.sprite = PossibleGrades[2];
             GradeComment.text = "Bravo! Your love for animals is top-notch.";
+            
         }
         else if (AMScript.AverageHealthGrade == "C")
         {
             GradeValue.sprite = PossibleGrades[3];
             GradeComment.text = "Congrats! However there's room for improvement.";
+            
         }
         else if (AMScript.AverageHealthGrade == "D")
         {
             GradeValue.sprite = PossibleGrades[4];
             GradeComment.text = "Disappointing! The animals need better care than this.";
+            
         }
         else if (AMScript.AverageHealthGrade == "E")
         {
             GradeValue.sprite = PossibleGrades[5];
             GradeComment.text = "Erm... I don't understand how you got hired.";
+            
         }
         else if (AMScript.AverageHealthGrade == "F")
         {
@@ -79,6 +87,7 @@ public class GradeMenuScript : MonoBehaviour
 
     public void ContinueBtn()
     {
+        DontDestroyOnLoad(Wallet);
         SceneManager.LoadScene("ShopUI");
     }
 }
