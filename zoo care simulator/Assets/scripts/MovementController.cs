@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     }
 
     public GameObject currentNode;
-    public float speed = 4f;
+    public float speed = 0.52f;
 
     // Update is called once per frame
     void Update()

@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class AppleCollect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Nibbler")
         {
             ScoreText.points = ScoreText.points + 15;
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
             Debug.Log("Apple collected!");
         }
     }
