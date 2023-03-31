@@ -162,6 +162,28 @@ public class StatTracker : MonoBehaviour
                         (animalAverage[i], animalAverage[j]) = (animalAverage[j], animalAverage[i]);
                     }
                 }
+
+                /*if (animalAverage[i] == PenguinOverall.value) //Doesn't work
+                {
+                    PenguinEntry.transform.SetSiblingIndex(i);
+                }
+                if (animalAverage[i] == PandaOverall.value)
+                {
+                    PenguinEntry.transform.SetSiblingIndex(i);
+                }
+                if (animalAverage[i] == CoatiOverall.value)
+                {
+                    CoatiEntry.transform.SetSiblingIndex(i);
+                }
+                if (animalAverage[i] == MeerkatOverall.value)
+                {
+                    MeerkatEntry.transform.SetSiblingIndex(i);
+                }
+                if (animalAverage[i] == SlothOverall.value)
+                {
+                    SlothEntry.transform.SetSiblingIndex(i);
+                }*/
+                
                 Debug.Log(i);
                 Debug.Log(animalAverage[i]);
             }
