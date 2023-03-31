@@ -8,7 +8,7 @@ public class WinScreen : MonoBehaviour
 {
     private void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public void Setup()
