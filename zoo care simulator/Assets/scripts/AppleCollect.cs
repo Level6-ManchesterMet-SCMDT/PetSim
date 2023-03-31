@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AppleCollect : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void Collider2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Nibbler")
         {
