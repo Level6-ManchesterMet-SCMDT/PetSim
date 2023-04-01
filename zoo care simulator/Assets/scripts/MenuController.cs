@@ -77,7 +77,7 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
-            SceneManager.LoadScene("Nmesh-DemoTwo");
+            SceneManager.LoadScene("Loading");
         }
     }
     
@@ -109,7 +109,7 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
-            SceneManager.LoadScene("Nmesh-DemoTwo");
+            SceneManager.LoadScene("Loading");
         }
     }
     
