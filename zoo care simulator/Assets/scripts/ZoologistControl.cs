@@ -202,6 +202,10 @@ public class ZoologistControl : MonoBehaviour
                     inventorySlots[currentInventroyIndex]= null;
                     removeIcon(currentInventroyIndex);
                 }
+                else if(item.tag=="animal cleaning")//cleaning animal
+                {
+
+                }
             }
              else if (interactedItem.tag == "Finish")//clock out interaction with the attendence machine
             {
@@ -223,6 +227,7 @@ public class ZoologistControl : MonoBehaviour
                     Destroy(interactedItem);
                 }
             }
+             
             else
             {
                 //DEBUG
