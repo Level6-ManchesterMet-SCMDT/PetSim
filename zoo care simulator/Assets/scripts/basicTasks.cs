@@ -64,6 +64,7 @@ public class basicTasks : MonoBehaviour
             {
                 clean = false;
             }
+
         }
         foreach (var animal in sickAnimals)//checks sick animals
         {
@@ -73,7 +74,7 @@ public class basicTasks : MonoBehaviour
                 cured = false;
             }
         }
-        // animal clean checker 
+
 
         //enclosure clean checker
         if(dirtScript.enclosureClean== false)
