@@ -13702,6 +13702,7 @@ MonoBehaviour:
   SettingsMenu: {fileID: 1903126998}
   HelpMenu: {fileID: 699862772}
   StoryMenu: {fileID: 1729606458}
+  AsyncLoad: {fileID: 1344738669}
 --- !u!82 &576193471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31412,10 +31413,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1344738669}
-        m_TargetAssemblyTypeName: AsyncLoadHandling, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 576193470}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: TutorialButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject SettingsMenu;
     [SerializeField] private GameObject HelpMenu;
     [SerializeField] private GameObject StoryMenu;
+    [SerializeField] private AsyncLoadHandling AsyncLoad;
     private Coroutine warpCoroutine;
     
     // Start is called before the first frame update
@@ -77,7 +78,8 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
-            SceneManager.LoadScene("Loading");
+            //SceneManager.LoadScene("Loading");
+            AsyncLoad.LoadScene(4);
         }
     }
     
@@ -109,7 +111,8 @@ public class MenuController : MonoBehaviour
     {
         if (message.Equals("TravelAnimationEnded"))
         {
-            SceneManager.LoadScene("Loading");
+            //SceneManager.LoadScene("Loading");
+            AsyncLoad.LoadScene(4);
         }
     }
     
