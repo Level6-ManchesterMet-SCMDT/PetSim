@@ -288,6 +288,7 @@ public class AnimalParentScript : MonoBehaviour
             health += healthRestoreRate;
         }
     }
+    protected void clean
     protected void growOlder()
     {
         age += growthRate;
