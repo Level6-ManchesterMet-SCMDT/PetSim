@@ -25,7 +25,7 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
     //[SerializeField] private Sprite[] icons; //Array of possible icons that can be placed in the hotbar
-    private string[] ItemTags = new []{"medicene","toy","food","cleaning"}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
+    private string[] ItemTags = new []{"medicene","toy","food","cleaning","animal cleaning"}; //ADD FUTURE ITEMS HERE - IN ORDER OF ICONS ARRAY
     
 
 
@@ -194,6 +194,11 @@ public class ZoologistControl : MonoBehaviour
                 //puts selected item into animal's inventory, and removes it from player's if it is not empty
 
                 var item = inventorySlots[currentInventroyIndex];
+                if (item.tag == "animal cleaning")//cleaning animal if player is holding sponge or other cleaning items
+                {
+                    Animal.clean();
+                    return;
+                }
                 if (item != null && Animal.animalInventory==null)//check if player hand is not empty and if animal inventory is empty
                 {
                     //moves the player's item into animal's inventory
@@ -202,6 +207,7 @@ public class ZoologistControl : MonoBehaviour
                     inventorySlots[currentInventroyIndex]= null;
                     removeIcon(currentInventroyIndex);
                 }
+                
             }
              else if (interactedItem.tag == "Finish")//clock out interaction with the attendence machine
             {
@@ -223,6 +229,7 @@ public class ZoologistControl : MonoBehaviour
                     Destroy(interactedItem);
                 }
             }
+             
             else
             {
                 //DEBUG
