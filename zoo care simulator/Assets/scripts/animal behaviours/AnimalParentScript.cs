@@ -198,13 +198,13 @@ public class AnimalParentScript : MonoBehaviour
     public void becomeDirty()//makes the animal dirty on day reset
     {
 
-        var dirtyChance = Random.Range(0, 3);
-        print(dirtyChance);
-        if (dirtyChance > 0)//make anumal dirty
-        {
-            dirtinessValue = Random.Range(1, 6);
+       // var dirtyChance = Random.Range(0, 3);
+        //print(dirtyChance);
+        //if (dirtyChance > 0)//make anumal dirty
+        //{
+            dirtinessValue = Random.Range(0, 6);
             print(dirtinessValue+" dirtness");
-        }
+        //}
     }
     public void clean()//cleans the animal
     {
