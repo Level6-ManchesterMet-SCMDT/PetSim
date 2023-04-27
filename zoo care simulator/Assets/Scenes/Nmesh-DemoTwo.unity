@@ -25521,6 +25521,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7213018371851111590, guid: b3ef2d3d789982044a4d609b70aeb20e, type: 3}
+      propertyPath: TimeBetweenPages
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ef2d3d789982044a4d609b70aeb20e, type: 3}
 --- !u!1 &1096988574
@@ -39007,6 +39011,7 @@ MonoBehaviour:
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
   tickRate: 1
+  dirtinessValue: 0
   hungerDecayRate: 1
   moodDecayRate: 1
   healthDecayRate: 1

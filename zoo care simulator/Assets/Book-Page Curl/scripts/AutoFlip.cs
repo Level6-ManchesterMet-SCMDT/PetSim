@@ -123,15 +123,17 @@ public class AutoFlip : MonoBehaviour {
     IEnumerator PageFinder(int target)
     {
         int pageDifference = target - ControledBook.currentPage;
-
+        //Time between pages = 0.01
+        //Wait4Seconds = 1
+        //PageFlipTime = 0.2, 0.5, 0.2, 0.5
         if (pageDifference > 0)
         {
             pageDifference = pageDifference / 2;
             while (pageDifference > 0)
             {
-                PageFlipTime = 0.1f;
+                PageFlipTime = 0.2f;
                 FlipRightPage();
-                yield return new WaitForSeconds(0.4f);
+                yield return new WaitForSeconds(1f);
                 Debug.Log(pageDifference);
                 pageDifference = pageDifference - 1;
             }
@@ -142,9 +144,9 @@ public class AutoFlip : MonoBehaviour {
             pageDifference = pageDifference / -2;
             while (pageDifference > 0)
             {
-                PageFlipTime = 0.1f;
+                PageFlipTime = 0.2f;
                 FlipLeftPage();
-                yield return new WaitForSeconds(0.4f);
+                yield return new WaitForSeconds(1f);
                 Debug.Log(pageDifference);
                 pageDifference = pageDifference - 1;
             }
