@@ -302,6 +302,7 @@ Transform:
   m_Children:
   - {fileID: 7412346041965448572}
   - {fileID: 7412346041151739560}
+  - {fileID: 1287424611739223405}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -358,6 +359,7 @@ MonoBehaviour:
   - Clean out Panda Enclosure
   - Clean the panda
   taskValue: 0100000003000000020000000400000005000000
+  completed: 0
   spawnedTasks: []
 --- !u!82 &7412346041360156800
 AudioSource:
@@ -565,11 +567,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalList: []
   sickAnimals: []
+  AnySick: 0
   allCured: 0
   allFed: 0
   allPlayed: 0
-  isClean: 0
+  allIsClean: 0
   cleanEnclosure: 0
+  tasksCompleted: 0
+  maxTasks: 0
+  averageAnimalState: 0
+  EnclosureActive: 1
+  dirtScript: {fileID: 1287424611739223404}
 --- !u!1 &7412346041438313441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,4 +1343,77 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8129419500100618787, guid: 4c89adc2fc0abac48b004b79a7ecb9df, type: 3}
   m_PrefabInstance: {fileID: 1588801471776323203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7041644053189071032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7412346041360156863}
+    m_Modifications:
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098923658381907415, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+      propertyPath: m_Name
+      value: dirtSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+--- !u!114 &1287424611739223404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8098923658381907412, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+  m_PrefabInstance: {fileID: 7041644053189071032}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27746c11ce6915438b5be945dc9bd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1287424611739223405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098923658381907413, guid: aed17db3ab24d1240ad8b2241eb00b35, type: 3}
+  m_PrefabInstance: {fileID: 7041644053189071032}
   m_PrefabAsset: {fileID: 0}

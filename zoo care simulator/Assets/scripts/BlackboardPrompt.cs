@@ -11,7 +11,7 @@ using Toggle = UnityEngine.UI.Toggle;
 public class BlackboardPrompt : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] private GameObject prompt;
+    //[SerializeField] private GameObject prompt;
     [SerializeField] private GameObject taskPrefab;
     [SerializeField] private Text taskText;
     [SerializeField] private Toggle taskCompletion;
@@ -202,7 +202,7 @@ public class BlackboardPrompt : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider collision)
+ /*   private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -220,5 +220,5 @@ public class BlackboardPrompt : MonoBehaviour
             prompt.SetActive(false);
             inTrigger = false;
         }
-    }
+    } */
 }
