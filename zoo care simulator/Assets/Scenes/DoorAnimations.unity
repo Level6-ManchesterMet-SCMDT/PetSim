@@ -21598,11 +21598,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
   m_PrefabInstance: {fileID: 1444610914}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1105494997 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5887169506921775593, guid: be0d5f6bd4e84ce439594816fc353eb6, type: 3}
-  m_PrefabInstance: {fileID: 5887169507340562749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1106663501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -32357,11 +32352,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
---- !u!95 &1702914509 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5887169507567202581, guid: be0d5f6bd4e84ce439594816fc353eb6, type: 3}
-  m_PrefabInstance: {fileID: 5887169507340562749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1705704207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -32616,6 +32606,7 @@ MonoBehaviour:
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
   tickRate: 1
+  dirtinessValue: 0
   hungerDecayRate: 1
   moodDecayRate: 1
   healthDecayRate: 1
@@ -37336,22 +37327,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6666815824470560171, guid: be0d5f6bd4e84ce439594816fc353eb6, type: 3}
   m_PrefabInstance: {fileID: 5887169507340562749}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1956117894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956117892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8af30a9a525ef45bc93595dbb969bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1835094508}
-  DoorAnims:
-  - {fileID: 1105494997}
-  - {fileID: 1702914509}
 --- !u!65 &1956117895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41504,7 +41479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3563218975772920526}
   - component: {fileID: 3563218975772920528}
-  - component: {fileID: 3563218975772920527}
+  - component: {fileID: 3563218975772920529}
   m_Layer: 0
   m_Name: Animated DoorOne
   m_TagString: Untagged
@@ -44376,7 +44351,7 @@ Animator:
   m_GameObject: {fileID: 894997679289887638}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce694a5659cf94447a94b25d0c4b5524, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa1ee167a333e4141804bae9c7cf4aa4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -44711,21 +44686,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &3563218975772920527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98392511035189203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8af30a9a525ef45bc93595dbb969bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1835094508}
-  DoorAnims:
-  - {fileID: 894997679289887633}
 --- !u!65 &3563218975772920528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44739,6 +44699,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.18253, y: 3.5689437, z: 2.3881047}
   m_Center: {x: -0.51454973, y: 1.2844719, z: 1.1042298}
+--- !u!114 &3563218975772920529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98392511035189203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b5f4dd21c22f84298d8e59cfbb0311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1835094508}
+  DoorAnims:
+  - {fileID: 894997679289887633}
 --- !u!1001 &4114625422367389490
 PrefabInstance:
   m_ObjectHideFlags: 0
