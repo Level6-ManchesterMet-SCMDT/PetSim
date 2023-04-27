@@ -84,6 +84,12 @@ public class StatTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PenguinName.text = Names[0].text;
+        PandaName.text = Names[1].text;
+        CoatiName.text = Names[2].text;
+        MeerkatName.text = Names[3].text;
+        SlothName.text = Names[4].text;
+
         gradient.Evaluate(1f);
         PenguinHealth.text = ""+ PenguinCurrentStats[0].value;
         PenguinHunger.text = ""+ PenguinCurrentStats[1].value;
