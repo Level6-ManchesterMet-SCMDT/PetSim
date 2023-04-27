@@ -151,44 +151,16 @@ public class StatTracker : MonoBehaviour
         animalAverage[4] = SlothOverall.value;
         SlothFill.color = gradient.Evaluate(SlothOverall.normalizedValue);
 
-        Debug.Log(animalAverage[0] + "pe : " + animalAverage[1] + "pa : " + animalAverage[2] + "ca : " + animalAverage[3] + "me : " + animalAverage[4] + "sl");
-
-            for (int i = 0; i < animalAverage.Count; i++)
+        for (int i = 0; i < animalAverage.Count; i++)
+        {
+            for (int j = i+1; j < animalAverage.Count; j++) 
             {
-                for (int j = i+1; j < animalAverage.Count; j++)
-                {
-                    if (animalAverage[j] < animalAverage[i])
-                    {
-                        (animalAverage[i], animalAverage[j]) = (animalAverage[j], animalAverage[i]);
-                    }
+                if (animalAverage[j] < animalAverage[i]) 
+                { 
+                    (animalAverage[i], animalAverage[j]) = (animalAverage[j], animalAverage[i]);
                 }
-
-                /*if (animalAverage[i] == PenguinOverall.value) //Doesn't work
-                {
-                    PenguinEntry.transform.SetSiblingIndex(i);
-                }
-                if (animalAverage[i] == PandaOverall.value)
-                {
-                    PenguinEntry.transform.SetSiblingIndex(i);
-                }
-                if (animalAverage[i] == CoatiOverall.value)
-                {
-                    CoatiEntry.transform.SetSiblingIndex(i);
-                }
-                if (animalAverage[i] == MeerkatOverall.value)
-                {
-                    MeerkatEntry.transform.SetSiblingIndex(i);
-                }
-                if (animalAverage[i] == SlothOverall.value)
-                {
-                    SlothEntry.transform.SetSiblingIndex(i);
-                }*/
-                
-                Debug.Log(i);
-                Debug.Log(animalAverage[i]);
             }
-        
-        
+        }
     }
     
     /*IEnumerator ScrollLoop(Scrollbar vertScroll)
