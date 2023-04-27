@@ -8,16 +8,6 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Animator[] DoorAnims;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,12 +16,12 @@ public class DoorScript : MonoBehaviour
             if (player.transform.position.x > this.transform.position.x)
             {
                 DoorAnims[i].SetTrigger("GreaterThan");
-                Debug.Log("Greater z" + i);
+                Debug.Log("Greater x" + i);
             }
             else if (player.transform.position.x < this.transform.position.x)
             {
                 DoorAnims[i].SetTrigger("LessThan");
-                Debug.Log("Lesser z" + i);
+                Debug.Log("Lesser x" + i);
             }
             Debug.Log(player.transform.position.x + ", " + player.transform.position.z);
         }
