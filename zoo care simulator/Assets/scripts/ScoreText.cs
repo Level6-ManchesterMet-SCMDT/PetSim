@@ -8,6 +8,7 @@ public class ScoreText : MonoBehaviour
 {
     public TextMeshProUGUI PointText;
     public static int points;
+    public GameObject winScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +20,10 @@ public class ScoreText : MonoBehaviour
     void Update()
     {
         PointText.text = points.ToString();
+        if (points == 6375)
+        {
+            Debug.Log("You Win!");
+            winScreen.SetActive(true);
+        }
     }
 }

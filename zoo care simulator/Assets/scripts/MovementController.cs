@@ -11,15 +11,14 @@ public class MovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public GameObject currentNode;
     public float speed = 0.52f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        NodeController currentNodeController = currentNode.GetComponent<NodeController>();
-        transform.position = Vector2.MoveTowards(transform.position, currentNode.transform.position, speed * Time.deltaTime);
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    //NodeController currentNodeController = currentNode.GetComponent<NodeController>();
+    //    //transform.position = Vector2.MoveTowards(transform.position, currentNode.transform.position, speed * Time.deltaTime);
+    //}
 
     void FixedUpdate()
     {
