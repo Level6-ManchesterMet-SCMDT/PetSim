@@ -9,19 +9,22 @@ public class ZAxisDoorScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        for (int i = 0; i < DoorAnims.Length; i++)
+        if (other.CompareTag("Player"))
         {
-            if (player.transform.position.z > this.transform.position.z)
+            for (int i = 0; i < DoorAnims.Length; i++)
             {
-                DoorAnims[i].SetTrigger("GreaterThan");
-                Debug.Log("Greater z" + i);
+                if (player.transform.position.z > this.transform.position.z)
+                {
+                    DoorAnims[i].SetTrigger("GreaterThan");
+                    Debug.Log("Greater z" + i);
+                }
+                else if (player.transform.position.z < this.transform.position.z)
+                {
+                    DoorAnims[i].SetTrigger("LessThan");
+                    Debug.Log("Lesser z" + i);
+                }
+                Debug.Log(player.transform.position.x + ", " + player.transform.position.z);
             }
-            else if (player.transform.position.z < this.transform.position.z)
-            {
-                DoorAnims[i].SetTrigger("LessThan");
-                Debug.Log("Lesser z" + i);
-            }
-            Debug.Log(player.transform.position.x + ", " + player.transform.position.z);
         }
     }
 }
