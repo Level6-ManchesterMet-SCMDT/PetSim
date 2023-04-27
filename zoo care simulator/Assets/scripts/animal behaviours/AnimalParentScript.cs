@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -49,6 +49,8 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("tick rate of how often processes update in seconds")]
     private float tickRate = 1;
     private float timer = 0;
+    [SerializeField]   
+    private int dirtinessValue;
     [SerializeField]
     [Tooltip("how much hunger decreases by per tick")]
     private int hungerDecayRate = 1;
@@ -89,13 +91,13 @@ public class AnimalParentScript : MonoBehaviour
         
         currenthappiness = maxValue;
         statBars.SetHappiness(maxValue);
- 
+        becomeDirty();
     }
     public void resetneeds()
     {
         Played = false;
         Fed = false;
-        Cured = false;
+        becomeDirty();
     }
     public void Feed(foodScript food)//increases hunger bar from feeding
     {
@@ -128,6 +130,7 @@ public class AnimalParentScript : MonoBehaviour
         animalInventory = null;
         
     }
+   
     public void EatMedicine(mediceneScript medicene)//input what the medicene cures and it increases health
     {
         int healthmodifier = medicene.HealthAdded;
@@ -192,6 +195,26 @@ public class AnimalParentScript : MonoBehaviour
             animalInventory.gameObject.transform.position = animalHand.transform.position;
         }
     }
+    public void becomeDirty()//makes the animal dirty on day reset
+    {
+
+       // var dirtyChance = Random.Range(0, 3);
+        //print(dirtyChance);
+        //if (dirtyChance > 0)//make anumal dirty
+        //{
+            dirtinessValue = Random.Range(0, 6);
+            print(dirtinessValue+" dirtness");
+        //}
+    }
+    public void clean()//cleans the animal
+    {
+        print("clean");
+        if (dirtinessValue >= 0)
+        {
+            print("clean 2");
+            dirtinessValue -= 1;
+        }
+    }
     virtual public void Update()//make sure to call override on all child methods and that it has a base.Update()
     {
 
@@ -224,6 +247,15 @@ public class AnimalParentScript : MonoBehaviour
             AdvanceTimeStatus();
             timer = tickRate;
             //print("tick "+gameObject.name);
+        }
+        //clean checker 
+        if (dirtinessValue <= 0)
+        {
+            Clean=true;
+        }
+        else
+        {
+            Clean= false;
         }
     }
     /// <summary>
@@ -288,6 +320,7 @@ public class AnimalParentScript : MonoBehaviour
             health += healthRestoreRate;
         }
     }
+
     protected void growOlder()
     {
         age += growthRate;
@@ -322,6 +355,10 @@ public class AnimalParentScript : MonoBehaviour
         //locks value within upper bounds
         if (currentAfflictedChance > 100) {
             currentAfflictedChance = 100;
+        }
+        if (Clean == false)//increase chance of becoming ill if dirty by 10%
+        {
+            currentAfflictedChance += 10;
         }
         //print(currentIllChance);
         int randomNumber=UnityEngine.Random.Range(0, maxValue);

@@ -26,6 +26,8 @@ public class basicTasks : MonoBehaviour
     public float averageAnimalState = 0;
     [Tooltip("if enclosure is enabled for the reputation")]
     public bool EnclosureActive=true;
+    [SerializeField]
+    dirtManager dirtScript;
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +37,7 @@ public class basicTasks : MonoBehaviour
     private void Start()
     {
         assignSickAnimals();
+        dirtScript.spawnDirt();
         maxTasks = 5;
     }
     void checkBasicNeeds()
@@ -61,6 +64,7 @@ public class basicTasks : MonoBehaviour
             {
                 clean = false;
             }
+
         }
         foreach (var animal in sickAnimals)//checks sick animals
         {
@@ -70,10 +74,13 @@ public class basicTasks : MonoBehaviour
                 cured = false;
             }
         }
-        // animal clean checker 
+
 
         //enclosure clean checker
-     
+        if(dirtScript.enclosureClean== false)
+        {
+            enclosureclean= false;
+        }
         allFed = fed;
         allPlayed = played;
         allCured = cured;
@@ -118,6 +125,7 @@ public class basicTasks : MonoBehaviour
             var animalscript = animal.GetComponent<AnimalParentScript>();
             animalscript.resetneeds();
         }
+        dirtScript.spawnDirt();
     }
     public bool anySick()
     {
