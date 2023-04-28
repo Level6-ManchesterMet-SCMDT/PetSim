@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -15,8 +16,11 @@ public class AttendenceMachineScript : MonoBehaviour
     public Transform NewDayPos;
     [SerializeField] private GameObject GradeMenu;
     [SerializeField] private MoneyManager Wallet;
+    [SerializeField] private GradeMenuScript GMScript;
     public string TaskCompletionGrade;
     public string AverageHealthGrade;
+    [SerializeField] private ZoologistControl Player;
+    [SerializeField] private TMP_Text TimeTaken;
 
     [Header("DEBUG VALUES")]
     [SerializeField]
@@ -110,6 +114,18 @@ public class AttendenceMachineScript : MonoBehaviour
             AverageHealthGrade = GradeList[6];
             MoneyEarned = 40;
             
+        }
+        
+        float timer = Player.timeStart;
+        string minutes = Mathf.Floor(timer / 60).ToString("00");
+        string seconds = (timer % 60).ToString("00");
+        if (minutes == "00")
+        {
+            TimeTaken.text = $"{seconds}s";
+        }
+        else
+        {
+            TimeTaken.text = $"{minutes}m, {seconds}s";
         }
         //DEBUG
         print("average status of all animals: " + AverageHealthGrade);

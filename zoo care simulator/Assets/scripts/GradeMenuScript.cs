@@ -9,12 +9,10 @@ public class GradeMenuScript : MonoBehaviour
 {
     [SerializeField] private Image GradeValue;
     [SerializeField] private TMP_Text GradeComment;
-    [SerializeField] private TMP_Text TimeTaken;
     [SerializeField] private TMP_Text TasksCompleted;
     [SerializeField] private TMP_Text AvgHealth;
     [SerializeField] private Sprite[] PossibleGrades;
     [SerializeField] private AttendenceMachineScript AMScript;
-    [SerializeField] private ZoologistControl Player;
     [SerializeField] private GameObject Wallet;
     
 
@@ -70,17 +68,7 @@ public class GradeMenuScript : MonoBehaviour
             GradeComment.text = "F#@*$£#?! You're lucky we don't report you!";
         }
 
-        float timer = Player.timeStart;
-        string minutes = Mathf.Floor(timer / 60).ToString("00");
-        string seconds = (timer % 60).ToString("00");
-        if (minutes == "00")
-        {
-            TimeTaken.text = $"{seconds}s";
-        }
-        else
-        {
-            TimeTaken.text = $"{minutes}m, {seconds}s";
-        }
+        
         TasksCompleted.text = AMScript.taskCount.ToString();
         AvgHealth.text = AMScript.AverageHealthScore.ToString("f1") + "%";
     }
