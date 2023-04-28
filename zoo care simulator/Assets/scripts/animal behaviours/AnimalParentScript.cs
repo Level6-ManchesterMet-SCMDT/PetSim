@@ -18,6 +18,9 @@ public class AnimalParentScript : MonoBehaviour
     public float growthRate;
     public float age;
     public bool isDead = false;
+
+    private int daysWithoutFood=0;
+    private int daysWithoutPlaytime = 0;
     [SerializeField]
     [Tooltip("aliments for matching with the correct medicene")]
     protected string[] alimentsList ={"flu","rash"};
@@ -46,22 +49,22 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("lower bound for the stats when generation")]
     private int lowerBoundGenerationModifier=50;
     [SerializeField]
-    [Tooltip("tick rate of how often processes update in seconds")]
+    [Tooltip("tick rate of how often processes update in seconds[DEPRECATED]")]
     private float tickRate = 1;
     private float timer = 0;
     [SerializeField]   
     private int dirtinessValue;
     [SerializeField]
-    [Tooltip("how much hunger decreases by per tick")]
+    [Tooltip("how much hunger decreases by per day pass")]
     private int hungerDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much mood decreases by per tick")]
+    [Tooltip("how much mood decreases by per day pass")]
     private int moodDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much health decreases by per tick if afflicted or low mood/hunger")]
+    [Tooltip("how much health decreases by per day pass if afflicted or low mood/hunger")]
     private int healthDecayRate = 1;
     [SerializeField]
-    [Tooltip("how much health increases by per tick passively when hunger and mood is high")]
+    [Tooltip("how much health increases by per day pass when hunger and mood is high")]
     private int healthRestoreRate = 1;
     [SerializeField]
     [Tooltip("what is the upper limit for both hunger and mood before health starts to regenerate")]
@@ -81,6 +84,8 @@ public class AnimalParentScript : MonoBehaviour
     public bool Fed=false;
     public bool Cured = false;
     public bool Clean = false;
+
+    
     private void Start()
     {
         currenthealth = maxValue;
