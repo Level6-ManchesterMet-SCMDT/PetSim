@@ -93,11 +93,12 @@ public class AnimalParentScript : MonoBehaviour
         statBars.SetHappiness(maxValue);
         becomeDirty();
     }
-    public void resetneeds()
+    public void resetneeds()//resets on day
     {
         Played = false;
         Fed = false;
         becomeDirty();
+        AdvanceTimeStatus();
     }
     public void Feed(foodScript food)//increases hunger bar from feeding
     {
@@ -244,7 +245,7 @@ public class AnimalParentScript : MonoBehaviour
         timer-= Time.deltaTime;
         if (timer < 0)
         {
-            AdvanceTimeStatus();
+            //AdvanceTimeStatus();
             timer = tickRate;
             //print("tick "+gameObject.name);
         }
