@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -12,9 +13,11 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject PausePrimary;
     [SerializeField] private GameObject PauseHelp;
     [SerializeField] private GameObject PauseOptions;
+    [SerializeField] private GameObject PlayerCanvases;
     [SerializeField] private FirstPersonController fpsController;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private AsyncLoadHandling AsyncLoad;
     private Resolution[] resolutions;
     
     // Start is called before the first frame update
@@ -60,6 +63,7 @@ public class PauseManager : MonoBehaviour
         PauseOptions.SetActive(false);
         fpsController.m_MouseLook.SetCursorLock(!PauseMenu.activeInHierarchy);
         fpsController.enabled = !PauseMenu.activeInHierarchy;
+        PlayerCanvases.SetActive(!PlayerCanvases.activeInHierarchy);
     }
 
     
@@ -82,6 +86,7 @@ public class PauseManager : MonoBehaviour
     }
     public void MainMenu()
     {
+        AsyncLoad.LoadScene(8);
         Debug.Log("MainMenu Pressed");
     }
 
