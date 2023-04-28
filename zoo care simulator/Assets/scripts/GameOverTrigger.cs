@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 {
-    //public GameObject loseScreen;
+    public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,8 @@ public class GameOverTrigger : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("You Lose!");
-            //loseScreen.SetActive(true);
-            //Destroy(gameObject); 
+            loseScreen.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }

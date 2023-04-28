@@ -25,6 +25,6 @@ public class MovementController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
    
-        rb.velocity = new Vector3(x * 15.0f, y * 15.0f, 0);
+        rb.velocity = new Vector3(x * speed, y * speed, 0);
     }
 }
