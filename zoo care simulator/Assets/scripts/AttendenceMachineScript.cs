@@ -21,6 +21,7 @@ public class AttendenceMachineScript : MonoBehaviour
     public string AverageHealthGrade;
     [SerializeField] private ZoologistControl Player;
     [SerializeField] private TMP_Text TimeTaken;
+    [SerializeField] private AudioSource ClockOutSong;
 
     [Header("DEBUG VALUES")]
     [SerializeField]
@@ -137,6 +138,7 @@ public class AttendenceMachineScript : MonoBehaviour
             Disable[i].SetActive(false);
         }
         GradeMenu.SetActive(true);
+        ClockOutSong.Play();
         player.GetComponent<FirstPersonController>().m_MouseLook.SetCursorLock(false);
         Wallet.MoneyIncrease(MoneyEarned);
     }
