@@ -137,11 +137,17 @@ public class ZoologistControl : MonoBehaviour
     {
         RaycastHit hitinfo = new RaycastHit();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hitinfo, reach)) {
+        if (Physics.Raycast(ray, out hitinfo, reach))
+        {
 
-
+            
             interactedItem = hitinfo.collider.gameObject;//grabs the item;
 
+            if (interactedItem.CompareTag("TempButton")) //Thermostat detect
+            {
+                interactedItem.GetComponent<Button>().onClick.Invoke();
+            }
+            
             for (int t = 0; t < ItemTags.Length; t++) //Checks the iteractedItem tag against the array of tags
             {
                 if (interactedItem.CompareTag(ItemTags[t])) //check if it is an interactble
