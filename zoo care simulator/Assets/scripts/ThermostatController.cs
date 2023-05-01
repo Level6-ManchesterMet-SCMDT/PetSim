@@ -11,6 +11,8 @@ public class ThermostatController : MonoBehaviour
     public int targetTemp;
     public int minTemp;
     public int maxTemp;
+
+    public bool TaskComplete;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,11 @@ public class ThermostatController : MonoBehaviour
         if (currentTemp == targetTemp)
         {
             Debug.Log("Target Temp Reached. Task Complete");
+            TaskComplete = true;
+        }
+        else
+        {
+            TaskComplete = false;
         }
     }
     public void DecreaseTemp()
@@ -46,6 +53,11 @@ public class ThermostatController : MonoBehaviour
         if (currentTemp == targetTemp)
         {
             Debug.Log("Target Temp Reached. Task Complete");
+            TaskComplete = true;
+        }
+        else
+        {
+            TaskComplete = false;
         }
     }
 }
