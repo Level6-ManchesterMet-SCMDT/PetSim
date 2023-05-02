@@ -11,6 +11,19 @@ public class AIMoveTargetTest : MonoBehaviour
     [SerializeField] Transform nodeTarget;
     [SerializeField] bool isNodeCol;
     [SerializeField] AudioSource animalSound;
+    [SerializeField] Animator animalFeedAnim;
+    [SerializeField] bool isEating;
+    int randPenguinAnim;
+
+
+    [SerializeField] int animalType;
+    //animal types and thier numbers
+    // 1 - panda
+    // 2 - coati
+    // 3 - penguin
+    // 4 - meerkat
+    //sloth isnt in here as it uses a different script.
+
 
     NavMeshAgent agent;
     Transform animalTransform;
@@ -34,16 +47,22 @@ public class AIMoveTargetTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nodeTarget = nodeArray[nodeTargetNumber].transform;
+        while(!isEating)
+        {
+            nodeTarget = nodeArray[nodeTargetNumber].transform;
 
-        agent.SetDestination(nodeTarget.position);
-        nodeRotQuat = Quaternion.LookRotation(nodeTarget.transform.position - animalTransform.position);
-        animalTransform.rotation = Quaternion.Slerp(animalTransform.rotation, nodeRotQuat, speed * Time.deltaTime); 
+            agent.SetDestination(nodeTarget.position);
+            nodeRotQuat = Quaternion.LookRotation(nodeTarget.transform.position - animalTransform.position);
+            animalTransform.rotation = Quaternion.Slerp(animalTransform.rotation, nodeRotQuat, speed * Time.deltaTime);
+            break;
+        }
+        
 
-        //animalTransform.LookAt(new Vector3(nodeTarget.position.x, animalTransform.position.y, nodeTarget.position.z));
-        //UnityEngine.Debug.Log("x = " + nodeTarget.position.x + "Y = " + animalTransform.position.y + "Z = " + nodeTarget.position.z);
+ 
 
+       
 
+        
 
 
 
@@ -63,9 +82,41 @@ public class AIMoveTargetTest : MonoBehaviour
             {
                 nodeTargetNumber = UnityEngine.Random.Range(0, 7);
             }
-            
 
-            
+            if(animalType == 1)
+            {
+                animalFeedAnim.Play("Armature|walkv0");
+            }
+            if (animalType == 2)
+            {
+                animalFeedAnim.Play("Armature|walk");
+            }
+            if (animalType == 3)
+            {
+                randPenguinAnim = Random.Range(0, 2);
+                if(randPenguinAnim == 1)
+                {
+                    animalFeedAnim.Play("Armature|Jump");
+                    yield return new WaitForSeconds(2);
+                    animalFeedAnim.Play("Armature|slideidle");
+                    yield return new WaitForSeconds(5);
+                }
+                else
+                {
+                    animalFeedAnim.Play("Armature|walk");
+                    yield return new WaitForSeconds(5);
+                }
+                        
+
+                
+               
+
+            }
+
+
+
+
+
             yield return new WaitForSeconds(7);
         }
 
@@ -89,6 +140,35 @@ public class AIMoveTargetTest : MonoBehaviour
         {
             nodeTargetNumber = UnityEngine.Random.Range(0, 7);
         }
+
+    }
+
+    public void startFeedAnim()
+    {
+        StopAllCoroutines();
+        StartCoroutine(eatAnim());
+        isEating = true;
+    }
+    private IEnumerator eatAnim()
+    {
+        if(animalFeedAnim != null)
+        {
+            if(animalType == 1)
+            {
+                animalFeedAnim.Play("Armature|headbob");
+            }
+            if (animalType == 2)
+            {
+                animalFeedAnim.Play("Armature|headbob");
+            }
+
+        }
+
+        Debug.Log("animPlaying");
+        yield return new WaitForSeconds(5);
+        StartCoroutine(soundPlay());
+        StartCoroutine(changeNode());
+        isEating=false;
 
     }
 }

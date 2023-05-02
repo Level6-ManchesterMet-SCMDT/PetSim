@@ -4609,6 +4609,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &183110325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8417659974447007025, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
+  m_PrefabInstance: {fileID: 8417659974332321688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183110309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099dad36e61499b458764099b017e2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &185293694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 63970d8ca80836e4e82db630a54a191a, type: 3}
@@ -4759,7 +4770,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1146700916}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &186875683
 AudioSource:
@@ -13223,6 +13234,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4114625422004919278, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
   m_PrefabInstance: {fileID: 4114625422367389490}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &496692446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4114625422004919276, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+  m_PrefabInstance: {fileID: 4114625422367389490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157975211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099dad36e61499b458764099b017e2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &504754134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}
@@ -34278,6 +34300,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 330056827444598180, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
   m_PrefabInstance: {fileID: 330056828591165911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1405222926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+  m_PrefabInstance: {fileID: 330056828591165911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405222923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099dad36e61499b458764099b017e2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1409705132
 GameObject:
   m_ObjectHideFlags: 0
@@ -37296,6 +37329,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1558483476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558483473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957a027faebce144aa6e38ca42289656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1001 &1560425982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39931,6 +39979,7 @@ MonoBehaviour:
   currentHappinessAfflictedChance: 0
   currenthungerAfflictedChance: 0
   statBars: {fileID: 1305941846}
+  navMeshScript: {fileID: 0}
   Played: 0
   Fed: 0
   Cured: 0
@@ -41545,6 +41594,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1782239046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3974897140565401735, guid: 3586e1c7b22b17043b8c1d65babca65d, type: 3}
+  m_PrefabInstance: {fileID: 1037479651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1782239050
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782239046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f5912964ce907704ebb2030bb82cabdd, type: 3}
+--- !u!1 &1784681027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 62322853922251872, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+  m_PrefabInstance: {fileID: 330056828591165911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1784681029
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784681027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db37a31a1b7c82f458317c7f2a9bd764, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> Stashed changes
 --- !u!1001 &1785542035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52490,6 +52586,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1357639277}
     m_Modifications:
     - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: navMeshScript
+      value: 
+      objectReference: {fileID: 1405222926}
+    - target: {fileID: 330056827444598176, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: FoodTypes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -52509,6 +52609,10 @@ PrefabInstance:
       propertyPath: animalSound
       value: 
       objectReference: {fileID: 186875683}
+    - target: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: animalFeedAnim
+      value: 
+      objectReference: {fileID: 1784681029}
     - target: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: nodeArray.Array.data[0]
       value: 
@@ -52596,6 +52700,30 @@ PrefabInstance:
     - target: {fileID: 330056827444598190, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: m_Mass
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 835060263632568026, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
@@ -52946,6 +53074,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 302109567}
     - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: navMeshScript
+      value: 
+      objectReference: {fileID: 496692446}
+    - target: {fileID: 4114625422004919251, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
       propertyPath: FoodTypes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -52970,9 +53102,17 @@ PrefabInstance:
       value: animal
       objectReference: {fileID: 0}
     - target: {fileID: 4114625422004919276, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: animalType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114625422004919276, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
       propertyPath: animalSound
       value: 
       objectReference: {fileID: 321909090}
+    - target: {fileID: 4114625422004919276, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
+      propertyPath: animalFeedAnim
+      value: 
+      objectReference: {fileID: 589272492}
     - target: {fileID: 4114625422004919276, guid: 259ac1c351de91f408ad4edce318bead, type: 3}
       propertyPath: nodeArray.Array.data[0]
       value: 
@@ -54072,9 +54212,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8417659974447007025, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
+      propertyPath: animalType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417659974447007025, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
       propertyPath: animalSound
       value: 
       objectReference: {fileID: 1332114750}
+    - target: {fileID: 8417659974447007025, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
+      propertyPath: animalFeedAnim
+      value: 
+      objectReference: {fileID: 729599356}
     - target: {fileID: 8417659974447007025, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
       propertyPath: nodeArray.Array.data[0]
       value: 
@@ -54111,6 +54259,10 @@ PrefabInstance:
       propertyPath: statBars
       value: 
       objectReference: {fileID: 768259757}
+    - target: {fileID: 8417659974447007027, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
+      propertyPath: navMeshScript
+      value: 
+      objectReference: {fileID: 183110325}
     - target: {fileID: 8417659974447007027, guid: 0bbdf61f13773a745b4d4f336ef7b1d9, type: 3}
       propertyPath: FoodTypes.Array.size
       value: 1
