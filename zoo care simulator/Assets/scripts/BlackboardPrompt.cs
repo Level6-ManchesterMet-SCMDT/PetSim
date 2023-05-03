@@ -24,8 +24,8 @@ public class BlackboardPrompt : MonoBehaviour
     [Header("Animal Details")]
     [SerializeField] private Species _species;
     [SerializeField]private string[] tasks;
-    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned enclosere =4, animal is clean=5, In order of task list")]
-    [Range(1,5)]
+    [Tooltip("HungerBoost =1, HappinessBoost =2, HealthBoost =3, Cleaned enclosere =4, animal is clean=5, temperature is set=6, In order of task list")]
+    [Range(1,6)]
     [SerializeField] private int[] taskValue;
     private bool inTrigger = false;
     private int nextTask = 1;
@@ -172,6 +172,20 @@ public class BlackboardPrompt : MonoBehaviour
                     spawnedTasks[i].isOn = false;
                 }
             }
+
+            if (taskValue[i] == 6)
+            {
+                if (taskScript.temperatureSet == true)
+                {
+                    spawnedTasks[i].isOn = true;
+                }
+                else
+                {
+                    spawnedTasks[i].isOn = false;
+                }
+                
+            }
+            
         }
 
 
