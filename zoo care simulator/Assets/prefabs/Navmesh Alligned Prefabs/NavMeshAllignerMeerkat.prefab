@@ -810,15 +810,22 @@ MonoBehaviour:
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
   tickRate: 1
-  hungerDecayRate: 1
-  moodDecayRate: 1
-  healthDecayRate: 1
+  dirtinessValue: 0
+  hungerDecayRate: 5
+  moodDecayRate: 5
+  hungerDecayRamp: 0
+  moodDecayRamp: 0
+  dirtyIncreasedModifier: 5
   healthRestoreRate: 1
   HealthRegenPercentage: 75
   maxChanceToGetAfflicted: 70
   currentHappinessAfflictedChance: 0
   currenthungerAfflictedChance: 0
   statBars: {fileID: 1034837826756901650}
+  Played: 0
+  Fed: 0
+  Cured: 0
+  Clean: 0
 --- !u!114 &1034837826136433001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,6 +849,7 @@ MonoBehaviour:
   - {fileID: 0}
   nodeTarget: {fileID: 0}
   isNodeCol: 0
+  animalSound: {fileID: 0}
   speed: 1
 --- !u!195 &1034837826136433000
 NavMeshAgent:

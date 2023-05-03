@@ -15,6 +15,8 @@ public class AnimalParentScript : MonoBehaviour
     public int currenthealth;
     public int currenthappiness;
     public int currenthunger;
+    [SerializeField]
+    private int dirtinessValue;
     public float growthRate;
     public float age;
     public bool isDead = false;
@@ -52,8 +54,7 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("tick rate of how often processes update in seconds[DEPRECATED]")]
     private float tickRate = 1;
     private float timer = 0;
-    [SerializeField]   
-    private int dirtinessValue;
+
     [SerializeField]
     [Tooltip("how much hunger decreases by per day pass")]
     private int hungerDecayRate = 1;
@@ -61,8 +62,16 @@ public class AnimalParentScript : MonoBehaviour
     [Tooltip("how much mood decreases by per day pass")]
     private int moodDecayRate = 1;
     [SerializeField]
+    [Tooltip("decay ramps copies from decay rates, no need to set")]
+    private int hungerDecayRamp;
+    [SerializeField]
+    [Tooltip("decay ramps copies from decay rates, no need to set")]
+    private int moodDecayRamp;
     [Tooltip("how much health decreases by per day pass if afflicted or low mood/hunger")]
     private int healthDecayRate = 1;
+    [SerializeField]
+    [Tooltip("increased rate of  +health decay when dirty")]
+    private int dirtyIncreasedModifier=5;
     [SerializeField]
     [Tooltip("how much health increases by per day pass when hunger and mood is high")]
     private int healthRestoreRate = 1;
@@ -97,13 +106,21 @@ public class AnimalParentScript : MonoBehaviour
         currenthappiness = maxValue;
         statBars.SetHappiness(maxValue);
         becomeDirty();
+        
+    }
+    private void Awake()
+    {
+        hungerDecayRamp = hungerDecayRate;
+        moodDecayRamp = moodDecayRate;
+       // print("decay ramp " + hungerDecayRamp + moodDecayRamp);
     }
     public void resetneeds()//resets on day
     {
+        AdvanceTimeStatus();
         Played = false;
         Fed = false;
         becomeDirty();
-        AdvanceTimeStatus();
+        
     }
     public void Feed(foodScript food)//increases hunger bar from feeding
     {
@@ -204,13 +221,11 @@ public class AnimalParentScript : MonoBehaviour
     public void becomeDirty()//makes the animal dirty on day reset
     {
 
-       // var dirtyChance = Random.Range(0, 3);
-        //print(dirtyChance);
-        //if (dirtyChance > 0)//make anumal dirty
-        //{
+        if (Clean == true)
+        {
             dirtinessValue = Random.Range(0, 6);
-            print(dirtinessValue+" dirtness");
-        //}
+            print(dirtinessValue + " dirtness");
+        }
     }
     public void clean()//cleans the animal
     {
@@ -279,7 +294,19 @@ public class AnimalParentScript : MonoBehaviour
         if (hunger > 1)
         {
             hunger = hunger- hungerDecayRate;
+            //if not fed previously it would cause it to decay faster exponentially
+            if (Fed == false)
+            {
+                hunger -= hungerDecayRamp;
+                hungerDecayRamp = hungerDecayRamp * 2;
+            }
+            if(Fed==true)//if have been fed before resets hunger decay ramp and not add it.
+            {
+                hungerDecayRamp = hungerDecayRate;
+            }
             statBars.SetHunger(hunger);
+
+            
         }
         if (hunger < 1)
         {
@@ -291,6 +318,19 @@ public class AnimalParentScript : MonoBehaviour
         if (mood > 1)
         {
             mood = mood -  moodDecayRate;
+            if (Clean == false)//removes more happiness when dirty
+            {
+                mood -= dirtyIncreasedModifier;
+            }
+            if (Played == false)
+            {
+                mood -= moodDecayRamp;
+                moodDecayRamp = moodDecayRamp * 2;
+            }
+            else if (Played == true)//resets it once it has been played
+            {
+                moodDecayRamp = moodDecayRate;
+            }
             statBars.SetHappiness(mood);
         }
         if (mood < 1)
@@ -304,6 +344,10 @@ public class AnimalParentScript : MonoBehaviour
         {
             health = health- healthDecayRate;
             statBars.SetHealth(health);
+            if (Clean == false)
+            {
+                health -= dirtyIncreasedModifier;
+            }
         }
         if (health <= 0)//animal dies
         {
@@ -362,10 +406,7 @@ public class AnimalParentScript : MonoBehaviour
         if (currentAfflictedChance > 100) {
             currentAfflictedChance = 100;
         }
-        if (Clean == false)//increase chance of becoming ill if dirty by 10%
-        {
-            currentAfflictedChance += 10;
-        }
+        
         //print(currentIllChance);
         int randomNumber=UnityEngine.Random.Range(0, maxValue);
         //will animal get afflicted
