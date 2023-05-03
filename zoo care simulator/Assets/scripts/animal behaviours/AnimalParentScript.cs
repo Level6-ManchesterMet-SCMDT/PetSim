@@ -77,6 +77,10 @@ public class AnimalParentScript : MonoBehaviour
     private float currenthungerAfflictedChance;
     [SerializeField] private StatBars statBars;
 
+    [SerializeField]
+    [Tooltip("Navmesh Script We Need to change Coroutine From")]
+    AIMoveTargetTest navMeshScript;
+
     public bool Played=false;
     public bool Fed=false;
     public bool Cured = false;
@@ -107,6 +111,11 @@ public class AnimalParentScript : MonoBehaviour
         {
             if (food.getFoodName() == PreferredFood[i])
             {
+                //plays feed anim from animal navmesh script
+                if (navMeshScript != null)
+                {
+                    navMeshScript.startFeedAnim();
+                }
                 //if it matches eats the food and becomes happier
                 hunger += food.saturationRestore;
                 mood += food.HappinesRestore;
@@ -114,20 +123,29 @@ public class AnimalParentScript : MonoBehaviour
                 Destroy(animalInventory);
                 Fed = true;
                 return;
+
             }
             else if (food.getFoodType() == FoodTypes[i])
             {
+                //plays feed anim from animal navmesh script
+                if (navMeshScript != null)
+                {
+                    navMeshScript.startFeedAnim();
+                }
                 //if it matches the type it eats it.
                 hunger += food.saturationRestore;
                 Destroy(animalInventory);
                 Fed= true;
                 return;
+            
             }
         }
         //drops the food if neither matches
         animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
         animalInventory.gameObject.transform.position = animalHand.transform.position;
         animalInventory = null;
+
+        
         
     }
    
