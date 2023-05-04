@@ -28,6 +28,8 @@ public class basicTasks : MonoBehaviour
     public bool EnclosureActive=true;
     [SerializeField]
     dirtManager dirtScript;
+    public bool temperatureSet;
+    [SerializeField] private ThermostatController thermoScript;
     // Update is called once per frame
     void Update()
     {
@@ -80,6 +82,15 @@ public class basicTasks : MonoBehaviour
         if(dirtScript.enclosureClean== false)
         {
             enclosureclean= false;
+        }
+        //Thermostat checker
+        if (thermoScript.TaskComplete == true)
+        {
+            temperatureSet = true;
+        }
+        else
+        {
+            temperatureSet = false;
         }
         allFed = fed;
         allPlayed = played;
