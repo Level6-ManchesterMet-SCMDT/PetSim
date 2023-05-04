@@ -113,7 +113,9 @@ public class pcController : MonoBehaviour
     }
     public void PandaButton()
     {
-        Debug.Log("PANDA GAME STARTED");
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene(10);
     }
     public void PenguinButton()
     {
@@ -135,7 +137,9 @@ public class pcController : MonoBehaviour
     }
     public void CoatiButton()
     {
-        Debug.Log("COATI GAME STARTED");
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene(9);
     }
 
 }
