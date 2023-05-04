@@ -93,14 +93,14 @@ public class BlackboardPrompt : MonoBehaviour
     {
         for (int i = 0; i < tasks.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.R) && spawnedTasks[i].isOn == false)
+          /*  if (Input.GetKeyDown(KeyCode.R) && spawnedTasks[i].isOn == false)
             {
                 taskCompletion.isOn = !taskCompletion.isOn;
                 spawnedTasks[i].isOn = true;
                 write.Play();
                 completed++;
                 DailyQuota();
-            }
+            }*/
         }
         //check the task script values
         for (int i = 0; i < taskValue.Length; i++)
