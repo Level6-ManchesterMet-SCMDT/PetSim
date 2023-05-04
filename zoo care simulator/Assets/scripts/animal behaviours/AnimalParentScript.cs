@@ -97,6 +97,10 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     GameObject virusCloud;
 
+    [SerializeField] private ParticleSystem emotion;
+    [SerializeField] private ParticleSystemRenderer reactionChange;
+    [SerializeField] private Material[] reactionType;
+
     public bool Played=false;
     public bool Fed=false;
     public bool Cured = false;
@@ -148,12 +152,16 @@ public class AnimalParentScript : MonoBehaviour
                 //if it matches eats the food and becomes happier
                 hunger += food.saturationRestore;
                 mood += food.HappinesRestore;
+                //emotion
+                reactionChange.material = reactionType[7];
+                emotion.Play();
                 //eats the food
                 Destroy(animalInventory);
                 Fed = true;
                 return;
 
             }
+            
             else if (food.getFoodType() == FoodTypes[i])
             {
                 //plays feed anim from animal navmesh script
@@ -165,15 +173,19 @@ public class AnimalParentScript : MonoBehaviour
                 hunger += food.saturationRestore;
                 Destroy(animalInventory);
                 Fed= true;
+                reactionChange.material = reactionType[1];
+                emotion.Play();
                 return;
             
             }
+
         }
         //drops the food if neither matches
         animalInventory.GetComponent<Rigidbody>().velocity = Vector3.zero;
         animalInventory.gameObject.transform.position = animalHand.transform.position;
         animalInventory = null;
-
+        reactionChange.material = reactionType[3];
+        emotion.Play();
         
         
     }
@@ -197,6 +209,8 @@ public class AnimalParentScript : MonoBehaviour
                 CurrentAliment = healthy;
                 Cured= true;
                 virusCloud.SetActive(false);
+                reactionChange.material = reactionType[0];
+                emotion.Play();
             }
             else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects.
             {
@@ -204,6 +218,8 @@ public class AnimalParentScript : MonoBehaviour
                 //side effects
                 hunger += hungermodifier;
                 mood += moodmodifier;
+                reactionChange.material = reactionType[5];
+                emotion.Play();
             }
         }
         else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects. this allows for stuff like anti-depressents
@@ -212,6 +228,8 @@ public class AnimalParentScript : MonoBehaviour
             //side effects
             hunger += hungermodifier;
             mood += moodmodifier;
+            reactionChange.material = reactionType[5];
+            emotion.Play();
         }
         Destroy(animalInventory);//eats the medicene for all cases
     }
@@ -241,6 +259,8 @@ public class AnimalParentScript : MonoBehaviour
             transform.Rotate(0, 50 * Time.deltaTime, 0);
             //moves the toy to the animal's position
             animalInventory.gameObject.transform.position = animalHand.transform.position;
+            reactionChange.material = reactionType[2];
+            emotion.Play();
         }
     }
     public void becomeDirty()//makes the animal dirty on day reset
@@ -259,6 +279,8 @@ public class AnimalParentScript : MonoBehaviour
         if (dirtinessValue >= 0)
         {
             print("clean 2");
+            reactionChange.material = reactionType[6];
+            emotion.Play();
             dirtinessValue -= 1;
         }
     }
@@ -340,6 +362,8 @@ public class AnimalParentScript : MonoBehaviour
         if (hunger < 1)
         {
             hunger = 1;
+            reactionChange.material = reactionType[3];
+            emotion.Play();
         }
     }
     protected void decayHappiness()
@@ -365,6 +389,9 @@ public class AnimalParentScript : MonoBehaviour
         if (mood < 1)
         {
             mood = 1;
+            reactionChange.material = reactionType[3];
+            emotion.Play();
+            
         }
     }
     protected void decayHealth()
@@ -381,6 +408,10 @@ public class AnimalParentScript : MonoBehaviour
         if (health <= 0)//animal dies
         {
             isDead= true;
+            var main = emotion.main;
+            main.loop = true;
+            reactionChange.material = reactionType[4];
+            emotion.Play();
         }
     }
     protected void BecomeAfflicted()
