@@ -22617,6 +22617,7 @@ MonoBehaviour:
   currenthealth: 0
   currenthappiness: 0
   currenthunger: 0
+  dirtinessValue: 0
   growthRate: 0
   age: 0
   isDead: 0
@@ -22632,7 +22633,6 @@ MonoBehaviour:
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
   tickRate: 1
-  dirtinessValue: 0
   hungerDecayRate: 1
   moodDecayRate: 1
   hungerDecayRamp: 0
@@ -22644,6 +22644,9 @@ MonoBehaviour:
   currentHappinessAfflictedChance: 0
   currenthungerAfflictedChance: 0
   statBars: {fileID: 1305941846}
+  navMeshScript: {fileID: 0}
+  dirtCloud: {fileID: 0}
+  virusCloud: {fileID: 0}
   Played: 0
   Fed: 0
   Cured: 0

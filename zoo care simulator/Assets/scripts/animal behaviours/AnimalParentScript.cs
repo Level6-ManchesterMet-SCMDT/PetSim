@@ -92,6 +92,10 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField]
     [Tooltip("Navmesh Script We Need to change Coroutine From")]
     AIMoveTargetTest navMeshScript;
+    [SerializeField]
+    GameObject dirtCloud;
+    [SerializeField]
+    GameObject virusCloud;
 
     public bool Played=false;
     public bool Fed=false;
@@ -116,7 +120,9 @@ public class AnimalParentScript : MonoBehaviour
     {
         hungerDecayRamp = hungerDecayRate;
         moodDecayRamp = moodDecayRate;
-       // print("decay ramp " + hungerDecayRamp + moodDecayRamp);
+        dirtCloud.SetActive(false);
+        virusCloud.SetActive(false);
+        // print("decay ramp " + hungerDecayRamp + moodDecayRamp);
     }
     public void resetneeds()//resets on day
     {
@@ -190,6 +196,7 @@ public class AnimalParentScript : MonoBehaviour
                 mood += moodmodifier;
                 CurrentAliment = healthy;
                 Cured= true;
+                virusCloud.SetActive(false);
             }
             else//if wrong medicene used it reduces health instead and aliment stays, but still adds side effects.
             {
@@ -243,6 +250,7 @@ public class AnimalParentScript : MonoBehaviour
         {
             dirtinessValue = Random.Range(0, 6);
             print(dirtinessValue + " dirtness");
+            dirtCloud.SetActive(true);
         }
     }
     public void clean()//cleans the animal
@@ -291,10 +299,13 @@ public class AnimalParentScript : MonoBehaviour
         if (dirtinessValue <= 0)
         {
             Clean=true;
+            dirtCloud.SetActive(false);
+            
         }
         else
         {
             Clean= false;
+            
         }
     }
     /// <summary>
@@ -379,6 +390,7 @@ public class AnimalParentScript : MonoBehaviour
             int length = alimentsList.Length;
             int index=UnityEngine.Random.Range(0, length);
             CurrentAliment= alimentsList[index];
+            virusCloud.SetActive(true);
         }
     }
     protected void restoreHealth()

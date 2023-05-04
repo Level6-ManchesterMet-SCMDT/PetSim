@@ -40646,6 +40646,8 @@ MonoBehaviour:
   currenthungerAfflictedChance: 0
   statBars: {fileID: 1305941846}
   navMeshScript: {fileID: 0}
+  dirtCloud: {fileID: 0}
+  virusCloud: {fileID: 0}
   Played: 0
   Fed: 0
   Cured: 0
@@ -53712,6 +53714,14 @@ PrefabInstance:
     - target: {fileID: 1034837827278368684, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118012005787743982, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543936896106594296, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7ad3c929018c94282f1df01548f620, type: 3}
