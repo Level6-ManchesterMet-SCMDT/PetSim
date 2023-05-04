@@ -2835,7 +2835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4286203544770475213, guid: 66d7ac65a52a68540bd845c21ec9fa58, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 4286203545342764329, guid: 66d7ac65a52a68540bd845c21ec9fa58, type: 3}
       propertyPath: Names.Array.data[0]
@@ -27093,6 +27093,14 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7213018371844170263, guid: b3ef2d3d789982044a4d609b70aeb20e, type: 3}
+      propertyPath: bookPages.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ae9399d4cf748b47a6c56e74f098935, type: 3}
+    - target: {fileID: 7213018371844170263, guid: b3ef2d3d789982044a4d609b70aeb20e, type: 3}
+      propertyPath: bookPages.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 00f3c6ccf3043624b8ed45118729e3bb, type: 3}
     - target: {fileID: 7213018371851111590, guid: b3ef2d3d789982044a4d609b70aeb20e, type: 3}
       propertyPath: TimeBetweenPages
       value: 0.01
@@ -40526,6 +40534,7 @@ MonoBehaviour:
   currenthealth: 0
   currenthappiness: 0
   currenthunger: 0
+  dirtinessValue: 0
   growthRate: 0
   age: 0
   isDead: 0
@@ -40543,10 +40552,11 @@ MonoBehaviour:
   playAimationDuration: 5
   lowerBoundGenerationModifier: 50
   tickRate: 1
-  dirtinessValue: 0
   hungerDecayRate: 1
   moodDecayRate: 1
-  healthDecayRate: 1
+  hungerDecayRamp: 0
+  moodDecayRamp: 0
+  dirtyIncreasedModifier: 5
   healthRestoreRate: 1
   HealthRegenPercentage: 75
   maxChanceToGetAfflicted: 70
@@ -42263,31 +42273,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: f5912964ce907704ebb2030bb82cabdd, type: 3}
---- !u!1 &1784681027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 62322853922251872, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
-  m_PrefabInstance: {fileID: 330056828591165911}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1784681029
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784681027}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db37a31a1b7c82f458317c7f2a9bd764, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1785542035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53263,7 +53248,7 @@ PrefabInstance:
     - target: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: animalFeedAnim
       value: 
-      objectReference: {fileID: 1784681029}
+      objectReference: {fileID: 0}
     - target: {fileID: 330056827444598178, guid: 6705546767dedbf4382772b9a121cf11, type: 3}
       propertyPath: nodeArray.Array.data[0]
       value: 
