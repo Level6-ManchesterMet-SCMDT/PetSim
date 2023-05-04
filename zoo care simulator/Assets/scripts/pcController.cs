@@ -107,35 +107,43 @@ public class pcController : MonoBehaviour
 
     public void MeerkatButton()
     {
-        DontDestroyOnLoad(player);
-        DontDestroyOnLoad(this.gameObject);
+       // DontDestroyOnLoad(player);
+     //   DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("FeedMeerkat2DMiniGame");
     }
     public void PandaButton()
     {
-        Debug.Log("PANDA GAME STARTED");
+        //   DontDestroyOnLoad(player);
+        player.SetActive(false);
+        //     DontDestroyOnLoad(this.gameObject);
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene(10);
     }
     public void PenguinButton()
     {
-        DontDestroyOnLoad(player);
+     //   DontDestroyOnLoad(player);
         player.SetActive(false);
-        DontDestroyOnLoad(this.gameObject);
+    //    DontDestroyOnLoad(this.gameObject);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("PenguinSliding");
 //        Debug.Log("PENGUIN GAME STARTED");
     }
     public void SlothButton()
     {
-        DontDestroyOnLoad(player);
+     //   DontDestroyOnLoad(player);
         player.SetActive(false);
-        DontDestroyOnLoad(this.gameObject);
+   //     DontDestroyOnLoad(this.gameObject);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("SlothRacing");
-  //      Debug.Log("SLOTH GAME STARTED");
     }
     public void CoatiButton()
     {
-        Debug.Log("COATI GAME STARTED");
+        //   DontDestroyOnLoad(player);
+        player.SetActive(false);
+        //     DontDestroyOnLoad(this.gameObject);
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene(9);
+       
     }
 
 }
