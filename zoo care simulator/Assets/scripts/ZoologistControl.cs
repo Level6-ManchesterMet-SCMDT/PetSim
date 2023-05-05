@@ -21,8 +21,6 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField]
     private float reachRange = 2;
     public float timeStart;
-    [SerializeField] private AudioSource spongeSound;
-    [SerializeField] private AudioSource brushSound;
 
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
@@ -205,7 +203,6 @@ public class ZoologistControl : MonoBehaviour
                 if (item.tag == "animal cleaning")//cleaning animal if player is holding sponge or other cleaning items
                 {
                     Animal.clean();
-                    spongeSound.Play();
                     return;
                 }
                 if (item != null && Animal.animalInventory==null)//check if player hand is not empty and if animal inventory is empty
@@ -235,7 +232,6 @@ public class ZoologistControl : MonoBehaviour
                 var item = inventorySlots[currentInventroyIndex];
                 if (item.tag == "cleaning")
                 {
-                    brushSound.Play();
                     Destroy(interactedItem);
                 }
             }

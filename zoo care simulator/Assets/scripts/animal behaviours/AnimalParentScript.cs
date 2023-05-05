@@ -100,7 +100,6 @@ public class AnimalParentScript : MonoBehaviour
     [SerializeField] private ParticleSystem emotion;
     [SerializeField] private ParticleSystemRenderer reactionChange;
     [SerializeField] private Material[] reactionType;
-    [SerializeField] private AudioSource toySound;
 
     public bool Played=false;
     public bool Fed=false;
@@ -243,7 +242,6 @@ public class AnimalParentScript : MonoBehaviour
             yield break;
         }
         IsPlayingToy = true;
-        toySound.Play();
         //improves mood
         print("add "+mood+" mood");
         mood += 10;
