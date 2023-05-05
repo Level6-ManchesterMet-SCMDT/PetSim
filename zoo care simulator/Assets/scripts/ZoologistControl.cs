@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +21,9 @@ public class ZoologistControl : MonoBehaviour
     [SerializeField]
     private float reachRange = 2;
     public float timeStart;
+
+    [SerializeField] private AudioSource spongeSound;
+    [SerializeField] private AudioSource sweepSound;
 
     [SerializeField] private GameObject[] Highlights; //Array of images that show the selected inventory slot
     [SerializeField] private Image[] slots; //Array oof all the available slots in the hotbar
@@ -202,6 +205,7 @@ public class ZoologistControl : MonoBehaviour
                 var item = inventorySlots[currentInventroyIndex];
                 if (item.tag == "animal cleaning")//cleaning animal if player is holding sponge or other cleaning items
                 {
+                    spongeSound.Play();
                     Animal.clean();
                     return;
                 }
@@ -232,6 +236,7 @@ public class ZoologistControl : MonoBehaviour
                 var item = inventorySlots[currentInventroyIndex];
                 if (item.tag == "cleaning")
                 {
+                    sweepSound.Play();
                     Destroy(interactedItem);
                 }
             }

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
+//using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -117,7 +117,7 @@ public class pcController : MonoBehaviour
         player.SetActive(false);
         //     DontDestroyOnLoad(this.gameObject);
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene("panda dance");
     }
     public void PenguinButton()
     {
@@ -142,7 +142,7 @@ public class pcController : MonoBehaviour
         player.SetActive(false);
         //     DontDestroyOnLoad(this.gameObject);
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene("CoatiMaze");
        
     }
 
