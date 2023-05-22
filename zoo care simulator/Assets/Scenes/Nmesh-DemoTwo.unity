@@ -8041,7 +8041,103 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: c9112be5fa336504bbb00941959d8505, type: 2}
   m_audioClip: {fileID: 8300000, guid: e772cfa290883824e9668f1e9e55484e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &286921858
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286921853}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c9112be5fa336504bbb00941959d8505, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b69b019b0028ade4eaa20cb13430915f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11972,12 +12068,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1389441154}
     - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
+      propertyPath: taskScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
       propertyPath: ClockOutSong
       value: 
       objectReference: {fileID: 286921857}
     - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
+      propertyPath: ClockOutSongBad
+      value: 
+      objectReference: {fileID: 286921858}
+    - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
+      propertyPath: AverageHealthGrade
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
+      propertyPath: AverageHealthScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
       propertyPath: Disable.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
+      propertyPath: TaskCompletionGrade
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1069763811491484619, guid: d1f7392f3d0f8ba45b255f694a36b8f7, type: 3}
       propertyPath: AnimalTasks.Array.size
@@ -52891,7 +53007,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!95 &1720661861
 Animator:
