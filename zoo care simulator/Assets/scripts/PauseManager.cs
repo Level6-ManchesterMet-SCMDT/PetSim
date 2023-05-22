@@ -86,7 +86,7 @@ public class PauseManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        AsyncLoad.LoadScene(8);
+        AsyncLoad.LoadScene(0);
         Debug.Log("MainMenu Pressed");
     }
 

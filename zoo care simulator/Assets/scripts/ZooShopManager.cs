@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ZooShopManager : MonoBehaviour
 {
@@ -217,6 +218,7 @@ public class ZooShopManager : MonoBehaviour
             }
         }
         Debug.Log(str);
+        SceneManager.LoadScene("EndSplashScreen");
     }
 
 
